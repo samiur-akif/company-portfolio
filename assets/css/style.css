@@ -973,6 +973,14 @@ Navbar Area Two CSS
 /*================================================
 Main Banner Area CSS
 =================================================*/
+.awssld__content {
+  background-color: transparent !important;
+}
+
+.awssld__timer {
+  background-color: transparent !important;
+}
+
 .main-banner {
   position: relative;
   height: 800px;
@@ -1066,9 +1074,9 @@ Main Banner Area CSS
   z-index: 2;
 }
 
-.main-banner .banner-image img:last-child {
-  display: none;
-}
+/* .main-banner .banner-image img:last-child {
+ 
+} */
 
 .main-banner-content h1 {
   font-size: 72px;
