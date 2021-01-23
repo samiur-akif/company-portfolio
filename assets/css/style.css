@@ -1074,9 +1074,9 @@ Main Banner Area CSS
   z-index: 2;
 }
 
-/* .main-banner .banner-image img:last-child {
- 
-} */
+.main-banner .banner-image img:last-child {
+  display: none;
+}
 
 .main-banner-content h1 {
   font-size: 72px;
@@ -1094,6 +1094,21 @@ Main Banner Area CSS
 
 .main-banner-content .banner-btn {
   margin-top: 40px;
+}
+
+.main-banner-content button {
+  padding: 12px 30px;
+  background: #f20791;
+  border: 1px solid #f20791;
+  color: #ffffff;
+  font-size: 16px;
+  margin-top: 40px;
+  outline: none;
+}
+
+.main-banner-content button:hover {
+  background-color: #ffffff;
+  color: #f20791;
 }
 
 .main-banner-content .banner-btn .popup-youtube {

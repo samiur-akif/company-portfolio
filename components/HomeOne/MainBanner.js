@@ -41,11 +41,12 @@ const MainBanner = () => {
                                         <div className="main-banner-content">
                                             <h1>Lorem ipsum dolor sit amet</h1>
                                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,  eiusmod tempor incididunt ut labore.</p>
-                                            <Link href="#">
-                                            <div className="banner-btn">
-                                                    <a className="default-btn-one">More About Us</a>
-                                            </div>
-                                            </Link>
+                                            {/* <div className="banner-btn">
+                                                <button className="default-btn-one">More About Us</button>
+                                            </div> */}
+                                            <button>More About Us</button>
+                                            
+                                            
                                         </div>
                                     </div>
 
@@ -55,13 +56,16 @@ const MainBanner = () => {
                                             </div>
                                     </div>
                                 </div>
+
 
 
                                 <div className="row align-items-center">
                                     <div className="col-lg-6 col-md-12">
                                         <div className="main-banner-content">
-                                            <h1>Slider 2 </h1>
+                                            <h1>Slider 2</h1>
                                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,  eiusmod tempor incididunt ut labore.</p>
+
+                                            
                                         </div>
                                     </div>
 
@@ -71,15 +75,12 @@ const MainBanner = () => {
                                             </div>
                                     </div>
                                 </div>
-
 
                                 <div className="row align-items-center">
                                     <div className="col-lg-6 col-md-12">
                                         <div className="main-banner-content">
                                             <h1>Slider 3</h1>
                                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,  eiusmod tempor incididunt ut labore.</p>
-
-                                            
                                         </div>
                                     </div>
 
