@@ -15,12 +15,12 @@ class ProjectsStyleOne extends Component {
                         <div className="col-lg-4 col-sm-6">
                             <div className="single-project-box">
                                 <Link href="#">
-                                    <a><img src={require("../../images/project/1.jpg")} alt="image" /></a>
+                                    <a><img src={require("../../images/project/placeholder.png")} alt="image" /></a>
                                 </Link>
                                 <div className="project-hover-content">
                                     <h3>
                                         <Link href="#">
-                                            <a>Branding</a>
+                                            <a>Lorem</a>
                                         </Link>
                                     </h3>
                                 </div>
@@ -30,12 +30,12 @@ class ProjectsStyleOne extends Component {
                         <div className="col-lg-4 col-sm-6">
                             <div className="single-project-box">
                                 <Link href="#">
-                                    <a><img src={require("../../images/project/2.jpg")} alt="image" /></a>
+                                    <a><img src={require("../../images/project/placeholder.png")} alt="image" /></a>
                                 </Link>
                                 <div className="project-hover-content">
                                     <h3>
                                         <Link href="#">
-                                            <a>Marketing</a>
+                                            <a>Lorem</a>
                                         </Link>
                                     </h3>
                                 </div>
@@ -45,12 +45,12 @@ class ProjectsStyleOne extends Component {
                         <div className="col-lg-4 col-sm-6">
                             <div className="single-project-box">
                                 <Link href="#">
-                                    <a><img src={require("../../images/project/3.jpg")} alt="image" /></a>
+                                    <a><img src={require("../../images/project/placeholder.png")} alt="image" /></a>
                                 </Link>
                                 <div className="project-hover-content">
                                     <h3>
                                         <Link href="#">
-                                            <a>SEO</a>
+                                            <a>Lorem</a>
                                         </Link>
                                     </h3>
                                 </div>
@@ -60,12 +60,12 @@ class ProjectsStyleOne extends Component {
                         <div className="col-lg-4 col-sm-6">
                             <div className="single-project-box">
                                 <Link href="#">
-                                    <a><img src={require("../../images/project/4.jpg")} alt="image" /></a>
+                                    <a><img src={require("../../images/project/placeholder.png")} alt="image" /></a>
                                 </Link>
                                 <div className="project-hover-content">
                                     <h3>
                                         <Link href="#">
-                                            <a>Web Design</a>
+                                            <a>Lorem</a>
                                         </Link>
                                     </h3>
                                 </div>
@@ -75,12 +75,12 @@ class ProjectsStyleOne extends Component {
                         <div className="col-lg-4 col-sm-6">
                             <div className="single-project-box">
                                 <Link href="#">
-                                    <a><img src={require("../../images/project/5.jpg")} alt="image" /></a>
+                                    <a><img src={require("../../images/project/placeholder.png")} alt="image" /></a>
                                 </Link>
                                 <div className="project-hover-content">
                                     <h3>
                                         <Link href="#">
-                                            <a>Web Development</a>
+                                            <a>Lorem</a>
                                         </Link>
                                     </h3>
                                 </div>
@@ -90,12 +90,12 @@ class ProjectsStyleOne extends Component {
                         <div className="col-lg-4 col-sm-6">
                             <div className="single-project-box">
                                 <Link href="#">
-                                    <a><img src={require("../../images/project/6.jpg")} alt="image" /></a>
+                                    <a><img src={require("../../images/project/placeholder.png")} alt="image" /></a>
                                 </Link>
                                 <div className="project-hover-content">
                                     <h3>
                                         <Link href="#">
-                                            <a>Digital marketing</a>
+                                            <a>Lorem</a>
                                         </Link>
                                     </h3>
                                 </div>

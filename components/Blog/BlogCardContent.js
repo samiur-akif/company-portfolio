@@ -39,7 +39,7 @@ class BlogCardContent extends Component {
                                     <div className="blog-content">
                                         <Link href="#">
                                             <a>
-                                                <h3>Startup Marketing Solution for Business Owner</h3>
+                                                <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h3>
                                             </a>
                                         </Link>
                                         <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti</p>
@@ -86,7 +86,7 @@ class BlogCardContent extends Component {
                                     <div className="blog-content">
                                         <Link href="#">
                                             <a>
-                                                <h3>How To Boost Your Digital Marketing Agency</h3>
+                                                <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h3>
                                             </a>
                                         </Link>
                                         <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti</p>
@@ -133,7 +133,7 @@ class BlogCardContent extends Component {
                                     <div className="blog-content">
                                         <Link href="#">
                                             <a>
-                                                <h3>Creative solutions to improve your business!</h3>
+                                                <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h3>
                                             </a>
                                         </Link>
                                         <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti</p>
@@ -180,7 +180,7 @@ class BlogCardContent extends Component {
                                     <div className="blog-content">
                                         <Link href="#">
                                             <a>
-                                                <h3>Startup Marketing Solution for Business Owner</h3>
+                                                <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h3>
                                             </a>
                                         </Link>
                                         <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti</p>
@@ -227,7 +227,7 @@ class BlogCardContent extends Component {
                                     <div className="blog-content">
                                         <Link href="#">
                                             <a>
-                                                <h3>How To Boost Your Digital Marketing Agency</h3>
+                                                <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h3>
                                             </a>
                                         </Link>
                                         <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti</p>
@@ -274,7 +274,7 @@ class BlogCardContent extends Component {
                                     <div className="blog-content">
                                         <Link href="#">
                                             <a>
-                                                <h3>Creative solutions to improve your business!</h3>
+                                                <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h3>
                                             </a>
                                         </Link>
                                         <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti</p>

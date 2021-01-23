@@ -28,8 +28,8 @@ class ContactContent extends Component {
                                 </div>
                                 <div className="content">
                                     <h4>E-mail</h4>
-                                    <p>hello@neemo.com</p>
-                                    <p>support@neemo.com</p>
+                                    <p>hello@example.com</p>
+                                    <p>support@example.com</p>
                                 </div>
                             </div>
                         </div>
@@ -41,7 +41,7 @@ class ContactContent extends Component {
                                 </div>
                                 <div className="content">
                                     <h4>Location</h4>
-                                    <p>123, Western Road, Melbourne Australia</p>
+                                    <p>123 street, city, county</p>
                                 </div>
                             </div>
                         </div>

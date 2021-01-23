@@ -15,7 +15,7 @@ class TeamCard extends Component {
                         <div className="col-lg-4 col-sm-6">
                             <div className="team-item-area">
                                 <div className="team-image">
-                                    <img src={require("../../images/team/1.jpg")} alt="image" />
+                                    <img src={require("../../images/team/7.jpg")} alt="image" />
                                 </div>
 
                                 <div className="team-content">
@@ -59,7 +59,7 @@ class TeamCard extends Component {
                         <div className="col-lg-4 col-sm-6">
                             <div className="team-item-area">
                                 <div className="team-image">
-                                    <img src={require("../../images/team/2.jpg")} alt="image" />
+                                    <img src={require("../../images/team/7.jpg")} alt="image" />
                                 </div>
 
                                 <div className="team-content">
@@ -103,7 +103,7 @@ class TeamCard extends Component {
                         <div className="col-lg-4 col-sm-6 offset-sm-3 offset-lg-0">
                             <div className="team-item-area">
                                 <div className="team-image">
-                                    <img src={require("../../images/team/3.jpg")} alt="image" />
+                                    <img src={require("../../images/team/7.jpg")} alt="image" />
                                 </div>
 
                                 <div className="team-content">

@@ -33,7 +33,7 @@ class SingleBlogContent extends Component {
                                         </ul>
                                     </div>
 
-                                    <h3>Why Business Absolutely Needs a Virtual Office</h3>
+                                    <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h3>
 
                                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim.</p>
 
@@ -143,7 +143,7 @@ class SingleBlogContent extends Component {
                                             <article className="comment-body">
                                                 <footer className="comment-meta">
                                                     <div className="comment-author vcard">
-                                                        <img src={require("../../images/client-image/1.jpg")} className="avatar" alt="image" />
+                                                        <img src={require("../../images/client-image/6.jpg")} className="avatar" alt="image" />
                                                         <b className="fn">John Jones</b>
                                                         <span className="says">says:</span>
                                                     </div>
@@ -173,7 +173,7 @@ class SingleBlogContent extends Component {
                                                     <article className="comment-body">
                                                         <footer className="comment-meta">
                                                             <div className="comment-author vcard">
-                                                                <img src={require("../../images/client-image/2.jpg")} className="avatar" alt="image" />
+                                                                <img src={require("../../images/client-image/6.jpg")} className="avatar" alt="image" />
                                                                 <b className="fn">Steven Smith</b>
                                                                 <span className="says">says:</span>
                                                             </div>
@@ -204,7 +204,7 @@ class SingleBlogContent extends Component {
                                                         <article className="comment-body">
                                                             <footer className="comment-meta">
                                                                 <div className="comment-author vcard">
-                                                                    <img src={require("../../images/client-image/3.jpg")} className="avatar" alt="image" />
+                                                                    <img src={require("../../images/client-image/6.jpg")} className="avatar" alt="image" />
                                                                     <b className="fn">Sarah Taylor</b>
                                                                     <span className="says">says:</span>
                                                                 </div>
@@ -237,7 +237,7 @@ class SingleBlogContent extends Component {
                                             <article className="comment-body">
                                                 <footer className="comment-meta">
                                                     <div className="comment-author vcard">
-                                                        <img src={require("../../images/client-image/4.jpg")} className="avatar" alt="image" />
+                                                        <img src={require("../../images/client-image/6.jpg")} className="avatar" alt="image" />
                                                         <b className="fn">James Anderson</b>
                                                         <span className="says">says:</span>
                                                     </div>

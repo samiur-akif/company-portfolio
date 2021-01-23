@@ -55,7 +55,7 @@ class TestimonialSection extends Component {
                                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.</p>
                                     </div>
                                     <div className="testimonial-image">
-                                        <img src={require("../../images/client-image/1.jpg")} alt="image" />
+                                        <img src={require("../../images/client-image/6.jpg")} alt="image" />
                                         <h3>R.Mortein</h3>
                                         <span>Product Manager</span>
                                     </div>
@@ -69,7 +69,7 @@ class TestimonialSection extends Component {
                                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.</p>
                                     </div>
                                     <div className="testimonial-image">
-                                        <img src={require("../../images/client-image/2.jpg")} alt="image" />
+                                        <img src={require("../../images/client-image/6.jpg")} alt="image" />
                                         <h3>R.Mortein</h3>
                                         <span>Product Manager</span>
                                     </div>

@@ -15,7 +15,7 @@ class TeamMemberContact extends Component {
                         <div className="col-lg-4 col-md-6">
                             <div className="team-item-area">
                                 <div className="team-image">
-                                    <img src={require("../../images/team/1.jpg")} alt="image" />
+                                    <img src={require("../../images/team/7.jpg")} alt="image" />
                                 </div>
 
                                 <div className="team-content">
@@ -59,7 +59,7 @@ class TeamMemberContact extends Component {
                         <div className="col-lg-4 col-md-6">
                             <div className="team-item-area">
                                 <div className="team-image">
-                                    <img src={require("../../images/team/2.jpg")} alt="image" />
+                                    <img src={require("../../images/team/7.jpg")} alt="image" />
                                 </div>
 
                                 <div className="team-content">
@@ -103,7 +103,7 @@ class TeamMemberContact extends Component {
                         <div className="col-lg-4 col-md-6">
                             <div className="team-item-area">
                                 <div className="team-image">
-                                    <img src={require("../../images/team/3.jpg")} alt="image" />
+                                    <img src={require("../../images/team/7.jpg")} alt="image" />
                                 </div>
 
                                 <div className="team-content">
@@ -147,7 +147,7 @@ class TeamMemberContact extends Component {
                         <div className="col-lg-4 col-md-6">
                             <div className="team-item-area">
                                 <div className="team-image">
-                                    <img src={require("../../images/team/4.jpg")} alt="image" />
+                                    <img src={require("../../images/team/7.jpg")} alt="image" />
                                 </div>
 
                                 <div className="team-content">
@@ -191,7 +191,7 @@ class TeamMemberContact extends Component {
                         <div className="col-lg-4 col-md-6">
                             <div className="team-item-area">
                                 <div className="team-image">
-                                    <img src={require("../../images/team/5.jpg")} alt="image" />
+                                    <img src={require("../../images/team/7.jpg")} alt="image" />
                                 </div>
 
                                 <div className="team-content">
@@ -235,7 +235,7 @@ class TeamMemberContact extends Component {
                         <div className="col-lg-4 col-md-6">
                             <div className="team-item-area">
                                 <div className="team-image">
-                                    <img src={require("../../images/team/6.jpg")} alt="image" />
+                                    <img src={require("../../images/team/7.jpg")} alt="image" />
                                 </div>
 
                                 <div className="team-content">

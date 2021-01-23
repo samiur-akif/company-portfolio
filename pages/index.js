@@ -21,10 +21,10 @@ class Index extends Component {
             <React.Fragment>
                 <Navbar />
                 <MainBanner />
-                <FeaturesContent />
                 <div className="pb-100">
                     <AboutContent />
                 </div>
+                <FeaturesContent />
                 <ServicesContent />
                 <WhyChooseUs />
                 <TabsContent />
@@ -33,9 +33,9 @@ class Index extends Component {
                 <TestimonialSection />
                 <AnalysisFormContent />
                 <BlogCardSection />
-                <div className="pb-100">
+                {/* <div className="pb-100">
                     <PartnerLogos />
-                </div>
+                </div> */}
                 <SubscribeStyleOne />
                 <Footer />
             </React.Fragment>

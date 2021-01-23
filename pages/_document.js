@@ -6,7 +6,7 @@ class MyDocument extends Document {
             <Html lang="en">
                 <Head>
                     <meta charSet="utf-8" />
-                    <link rel="icon" type="image/png" href={require("../images/favicon.png")}></link>
+                    <link rel="icon" type="image/png" href={require("../images/favicon.ico")}></link>
                 </Head>
                 <body>
                     <Main />

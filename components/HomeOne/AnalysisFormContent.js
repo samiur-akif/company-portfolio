@@ -8,14 +8,14 @@ class AnalysisFormContent extends Component {
                     <div className="row align-items-center">
                         <div className="col-lg-6 col-md-12">
                             <div className="analysis-image">
-                                <img src={require("../../images/analysis-image.png")} alt="image" />
+                                <img src={require("../../images/placeholder.png")} alt="image" />
                             </div>
                         </div>
 
                         <div className="col-lg-6 col-md-12">
                             <div className="analysis-area-content">
                                 <span>Analysis</span>
-                                <h3>Get Free SEO Analysis</h3>
+                                <h3>Lorem ipsum dolor sit amet</h3>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</p>
                             </div>
 

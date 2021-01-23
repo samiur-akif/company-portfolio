@@ -24,7 +24,7 @@ class FaqSection extends Component {
                                     <AccordionItem>
                                         <AccordionItemHeading>
                                             <AccordionItemButton>
-                                                What harsh truths do you prefer to ignore?
+                                                Lorem ipsum dolor sit amet?
                                             </AccordionItemButton>
                                         </AccordionItemHeading>
                                         <AccordionItemPanel>
@@ -37,7 +37,7 @@ class FaqSection extends Component {
                                     <AccordionItem>
                                         <AccordionItemHeading>
                                             <AccordionItemButton>
-                                                Is free will real or just an illusion?
+                                                Lorem ipsum dolor sit amet?
                                             </AccordionItemButton>
                                         </AccordionItemHeading>
                                         <AccordionItemPanel>
@@ -50,7 +50,7 @@ class FaqSection extends Component {
                                     <AccordionItem>
                                         <AccordionItemHeading>
                                             <AccordionItemButton>
-                                                Does the price go up as my team gets larger?
+                                            Lorem ipsum dolor sit amet?
                                             </AccordionItemButton>
                                         </AccordionItemHeading>
                                         <AccordionItemPanel>
@@ -63,7 +63,7 @@ class FaqSection extends Component {
                                     <AccordionItem>
                                         <AccordionItemHeading>
                                             <AccordionItemButton>
-                                                How long does it take for equipment to be delivered?
+                                            Lorem ipsum dolor sit amet?
                                             </AccordionItemButton>
                                         </AccordionItemHeading>
                                         <AccordionItemPanel>
@@ -76,7 +76,7 @@ class FaqSection extends Component {
                                     <AccordionItem>
                                         <AccordionItemHeading>
                                             <AccordionItemButton>
-                                                I’m a developer, how do I become a Glass Partner?
+                                                Lorem ipsum dolor sit amet?
                                             </AccordionItemButton>
                                         </AccordionItemHeading>
                                         <AccordionItemPanel>

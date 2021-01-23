@@ -22,7 +22,7 @@ class MainBanner extends Component {
                                 <div className="row align-items-center">
                                     <div className="col-lg-6 col-md-12">
                                         <div className="main-banner-content">
-                                            <h1>Digital Agency with Excellence Service</h1>
+                                            <h1>Lorem ipsum dolor sit amet</h1>
                                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,  eiusmod tempor incididunt ut labore.</p>
 
                                             <div className="banner-btn">
@@ -30,25 +30,25 @@ class MainBanner extends Component {
                                                     <a className="default-btn-one">More About Us</a>
                                                 </Link>
 
-                                                <Link href="#play-video">
+                                                {/* <Link href="#play-video">
                                                     <a
                                                         onClick={e => {e.preventDefault(); this.openModal()}}
                                                         className="video-btn popup-youtube"
                                                     > 
                                                         Watch Video <i className="flaticon-play-button"></i>
                                                     </a>
-                                                </Link>
+                                                </Link> */}
                                             </div>
                                         </div>
                                     </div>
 
                                     {/* If you want to change the video need to update below videoID */}
-                                    <ModalVideo 
+                                    {/* <ModalVideo 
                                         channel='youtube' 
                                         isOpen={this.state.isOpen} 
                                         videoId='_ysd-zHamjk' 
                                         onClose={() => this.setState({isOpen: false})} 
-                                    />
+                                    /> */}
 
                                     <div className="col-lg-6 col-md-12">
                                         <div className="banner-image">
@@ -116,7 +116,7 @@ class MainBanner extends Component {
                                     </div>
                                 </div>
 
-                                <div className="banner-bg-text">SEO</div>
+                                {/* <div className="banner-bg-text">SEO</div> */}
                             </div>
                         </div>
                     </div>

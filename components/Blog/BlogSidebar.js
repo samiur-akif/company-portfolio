@@ -30,7 +30,7 @@ class BlogSidebar extends Component {
                             <time className="2020-06-30">June 10, 2020</time>
                             <h4 className="title usmall">
                                 <Link href="#">
-                                    <a>Making Peace With The Feast Or Famine Of Freelancing</a>
+                                    <a>Lorem ipsum dolor sit amet, consectetur adipiscing elit, </a>
                                 </Link>
                             </h4>
                         </div>
@@ -47,7 +47,7 @@ class BlogSidebar extends Component {
                             <time className="2020-06-30">June 21, 2020</time>
                             <h4 className="title usmall">
                                 <Link href="#">
-                                    <a>I Used The Web For A Day On A 50 MB Budget</a>
+                                    <a>sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</a>
                                 </Link>
                             </h4>
                         </div>
@@ -66,7 +66,7 @@ class BlogSidebar extends Component {
                             <time className="2020-06-30">June 30, 2020</time>
                             <h4 className="title usmall">
                                 <Link href="#">
-                                    <a>How To Create A Responsive Popup Gallery?</a>
+                                    <a>minim veniam, quis nostrud exercitation ullamco</a>
                                 </Link>
                             </h4>
                         </div>

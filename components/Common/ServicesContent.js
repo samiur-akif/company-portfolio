@@ -19,7 +19,7 @@ class ServicesContent extends Component {
                                 </div>
                                 <h3>
                                     <Link href="#">
-                                        <a>Search Engine Optimization</a>
+                                        <a>Lorem ipsum dolor sit amet</a>
                                     </Link>
                                 </h3>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incutu  labore et dolore magna aliqua.</p>
@@ -33,7 +33,7 @@ class ServicesContent extends Component {
                                 </div>
                                 <h3>
                                     <Link href="#">
-                                        <a>Social Media Strategy</a>
+                                        <a>Lorem ipsum dolor sit amet</a>
                                     </Link>
                                 </h3>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incutu  labore et dolore magna aliqua.</p>
@@ -47,7 +47,7 @@ class ServicesContent extends Component {
                                 </div>
                                 <h3>
                                     <Link href="#">
-                                        <a>Real Time and Data</a>
+                                        <a>Lorem ipsum dolor sit amet</a>
                                     </Link>
                                 </h3>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incutu  labore et dolore magna aliqua.</p>
@@ -61,7 +61,7 @@ class ServicesContent extends Component {
                                 </div>
                                 <h3>
                                     <Link href="#">
-                                        <a>Online Media Management</a>
+                                        <a>Lorem ipsum dolor sit amet</a>
                                     </Link>
                                 </h3>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incutu  labore et dolore magna aliqua.</p>
@@ -75,7 +75,7 @@ class ServicesContent extends Component {
                                 </div>
                                 <h3>
                                     <Link href="#">
-                                        <a>Reporting & Analysis</a>
+                                        <a>Lorem ipsum dolor sit amet</a>
                                     </Link>
                                 </h3>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incutu  labore et dolore magna aliqua.</p>
@@ -89,7 +89,7 @@ class ServicesContent extends Component {
                                 </div>
                                 <h3>
                                     <Link href="#">
-                                        <a>Penalty Recovery</a>
+                                        <a>Lorem ipsum dolor sit amet</a>
                                     </Link>
                                 </h3>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incutu  labore et dolore magna aliqua.</p>

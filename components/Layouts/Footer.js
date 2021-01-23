@@ -95,27 +95,27 @@ class Footer extends Component {
                                     <ul className="footer-quick-links">
                                         <li>
                                             <Link href="#">
-                                                <a>SEO Marketing</a>
+                                                <a>Lorem</a>
                                             </Link>
                                         </li>
                                         <li>
                                             <Link href="#">
-                                                <a>SEO Services</a>
+                                                <a>Lorem</a>
                                             </Link>
                                         </li>
                                         <li>
                                             <Link href="#">
-                                                <a>Services</a>
+                                                <a>Lorem</a>
                                             </Link>
                                         </li>
                                         <li>
                                             <Link href="#">
-                                                <a>Pay-Per-Click</a>
+                                                <a>Lorem</a>
                                             </Link>
                                         </li>
                                         <li>
                                             <Link href="#">
-                                                <a>Social Media</a>
+                                                <a>Lorem</a>
                                             </Link>
                                         </li>
                                     </ul>
@@ -131,19 +131,19 @@ class Footer extends Component {
                                     <div className="footer-info-contact">
                                         <i className="flaticon-call-answer"></i>
                                         <h3>Phone</h3>
-                                        <span>(882) 569-7565</span>
+                                        <span>(123) 456-7890</span>
                                     </div>
 
                                     <div className="footer-info-contact">
                                         <i className="flaticon-envelope"></i>
                                         <h3>Email</h3>
-                                        <span>hello@neemo.com</span>
+                                        <span>hello@eaxmple.com</span>
                                     </div>
 
                                     <div className="footer-info-contact">
                                         <i className="flaticon-placeholder-filled-point"></i>
                                         <h3>Address</h3>
-                                        <span>123, Western Road, Melbourne Australia</span>
+                                        <span>123 street name, city, country</span>
                                     </div>
                                 </div>
                             </div>
@@ -176,7 +176,7 @@ class Footer extends Component {
                         <div className="row align-items-center">
                             <div className="col-lg-6">
                                 <p>
-                                    © {currentYear} Neemo. All Rights Reserved by <a href="https://envytheme.com/" target="_blank">EnvyTheme</a>
+                                    © {currentYear}. All Rights Reserved by
                                 </p>
                             </div>
 

@@ -10,7 +10,7 @@ class FeaturesContent extends Component {
                         <div className="col-lg-5 col-md-12">
                             <div className="features-content-area">
                                 <span>Care Features</span>
-                                <h3>Create Awesome Service With Our Tools</h3>
+                                <h3>Lorem ipsum dolor sit amet</h3>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
 
                                 <div className="features-btn">
@@ -28,7 +28,7 @@ class FeaturesContent extends Component {
                                         <div className="icon">
                                             <i className="flaticon-seo"></i>
                                         </div>
-                                        <h3>Seo Consultancy</h3>
+                                        <h3>Lorem ipsum dolor sit amet</h3>
                                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
                                     </div>
                                 </div>
@@ -38,7 +38,7 @@ class FeaturesContent extends Component {
                                         <div className="icon">
                                             <i className="flaticon-analytics"></i>
                                         </div>
-                                        <h3>Competitor Analysis</h3>
+                                        <h3>Lorem ipsum dolor sit amet</h3>
                                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
                                     </div>
                                 </div>
@@ -48,7 +48,7 @@ class FeaturesContent extends Component {
                                         <div className="icon">
                                             <i className="flaticon-laptop"></i>
                                         </div>
-                                        <h3>Social Media Marketing</h3>
+                                        <h3>Lorem ipsum dolor sit amet</h3>
                                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
                                     </div>
                                 </div>
@@ -58,7 +58,7 @@ class FeaturesContent extends Component {
                                         <div className="icon">
                                             <i className="flaticon-analysis-1"></i>
                                         </div>
-                                        <h3>Competitor Analysis</h3>
+                                        <h3>Lorem ipsum dolor sit amet</h3>
                                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
                                     </div>
                                 </div>

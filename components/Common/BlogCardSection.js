@@ -17,7 +17,7 @@ class BlogCardSection extends Component {
                                 <div className="blog-image">
                                     <Link href="#">
                                         <a>
-                                            <img src={require("../../images/blog/1.png")} alt="image" />
+                                            <img src={require("../../images/blog/placeholder.png")} alt="image" />
                                         </a>
                                     </Link>
                                 </div>
@@ -44,10 +44,10 @@ class BlogCardSection extends Component {
                                     <div className="blog-content">
                                         <Link href="#">
                                             <a>
-                                                <h3>Startup Marketing Solution for Business Owner</h3>
+                                                <h3>Lorem ipsum dolor sit amet</h3>
                                             </a>
                                         </Link>
-                                        <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti</p>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                                     </div>
 
                                     <div className="blog-btn">
@@ -64,7 +64,7 @@ class BlogCardSection extends Component {
                                 <div className="blog-image">
                                     <Link href="#">
                                         <a>
-                                            <img src={require("../../images/blog/2.png")} alt="image" />
+                                            <img src={require("../../images/blog/placeholder.png")} alt="image" />
                                         </a>
                                     </Link>
                                 </div>
@@ -91,10 +91,10 @@ class BlogCardSection extends Component {
                                     <div className="blog-content">
                                         <Link href="#">
                                             <a>
-                                                <h3>How To Boost Your Digital Marketing Agency</h3>
+                                                <h3>Lorem ipsum dolor sit amet</h3>
                                             </a>
                                         </Link>
-                                        <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti</p>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                                     </div>
 
                                     <div className="blog-btn">
@@ -111,7 +111,7 @@ class BlogCardSection extends Component {
                                 <div className="blog-image">
                                     <Link href="#">
                                         <a>
-                                            <img src={require("../../images/blog/3.png")} alt="image" />
+                                            <img src={require("../../images/blog/placeholder.png")} alt="image" />
                                         </a>
                                     </Link>
                                 </div>
@@ -138,10 +138,10 @@ class BlogCardSection extends Component {
                                     <div className="blog-content">
                                         <Link href="#">
                                             <a>
-                                                <h3>Creative solutions to improve your business!</h3>
+                                                <h3>Lorem ipsum dolor sit amet</h3>
                                             </a>
                                         </Link>
-                                        <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti</p>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco</p>
                                     </div>
 
                                     <div className="blog-btn">

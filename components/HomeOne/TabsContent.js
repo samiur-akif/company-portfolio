@@ -25,7 +25,7 @@ class TabsContent extends Component {
                 <div className="container">
                     <div className="section-title">
                         <span>Boosting</span>
-                        <h3>Outstanding Digital Experience</h3>
+                        <h3>Lorem ipsum dolor sit amet</h3>
                     </div>
 
                     <div className="tab boosting-list-tab">
@@ -36,27 +36,27 @@ class TabsContent extends Component {
                                 onClick={(e) => this.openTabSection(e, 'tab1')}
                             >
                                 <i className="flaticon-analysis-2"></i>
-                                <span>Real-Time-Analytics</span>
+                                <span>Lorem ipsum dolor</span>
                             </li>
                             <li onClick={(e) => this.openTabSection(e, 'tab2')} className="bg-eff7e9">
                                 <i className="flaticon-hand"></i>
-                                <span>Pay-Per-Click</span>
+                                <span>Lorem ipsum dolor</span>
                             </li>
                             <li onClick={(e) => this.openTabSection(e, 'tab3')} className="bg-fff8f0">
                                 <i className="flaticon-digital-marketing"></i>
-                                <span>Online Marketing</span>
+                                <span>Lorem ipsum dolor</span>
                             </li>
                             <li onClick={(e) => this.openTabSection(e, 'tab4')} className="bg-ecfaf7">
                                 <i className="flaticon-email"></i>
-                                <span>Email Marketing</span>
+                                <span>Lorem ipsum dolor</span>
                             </li>
                             <li onClick={(e) => this.openTabSection(e, 'tab5')} className="bg-f2f0fb">
                                 <i className="flaticon-network"></i>
-                                <span>Social Marketing</span>
+                                <span>Lorem ipsum dolor</span>
                             </li>
                             <li onClick={(e) => this.openTabSection(e, 'tab6')} className="bg-c5ebf9">
                                 <i className="flaticon-analysis-1"></i>
-                                <span>Digital Marketing</span>
+                                <span>Lorem ipsum dolor</span>
                             </li>
                         </ul>
 
@@ -66,14 +66,14 @@ class TabsContent extends Component {
                                 <div className="row align-items-center">
                                     <div className="col-lg-5">
                                         <div className="tab-image">
-                                            <img src={require("../../images/tab/1.jpg")} alt="image" />
+                                            <img src={require("../../images/placeholder.png")} alt="image" />
                                         </div>
                                     </div>
 
                                     <div className="col-lg-7">
                                         <div className="content">
-                                            <h2>Real-Time Analytics</h2>
-                                            <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</p>
+                                            <h2>Lorem ipsum dolor</h2>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                                         </div>
 
                                         <div className="row">
@@ -109,14 +109,14 @@ class TabsContent extends Component {
                                 <div className="row align-items-center">
                                     <div className="col-lg-5">
                                         <div className="tab-image">
-                                            <img src={require("../../images/tab/2.jpg")} alt="image" />
+                                            <img src={require("../../images/placeholder.png")} alt="image" />
                                         </div>
                                     </div>
 
                                     <div className="col-lg-7">
                                         <div className="content">
-                                            <h2>Pay-Per Click</h2>
-                                            <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</p>
+                                            <h2>Lorem ipsum dolor</h2>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                                         </div>
 
                                         <div className="row">
@@ -154,14 +154,14 @@ class TabsContent extends Component {
                                 <div className="row align-items-center">
                                     <div className="col-lg-5">
                                         <div className="tab-image">
-                                            <img src={require("../../images/tab/3.jpg")} alt="image" />
+                                            <img src={require("../../images/placeholder.png")} alt="image" />
                                         </div>
                                     </div>
 
                                     <div className="col-lg-7">
                                         <div className="content">
-                                            <h2>Online Marketting</h2>
-                                            <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</p>
+                                            <h2>Lorem ipsum dolor</h2>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                                         </div>
 
                                         <div className="row">
@@ -197,14 +197,14 @@ class TabsContent extends Component {
                                 <div className="row align-items-center">
                                     <div className="col-lg-5">
                                         <div className="tab-image">
-                                            <img src={require("../../images/tab/4.jpg")} alt="image" />
+                                            <img src={require("../../images/placeholder.png")} alt="image" />
                                         </div>
                                     </div>
 
                                     <div className="col-lg-7">
                                         <div className="content">
-                                            <h2>Email Marketting</h2>
-                                            <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</p>
+                                            <h2>Lorem ipsum dolor</h2>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                                         </div>
 
                                         <div className="row">
@@ -240,14 +240,14 @@ class TabsContent extends Component {
                                 <div className="row align-items-center">
                                     <div className="col-lg-5">
                                         <div className="tab-image">
-                                            <img src={require("../../images/tab/5.jpg")} alt="image" />
+                                            <img src={require("../../images/placeholder.png")} alt="image" />
                                         </div>
                                     </div>
 
                                     <div className="col-lg-7">
                                         <div className="content">
-                                            <h2>Social Marketting</h2>
-                                            <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</p>
+                                            <h2>Lorem ipsum dolor</h2>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                                         </div>
 
                                         <div className="row">
@@ -283,14 +283,14 @@ class TabsContent extends Component {
                                 <div className="row align-items-center">
                                     <div className="col-lg-5">
                                         <div className="tab-image">
-                                            <img src={require("../../images/tab/6.jpg")} alt="image" />
+                                            <img src={require("../../images/placeholder.png")} alt="image" />
                                         </div>
                                     </div>
 
                                     <div className="col-lg-7">
                                         <div className="content">
-                                            <h2>Digital Marketting</h2>
-                                            <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</p>
+                                            <h2>Lorem ipsum dolor</h2>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                                         </div>
 
                                         <div className="row">

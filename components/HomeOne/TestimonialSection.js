@@ -60,7 +60,7 @@ class TestimonialSection extends Component {
                             >
                                 <div className="testimonial-single-item">
                                     <div className="testimonial-image">
-                                        <img src={require("../../images/client-image/1.jpg")} alt="image" />
+                                        <img src={require("../../images/client-image/6.jpg")} alt="image" />
                                     </div>
                                     <div className="testimonial-content-text">
                                         <h3>R.Mortein</h3>
@@ -74,7 +74,7 @@ class TestimonialSection extends Component {
 
                                 <div className="testimonial-single-item">
                                     <div className="testimonial-image">
-                                        <img src={require("../../images/client-image/2.jpg")} alt="image" />
+                                        <img src={require("../../images/client-image/6.jpg")} alt="image" />
                                     </div>
                                     <div className="testimonial-content-text">
                                         <h3>Edward Bold</h3>
@@ -88,7 +88,7 @@ class TestimonialSection extends Component {
 
                                 <div className="testimonial-single-item">
                                     <div className="testimonial-image">
-                                        <img src={require("../../images/client-image/3.jpg")} alt="image" />
+                                        <img src={require("../../images/client-image/6.jpg")} alt="image" />
                                     </div>
                                     <div className="testimonial-content-text">
                                         <h3>Mahindra jhon</h3>
@@ -102,7 +102,7 @@ class TestimonialSection extends Component {
 
                                 <div className="testimonial-single-item">
                                     <div className="testimonial-image">
-                                        <img src={require("../../images/client-image/4.jpg")} alt="image" />
+                                        <img src={require("../../images/client-image/6.jpg")} alt="image" />
                                     </div>
                                     <div className="testimonial-content-text">
                                         <h3>Lee Munroe</h3>
@@ -116,7 +116,7 @@ class TestimonialSection extends Component {
 
                                 <div className="testimonial-single-item">
                                     <div className="testimonial-image">
-                                        <img src={require("../../images/client-image/3.jpg")} alt="image" />
+                                        <img src={require("../../images/client-image/6.jpg")} alt="image" />
                                     </div>
                                     <div className="testimonial-content-text">
                                         <h3>Meg Lanning</h3>
