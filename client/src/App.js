@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 import { updateHomeData } from './Redux/Pages/Home/home-action';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
-import '../src/assets/css/style.css';
+import './assets/css/style.css';
 import './App.css';
 
 function App({updateHomeData}) {
