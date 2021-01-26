@@ -1,0 +1,17 @@
+.carousel-item {
+    height: 50rem;
+}
+
+.carousel-control-next-icon, .carousel-control-prev-icon {
+    height: 50px !important;
+    width: 50px !important;
+}
+
+.carousel-caption {
+    top: 50%;
+    left: 10% !important;
+}
+
+.carousel-control-next{
+    z-index: 100 !important;
+}
