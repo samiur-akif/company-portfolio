@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_connection_row_connection_rows",
+  "info": {
+    "name": "Connection_Row",
+    "icon": "arrows-alt"
+  },
+  "options": {},
+  "attributes": {
+    "Name": {
+      "type": "string"
+    },
+    "Details": {
+      "type": "text"
+    }
+  }
+}

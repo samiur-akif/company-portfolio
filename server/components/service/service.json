@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_service_services",
+  "info": {
+    "name": "Service",
+    "icon": "star"
+  },
+  "options": {},
+  "attributes": {
+    "Icon": {
+      "type": "string"
+    },
+    "Name": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "text"
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "collectionName": "components_about_about_uses",
+  "info": {
+    "name": "About Us",
+    "icon": "info",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "About_Small_Image": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "About_Title": {
+      "type": "string"
+    },
+    "About_Description": {
+      "type": "text"
+    },
+    "About_Button_Text": {
+      "type": "string"
+    },
+    "About_Button_Link": {
+      "type": "string"
+    }
+  }
+}
