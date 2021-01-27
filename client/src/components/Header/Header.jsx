@@ -10,7 +10,7 @@ const Header = () => {
     fetch("http://localhost:1337/menus")
       .then((res) => res.json())
       .then((data) => setMenus(data));
-  });
+  }, []);
 
   useEffect(() => {
     window.addEventListener("scroll", () => {

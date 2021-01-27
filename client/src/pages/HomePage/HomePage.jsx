@@ -1,6 +1,5 @@
 import React from "react";
 import "./HomePage.css";
-import Header from '../../components/Header/Header';
 import MainBanner from '../../components/Home/MainBanner/MainBanner';
 import About from '../../components/Home/About/About';
 import Features from '../../components/Home/Features/Features';
@@ -14,7 +13,6 @@ const HomePage = () => {
   
   return (
       <>
-      <Header />
       <MainBanner />
       <About />
       <Features />

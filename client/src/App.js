@@ -1,9 +1,11 @@
 import React, { useEffect } from 'react';
 import {Route, Switch} from 'react-router-dom';
 import HomePage from './pages/HomePage/HomePage';
+import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import { connect } from 'react-redux';
 import { updateHomeData } from './Redux/Pages/Home/home-action';
+import Custom from './pages/Custom/Custom';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './assets/css/style.css';
@@ -26,8 +28,10 @@ function App({updateHomeData}) {
  
   return (
     <>
+      <Header />
       <Switch>
         <Route exact path="/" component={HomePage} />
+        <Route path="/pages/:id" component={Custom} />
       </Switch>
       <Footer />
      </> 

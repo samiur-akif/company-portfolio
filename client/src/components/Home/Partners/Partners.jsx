@@ -50,16 +50,17 @@ const Partners = ({ homeData }) => {
   return (
     <div className="section-sm bg-grey-lighter">
       <div className="container text-center">
-        {display ? (
-          <OwlCarousel
-            className="partner-slider owl-carousel owl-theme"
-            {...options}
-          >
-            {partners.length
-              ? partners.map((item, key) => <Partner key={key} imgUrl={item.url} />)
-              : null}
-          </OwlCarousel>
-        ) : null }
+        {
+          partners.length && display ?
+            <OwlCarousel
+              className="partner-slider owl-carousel owl-theme"
+              {...options}
+            >
+              { partners.map((item, key) => <Partner key={key} imgUrl={item.url} />) }
+              
+            </OwlCarousel> : null
+        }
+        
         {/* end owl-carousel */}
       </div>
       {/* end container */}

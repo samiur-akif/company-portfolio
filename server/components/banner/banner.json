@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_banner_banners",
+  "info": {
+    "name": "Banner",
+    "icon": "file-image"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    }
+  }
+}

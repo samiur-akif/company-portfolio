@@ -6,6 +6,7 @@ import "./MainBanner.css";
 
 const imgAPI = 'http://localhost:1337';
 
+
 const MainBanner = ({ homeData }) => {
   console.log("home data", homeData);
   const [sliderData, setSliderData] = useState([]);
@@ -15,11 +16,25 @@ const MainBanner = ({ homeData }) => {
       setSliderData(homeData["Main_Slider"]);
     }
   }, [homeData]);
+
+
   return (
     <div className="bg-black-05">
       <Container fluid className="main-banner">
         <Row>
           <Carousel>
+          {/* {
+            sliderData.length ?
+            <>
+            <Carousel>
+              { sliderData.map((item,key) => (
+                <Slider imgUrl={item.slider_images.url} title={item.Company_Slogan} buttonText={item.button_text} buttonLink={item.button_link} />
+              )) }
+            </Carousel> 
+            </> : null
+          } */}
+
+
           <Carousel.Item>
             <img
               className="d-block w-100"
@@ -70,46 +85,10 @@ const MainBanner = ({ homeData }) => {
               </a>
             </Carousel.Caption>
           </Carousel.Item>
-            {/* {sliderData.length
-              ? sliderData.map((item, key) => (
-                  <Slider
-                    key={key}
-                    imgUrl={item["slider_images"].url}
-                    title={item.Company_Slogan}
-                    buttonText={item.button_text}
-                    buttonLink={item.button_link}
-                  />
-                ))
-              : null} */}
           </Carousel>
         </Row>
       </Container>
     </div>
-
-    /* <div
-        className="section-2xl bg-image parallax"
-        data-bg-src="/background.jpg"
-      >
-        <div className="bg-black-05">
-          <div className="container">
-            <div className="row">
-              <div className="col-12 col-lg-8 col-xl-6">
-                <h1 className="font-weight-light">
-                  {bannerData.Company_Slogan}
-                </h1>
-                <a
-                  className="button button-lg button-radius button-white-3 margin-top-30"
-                  href={bannerData.button_link}
-                >
-                  {bannerData.button_text}
-                </a>
-              </div>
-            </div>
-            end row 
-          </div>
-          end container
-        </div>
-      </div> */
   );
 };
 
