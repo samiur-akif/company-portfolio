@@ -1,33 +1,24 @@
-import React, { useEffect, useState } from "react";
-import { connect } from "react-redux";
+import React from "react";
 import Carousel from "react-bootstrap/Carousel";
 import { Container, Row } from "react-bootstrap";
 import "./MainBanner.css";
 
 const imgAPI = "http://localhost:1337";
 
-const MainBanner = ({ homeData }) => {
-  console.log("home data", homeData);
-  const [sliderData, setSliderData] = useState([]);
-
-  useEffect(() => {
-    if (Object.keys(homeData).length) {
-      setSliderData(homeData["Main_Slider"]);
-    }
-  }, [homeData]);
+const MainBanner = ({ values }) => {
 
   return (
     <div className="bg-black-05">
       <Container fluid className="main-banner">
         <Row>
-          {sliderData.length ? (
+          {values.length ? (
             <Carousel>
-              {sliderData.map((item, key) => (
+              {values.map((item, key) => (
                 <Carousel.Item key={key}>
                   <img
                     className="d-block w-100"
-                    src={`${imgAPI}${item?.slider_images?.url}`}
-                    alt="Slider Image"
+                    src={`${imgAPI}${item?.Image?.url}`}
+                    alt="Slider"
                   />
                   <Carousel.Caption>
                     <h1 className="font-weight-light">
@@ -35,9 +26,9 @@ const MainBanner = ({ homeData }) => {
                     </h1>
                     <a
                       className="button button-lg button-radius button-white-3 margin-top-30"
-                      href={item?.button_link}
+                      href={item?.Button_Link}
                     >
-                      {item?.button_text}
+                      {item?.Button_Text}
                     </a>
                   </Carousel.Caption>
                 </Carousel.Item>
@@ -50,8 +41,6 @@ const MainBanner = ({ homeData }) => {
   );
 };
 
-const mapStateToProps = ({ home }) => ({
-  homeData: home.homeData,
-});
 
-export default connect(mapStateToProps)(MainBanner);
+
+export default MainBanner;

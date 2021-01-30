@@ -2,12 +2,24 @@
   "collectionName": "components_banner_banners",
   "info": {
     "name": "Banner",
-    "icon": "file-image"
+    "icon": "file-image",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "title": {
       "type": "string"
+    },
+    "Image": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
     }
   }
 }

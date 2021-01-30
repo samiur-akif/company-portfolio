@@ -5,7 +5,7 @@ const imgAPI = "http://localhost:1337";
 const Partner = ({imgUrl}) => {
   return (
     <div className="client-box">
-      <a href="#">
+      <a href="/">
         <img src={`${imgAPI}${imgUrl}`} alt="" />
       </a>
     </div>

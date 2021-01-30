@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_client_review_client_reviews",
+  "info": {
+    "name": "Client_Review",
+    "icon": "star-half-alt",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Review_Text": {
+      "type": "text"
+    },
+    "Name": {
+      "type": "text"
+    },
+    "Designation": {
+      "type": "string"
+    },
+    "Profile_Picture": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    }
+  }
+}

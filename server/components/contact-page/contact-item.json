@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_contact_page_contact_items",
+  "info": {
+    "name": "Contact_Item",
+    "icon": "book"
+  },
+  "options": {},
+  "attributes": {
+    "Icon": {
+      "type": "string"
+    },
+    "Name": {
+      "type": "string"
+    },
+    "Details": {
+      "type": "text"
+    }
+  }
+}

@@ -1,16 +1,9 @@
-import React, { useEffect, useState } from "react";
-import { connect } from "react-redux";
+import React from "react";
 
 const imgAPI = "http://localhost:1337";
 
-const About = ({ homeData }) => {
-  const [about, setAbout] = useState({});
-  useEffect(() => {
-    if (Object.keys(homeData).length) {
-      setAbout(homeData["About"]);
-    }
-  }, [homeData]);
-
+const About = ({ values }) => {
+  
   return (
     <div className="section">
       <div className="container">
@@ -18,20 +11,20 @@ const About = ({ homeData }) => {
           <div className="col-12 col-lg-6">
             <img
               className="border-radius"
-              src={`${imgAPI}${about?.About_Small_Image?.url}`}
+              src={`${imgAPI}${values[0].About_Small_Image.url}`}
               alt=""
             />
           </div>
           <div className="col-12 col-lg-6">
             <h3 className="font-weight-light margin-bottom-20">
-              {about?.About_Title}
+              {values[0].Title}
             </h3>
-            <p>{about?.About_Description}</p>
+            <p>{values[0].Description}</p>
             <a
               className="button-text-3 margin-top-40"
-              href={about?.About_Button_Link}
+              href={values[0].Button_Link}
             >
-              {about?.About_Button_Text}
+              {values[0].Button_Text}
             </a>
           </div>
         </div>
@@ -40,8 +33,5 @@ const About = ({ homeData }) => {
   );
 };
 
-const mapStateToProps = ({ home }) => ({
-  homeData: home.homeData,
-});
 
-export default connect(mapStateToProps)(About);
+export default About;

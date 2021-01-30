@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_faq_page_faq_items",
+  "info": {
+    "name": "FAQ_Item",
+    "icon": "question-circle"
+  },
+  "options": {},
+  "attributes": {
+    "Question": {
+      "type": "string"
+    },
+    "Answer": {
+      "type": "text"
+    }
+  }
+}

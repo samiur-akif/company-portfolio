@@ -1,10 +1,10 @@
 import {combineReducers} from 'redux';
-import homeReducer from './Pages/Home/home-reducer';
+import pagesReducer from './Pages/Pages/pages-reducer';
 import aboutReducer from './Pages/About/about-reducer';
 
 
 const rootReducer = combineReducers({
-    home: homeReducer,
+    pages: pagesReducer,
     about: aboutReducer
 })
 

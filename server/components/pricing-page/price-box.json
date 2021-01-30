@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_pricing_page_price_boxes",
+  "info": {
+    "name": "Price_Box",
+    "icon": "dollar-sign"
+  },
+  "options": {},
+  "attributes": {
+    "Package_Name": {
+      "type": "string"
+    },
+    "Price": {
+      "type": "float"
+    },
+    "Subscription_Type": {
+      "type": "string"
+    },
+    "Features": {
+      "type": "text"
+    },
+    "Purchase_Button_Text": {
+      "type": "string"
+    }
+  }
+}

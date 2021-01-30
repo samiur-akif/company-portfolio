@@ -1,15 +1,7 @@
-import React, { useEffect, useState } from "react";
-import { connect } from "react-redux";
+import React from "react";
 import Service from "./Service";
 
-const Services = ({ homeData }) => {
-  const [services, setServices] = useState([]);
-
-  useEffect(() => {
-    if (Object.keys(homeData).length) {
-      setServices(homeData["Services"]);
-    }
-  }, [homeData]);
+const Services = ({ values }) => {
   return (
     <div className="section">
       <div className="container">
@@ -24,8 +16,8 @@ const Services = ({ homeData }) => {
           {/* end row */}
         </div>
         <div className="row">
-          {services.length
-            ? services.map((item, key) => (
+          {values.length
+            ? values.map((item, key) => (
                 <Service
                   key={key}
                   icon={item.Icon}
@@ -42,8 +34,6 @@ const Services = ({ homeData }) => {
   );
 };
 
-const mapStateToProps = ({ home }) => ({
-  homeData: home.homeData,
-});
 
-export default connect(mapStateToProps)(Services);
+
+export default Services;

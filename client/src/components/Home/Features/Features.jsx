@@ -1,21 +1,14 @@
-import React, { useEffect, useState } from "react";
-import { connect } from "react-redux";
 import Feature from "./Feature";
+import './Features.css';
 
-const Features = ({ homeData }) => {
-  const [keyFeature, setKeyFeature] = useState([]);
-  useEffect(() => {
-    if (Object.keys(homeData).length) {
-      setKeyFeature(homeData["Key_Features"]);
-    }
-  }, [homeData]);
+const Features = ({ values }) => {
 
   return (
-    <div className="section padding-top-0">
+    <div className="section padding-top-2">
       <div className="container icon-5xl">
         <div className="row">
-          {keyFeature.length
-            ? keyFeature.map((item, key) => (
+          {values.length
+            ? values.map((item, key) => (
                 <Feature
                   key={key}
                   icon={item.Icon}
@@ -32,8 +25,5 @@ const Features = ({ homeData }) => {
   );
 };
 
-const mapStateToProps = ({ home }) => ({
-  homeData: home.homeData,
-});
 
-export default connect(mapStateToProps)(Features);
+export default Features;

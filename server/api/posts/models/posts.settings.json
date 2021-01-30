@@ -2,7 +2,8 @@
   "kind": "collectionType",
   "collectionName": "posts",
   "info": {
-    "name": "Posts"
+    "name": "Posts",
+    "description": ""
   },
   "options": {
     "increments": true,
@@ -16,11 +17,8 @@
     "Description": {
       "type": "richtext"
     },
-    "Date": {
-      "type": "date"
-    },
-    "Images": {
-      "collection": "file",
+    "Image": {
+      "model": "file",
       "via": "related",
       "allowedTypes": [
         "images",
@@ -31,8 +29,8 @@
       "required": false
     },
     "categories": {
-      "via": "posts",
-      "collection": "categories"
+      "collection": "categories",
+      "via": "posts"
     }
   }
 }

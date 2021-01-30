@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
 import OwlCarousel from "react-owl-carousel3";
-import { connect } from "react-redux";
 import Partner from "./Partner";
 
-const Partners = ({ homeData }) => {
+const Partners = ({ values }) => {
   const [display, setDisplay] = useState(false);
   let isMounted = false;
 
@@ -14,14 +13,6 @@ const Partners = ({ homeData }) => {
       isMounted = false;
     };
   });
-
-  const [partners, setPartners] = useState([]);
-
-  useEffect(() => {
-    if (Object.keys(homeData).length) {
-      setPartners(homeData["Client_Logos"]["Client_Images"]);
-    }
-  }, [homeData]);
 
   const options = {
     loop: true,
@@ -51,12 +42,12 @@ const Partners = ({ homeData }) => {
     <div className="section-sm bg-grey-lighter">
       <div className="container text-center">
         {
-          partners.length && display ?
+          values[0]["Images"].length && display ?
             <OwlCarousel
               className="partner-slider owl-carousel owl-theme"
               {...options}
             >
-              { partners.map((item, key) => <Partner key={key} imgUrl={item.url} />) }
+              { values[0]["Images"].map((item, key) => <Partner key={key} imgUrl={item.url} />) }
               
             </OwlCarousel> : null
         }
@@ -68,8 +59,6 @@ const Partners = ({ homeData }) => {
   );
 };
 
-const mapStateToProps = ({ home }) => ({
-  homeData: home.homeData,
-});
 
-export default connect(mapStateToProps)(Partners);
+
+export default Partners;

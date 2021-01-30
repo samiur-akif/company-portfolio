@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_services_page_details_rows",
+  "info": {
+    "name": "Details_Row",
+    "icon": "address-card"
+  },
+  "options": {},
+  "attributes": {
+    "Image": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "Title": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "text"
+    }
+  }
+}

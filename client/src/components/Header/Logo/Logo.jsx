@@ -4,7 +4,7 @@ const Logo = () => {
     return (
         <div className="header-logo">
         <h3>
-          <a href="#">Logo</a>
+          <a href="/">Logo</a>
         </h3>
         {/* 
                     <img class="logo-dark" src="/your-logo-dark.png" alt="">

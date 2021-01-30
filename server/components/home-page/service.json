@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_home_page_services",
+  "info": {
+    "name": "Service",
+    "icon": "box-open"
+  },
+  "options": {},
+  "attributes": {
+    "Icon": {
+      "type": "string"
+    },
+    "Name": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "text"
+    }
+  }
+}

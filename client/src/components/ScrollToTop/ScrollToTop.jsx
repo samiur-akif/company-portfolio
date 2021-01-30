@@ -5,7 +5,7 @@ const ScroolToTop = () => {
         <div className="scrolltotop">
         <a
           className="button-circle button-circle-sm button-circle-dark"
-          href="#"
+          href="/"
         >
           <i className="ti-arrow-up" />
         </a>
