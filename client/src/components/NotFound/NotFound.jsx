@@ -6,7 +6,7 @@ const NotFound = () => {
     return (
         <>
             <Header />
-                <div class="section-xl bg-image parallax" data-bg-src="./background.jpg">
+                <div class="section-xl bg-image parallax" data-bg-src="./404-classic-bg.jpg">
                     <div class="bg-black-03">
                         <div class="container text-center">
                             <div class="row">
