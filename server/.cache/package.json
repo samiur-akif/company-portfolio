@@ -1,4 +1,10 @@
 {
+  "_args": [
+    [
+      "strapi-admin@3.4.4",
+      "/Volumes/Projects/Jouney to React/agency-strapi/server"
+    ]
+  ],
   "_from": "strapi-admin@3.4.4",
   "_id": "strapi-admin@3.4.4",
   "_inBundle": false,
@@ -26,16 +32,14 @@
     "/"
   ],
   "_resolved": "https://registry.npmjs.org/strapi-admin/-/strapi-admin-3.4.4.tgz",
-  "_shasum": "3f38ca7fb648b9422d0251415e9776f2ed019439",
-  "_spec": "strapi-admin@3.4.4",
-  "_where": "/Volumes/Projects/Jouney to React/agency/neemo-react-next-seo-it-agency-template/backend",
+  "_spec": "3.4.4",
+  "_where": "/Volumes/Projects/Jouney to React/agency-strapi/server",
   "author": {
     "name": "Strapi"
   },
   "bugs": {
     "url": "https://github.com/strapi/strapi-admin/issues"
   },
-  "bundleDependencies": false,
   "dependencies": {
     "@babel/core": "^7.12.3",
     "@babel/plugin-proposal-async-generator-functions": "^7.10.5",
@@ -132,7 +136,6 @@
     "webpackbar": "^4.0.0",
     "yup": "^0.27.0"
   },
-  "deprecated": false,
   "description": "Strapi Admin",
   "engines": {
     "node": ">=10.16.0 <=14.x.x",

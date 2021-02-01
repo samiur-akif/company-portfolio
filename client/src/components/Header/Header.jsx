@@ -14,7 +14,7 @@ const Header = () => {
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
-        if(window.scrollY > 350){
+        if(window.scrollY > 150){
           setHandleShow(true)
         }
         else{

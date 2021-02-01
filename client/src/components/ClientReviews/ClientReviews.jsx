@@ -16,7 +16,7 @@ const ClientReviews = ({ values }) => {
 
   const options = {
     loop: true,
-    nav: true,
+    nav: false,
     dots: false,
     smartSpeed: 2000,
     margin: 30,
@@ -33,8 +33,8 @@ const ClientReviews = ({ values }) => {
             {values.map((item, key) => (
               <TestimonialBox
                 key={key}
-                review={item.Review}
-                imgUrl={item.Image.url}
+                review={item.Review_Text}
+                imgUrl={item.Profile_Picture.url}
                 name={item.Name}
                 designation={item.Designation}
               />

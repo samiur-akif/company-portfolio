@@ -65,7 +65,7 @@ const Custom = ({ pageData }) => {
     ),
     "text-row": (values, key) => <TextSection key={key} values={values} />,
     "banner": (values, key) => <Banner key={key} values={values} />,
-    "client-review": (values, key) => (
+    "client-reviews": (values, key) => (
       <ClientReviews key={key} values={values} />
     ),
     "contact-item": (values, key) => <ContactRow key={key} values={values} />,

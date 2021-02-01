@@ -1,4 +1,10 @@
 {
+  "_args": [
+    [
+      "strapi-plugin-content-type-builder@3.4.4",
+      "/Volumes/Projects/Jouney to React/agency-strapi/server"
+    ]
+  ],
   "_from": "strapi-plugin-content-type-builder@3.4.4",
   "_id": "strapi-plugin-content-type-builder@3.4.4",
   "_inBundle": false,
@@ -24,9 +30,8 @@
     "/"
   ],
   "_resolved": "https://registry.npmjs.org/strapi-plugin-content-type-builder/-/strapi-plugin-content-type-builder-3.4.4.tgz",
-  "_shasum": "8fb884605aef52bb65f6ced7e233969bdb6aeac8",
-  "_spec": "strapi-plugin-content-type-builder@3.4.4",
-  "_where": "/Volumes/Projects/Jouney to React/agency/neemo-react-next-seo-it-agency-template/backend",
+  "_spec": "3.4.4",
+  "_where": "/Volumes/Projects/Jouney to React/agency-strapi/server",
   "author": {
     "name": "Strapi team",
     "email": "hi@strapi.io",
@@ -35,7 +40,6 @@
   "bugs": {
     "url": "https://github.com/strapi/strapi/issues"
   },
-  "bundleDependencies": false,
   "dependencies": {
     "@buffetjs/core": "3.3.3-next.2",
     "@buffetjs/custom": "3.3.3-next.2",
@@ -64,7 +68,6 @@
     "strapi-utils": "3.4.4",
     "yup": "^0.27.0"
   },
-  "deprecated": false,
   "description": "Strapi plugin to create content type (API).",
   "engines": {
     "node": ">=10.16.0 <=14.x.x",

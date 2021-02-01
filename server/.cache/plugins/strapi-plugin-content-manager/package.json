@@ -1,4 +1,10 @@
 {
+  "_args": [
+    [
+      "strapi-plugin-content-manager@3.4.4",
+      "/Volumes/Projects/Jouney to React/agency-strapi/server"
+    ]
+  ],
   "_from": "strapi-plugin-content-manager@3.4.4",
   "_id": "strapi-plugin-content-manager@3.4.4",
   "_inBundle": false,
@@ -25,9 +31,8 @@
     "/"
   ],
   "_resolved": "https://registry.npmjs.org/strapi-plugin-content-manager/-/strapi-plugin-content-manager-3.4.4.tgz",
-  "_shasum": "2fe96c4c996538b0f3c3f5481c48f0342f1bc9d1",
-  "_spec": "strapi-plugin-content-manager@3.4.4",
-  "_where": "/Volumes/Projects/Jouney to React/agency/neemo-react-next-seo-it-agency-template/backend",
+  "_spec": "3.4.4",
+  "_where": "/Volumes/Projects/Jouney to React/agency-strapi/server",
   "author": {
     "name": "Strapi team",
     "email": "hi@strapi.io",
@@ -36,7 +41,6 @@
   "bugs": {
     "url": "https://github.com/strapi/strapi/issues"
   },
-  "bundleDependencies": false,
   "dependencies": {
     "@buffetjs/core": "3.3.3-next.2",
     "@buffetjs/custom": "3.3.3-next.2",
@@ -79,7 +83,6 @@
     "strapi-utils": "3.4.4",
     "yup": "^0.27.0"
   },
-  "deprecated": false,
   "description": "A powerful UI to easily manage your data.",
   "engines": {
     "node": ">=10.16.0 <=14.x.x",

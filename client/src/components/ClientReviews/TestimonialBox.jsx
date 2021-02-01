@@ -12,6 +12,7 @@ const TestimonialBox = ({review, imgUrl, name, designation}) => {
         className="margin-bottom-20"
         src={`${imgAPI}${imgUrl}`}
         alt=""
+        style={{ objectFit: 'contain'}}
       />
       <h5 className="font-weight-normal margin-0 line-height-140">
         {name}

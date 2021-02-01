@@ -6,6 +6,7 @@ import {
   AccordionItemPanel,
   AccordionItemButton,
 } from "react-accessible-accordion";
+import 'react-accessible-accordion/dist/fancy-example.css';
 
 const FAQ = ({ values }) => {
   return (
