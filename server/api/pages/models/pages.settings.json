@@ -11,7 +11,7 @@
     "draftAndPublish": true
   },
   "attributes": {
-    "Page_Title": {
+    "Page_Link": {
       "type": "string",
       "required": true,
       "unique": true,
@@ -35,8 +35,13 @@
         "contact-page.contact-item",
         "faq-page.faq-item",
         "services-page.icon-row",
-        "services-page.details-row"
+        "services-page.details-row",
+        "contact-page.contact-form",
+        "contact-page.gmap-location"
       ]
+    },
+    "Title": {
+      "type": "string"
     }
   }
 }

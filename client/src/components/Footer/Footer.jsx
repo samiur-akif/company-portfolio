@@ -1,32 +1,49 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react';
 import './Footer.css'
+import Logo from '../Header/Logo/Logo';
+import SocialLinks from '../Header/SocialLinks/SocialLinks';
 
 
 const Footer = () => {
+	const [usefulLinks, setUsefulLinks] = useState([]);
+	const [additionalLinks, setAdditionalLinks] = useState([]);
+    
+    useEffect(() => {
+      fetch("http://localhost:1337/useful-links")
+        .then((res) => res.json())
+		.then((data) => setUsefulLinks(data));
+
+		fetch("http://localhost:1337/additional-links")
+        .then((res) => res.json())
+		.then((data) => setAdditionalLinks(data));
+	}, []);
+	
     return (
         <footer>
 			<div className="section-sm bg-dark">
 				<div className="container">
 					<div className="row col-spacing-20">
 						<div className="col-6 col-sm-6 col-lg-3">
-							<h3>Logo</h3>
+							<div><Logo /></div>
 						</div>
-						<div className="col-6 col-sm-6 col-lg-3">
+						<div className="col-6 col-sm-6 col-lg-3 d-flex flex-column align-items-center">
 							<h6 className="font-small font-weight-normal uppercase">Useful Links</h6>
 							<ul className="list-dash">
-								<li><a href="/">About us</a></li>
-								<li><a href="/">Team</a></li>
-								<li><a href="/">Prices</a></li>
-								<li><a href="/">Contact</a></li>
+								{
+									usefulLinks.length ? usefulLinks.map((item, key) => (
+										<li key={key}><a href={item.Link}>{item.Name}</a></li>
+									)) : null
+								}
 							</ul>
 						</div>
-						<div className="col-6 col-sm-6 col-lg-3">
+						<div className="col-6 col-sm-6 col-lg-3 d-flex flex-column align-items-center">
 							<h6 className="font-small font-weight-normal uppercase">Additional Links</h6>
 							<ul className="list-dash">
-								<li><a href="/">Services</a></li>
-								<li><a href="/">Process</a></li>
-								<li><a href="/">FAQ</a></li>
-								<li><a href="/">Careers</a></li>
+							{
+									additionalLinks.length ? additionalLinks.map((item, key) => (
+										<li key={key}><a href={item.Link}>{item.Name}</a></li>
+									)) : null
+								}
 							</ul>
 						</div>
 						<div className="col-6 col-sm-6 col-lg-3">
@@ -46,12 +63,7 @@ const Footer = () => {
 							<p>&copy; 2020, All Rights Reserved.</p>
 						</div>
 						<div className="col-12 col-md-6 text-center text-md-right">
-							<ul className="list-inline">
-								<li><a href="/"><i className="fab fa-facebook-f"></i></a></li>
-								<li><a href="/"><i className="fab fa-twitter"></i></a></li>
-								<li><a href="/"><i className="fab fa-pinterest"></i></a></li>
-								<li><a href="/"><i className="fab fa-instagram"></i></a></li>
-							</ul>
+							<SocialLinks />
 						</div>
 					</div> {/* <!-- end row(2) --> */}
 				</div> {/* <!-- end container --> */}

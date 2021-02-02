@@ -1,22 +1,63 @@
-import React from 'react'
-import BlogHeader from './BlogHeader/BlogHeader'
+import React, { useEffect, useState } from "react";
+import BlogHeader from "./BlogHeader/BlogHeader";
+import BlogPost from "./BlogPost/BlogPost";
+import Pagination from "./Pagination/Pagination";
+import Header from "../Header/Header";
 
 const Blog = () => {
-    return (
-        <>
-        <BlogHeader />
-        <div className="section">
+  const [posts, setPosts] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const postsPerPage = 3;
+
+  useEffect(() => {
+      fetch("http://localhost:1337/posts")
+        .then((res) => res.json())
+        .then((data) => {
+          setPosts(data);
+        });
+  },[]);
+
+  const indexOfLastPost = currentPage * postsPerPage;
+  const indexOfFirstPost = indexOfLastPost - postsPerPage;
+  const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost);
+
+  // Change page
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
+
+  return (
+    <>
+      <Header blackBack={true} />
+      <BlogHeader />
+      <div className="section">
         <div className="container">
           <div className="row">
             <div className="col-12 col-sm-10 offset-sm-1 col-md-8 offset-md-2">
               {/* Blog Posts */}
-              {/* Pagination */}
+              {currentPosts.length
+                ? currentPosts.map((item, key) => (
+                    <BlogPost
+                      key={key}
+                      id={item.id}
+                      title={item.Title}
+                      category={item.categories}
+                      description={item.Description}
+                      imgUrl={item.Image.url}
+                      publishDate={item.published_at}
+                    />
+                  ))
+                : null}
+              <Pagination
+                postsPerPage={postsPerPage}
+                currentPage={currentPage}
+                totalPosts={posts.length}
+                paginate={paginate}
+              />
             </div>
           </div>
         </div>
       </div>
-      </>
-    )
-}
+    </>
+  );
+};
 
-export default Blog
+export default Blog;

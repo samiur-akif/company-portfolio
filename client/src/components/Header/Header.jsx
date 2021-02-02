@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import SocialLinks from "./SocialLinks/SocialLinks";
 import Logo from "./Logo/Logo";
 
-const Header = () => {
+const Header = ({blackBack}) => {
   const [menus, setMenus] = useState([]);
   const [handleShow, setHandleShow] = useState(false)
 
@@ -36,7 +36,7 @@ const Header = () => {
   );
 
   return (
-    <div className="header right absolute-light sticky-autohide" style={ handleShow ? {background: '#262626'} : {}}>
+    <div className="header right absolute-light sticky-autohide" style={ handleShow || blackBack ? {background: '#262626'} : {}}>
       <div className="container">
         <Logo />
 

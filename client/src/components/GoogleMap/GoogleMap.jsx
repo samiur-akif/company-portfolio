@@ -1,9 +1,9 @@
 import React from 'react'
 
-const GoogleMap = () => {
+const GoogleMap = ({values}) => {
     return (
         <div className="container-fluid padding-0">
-			<div id="map1" className="gmap gmap-xl" data-latitude="51.513569" data-longitude="-0.123443"></div>			
+			<div id="map1" className="gmap gmap-xl" data-latitude={values[0].Lattitude} data-longitude={values[0].Longitude}></div>			
 		</div>
     )
 }

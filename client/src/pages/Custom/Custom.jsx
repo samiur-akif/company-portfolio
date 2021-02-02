@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Helmet } from "react-helmet";
 import About from "../../components/Home/About/About";
 import Features from "../../components/Home/Features/Features";
 import Partners from "../../components/Home/Partners/Partners";
@@ -15,6 +16,9 @@ import FAQ from "../../components/FAQ/FAQ";
 import PricingTable from "../../components/Pricing/PricingTable/PricingTable";
 import ServiceDetails from "../../components/Services/ServiceDetails/ServiceDetails";
 import ServiceIcons from "../../components/Services/ServiceIcons/ServiceIcons";
+import ContactForm from "../../components/Contact/ContactForm/ContactForm";
+import GoogleMap from "../../components/GoogleMap/GoogleMap";
+import Header from '../../components/Header/Header';
 
 import { connect } from "react-redux";
 import { useParams } from "react-router-dom";
@@ -25,23 +29,26 @@ const Custom = ({ pageData }) => {
   const [componentSquence, setComponentSquence] = useState([]);
   const { id } = useParams();
   const [notFound, setNotFound] = useState(false);
+  const [pageTitle, setPageTitle] = useState("");
 
   useEffect(() => {
     if (pageData.length) {
       if (id) {
         const pageMatch = pageData.find(
-          (item) => item["Page_Title"].toLowerCase() === id.toLowerCase()
+          (item) => item["Page_Link"].toLowerCase() === id.toLowerCase()
         );
         if (pageMatch) {
           setSpecificPage(pageMatch.Section);
+          setPageTitle(pageMatch.Title);
         } else {
           setNotFound(true);
         }
       } else {
         const pageMatch = pageData.find(
-          (item) => item["Page_Title"].toLowerCase() === "home"
+          (item) => item["Page_Link"].toLowerCase() === "home"
         );
         setSpecificPage(pageMatch.Section);
+        setPageTitle(pageMatch.Title);
       }
     }
   }, [pageData]);
@@ -55,7 +62,7 @@ const Custom = ({ pageData }) => {
   const dataOptions = {
     "key-feature": (values, key) => <Features key={key} values={values} />,
     "client-logos": (values, key) => <Partners key={key} values={values} />,
-    "service": (values, key) => <Services key={key} values={values} />,
+    service: (values, key) => <Services key={key} values={values} />,
     "home-slider": (values, key) => <MainBanner key={key} values={values} />,
     "connection-row": (values, key) => <Contact key={key} values={values} />,
     "about-us": (values, key) => <About key={key} values={values} />,
@@ -64,7 +71,7 @@ const Custom = ({ pageData }) => {
       <Achievements key={key} values={values} />
     ),
     "text-row": (values, key) => <TextSection key={key} values={values} />,
-    "banner": (values, key) => <Banner key={key} values={values} />,
+    banner: (values, key) => <Banner key={key} values={values} />,
     "client-reviews": (values, key) => (
       <ClientReviews key={key} values={values} />
     ),
@@ -75,6 +82,8 @@ const Custom = ({ pageData }) => {
       <ServiceDetails key={key} values={values} />
     ),
     "icon-row": (values, key) => <ServiceIcons key={key} values={values} />,
+    "contact-form": (values, key) => <ContactForm key={key} values={values} />,
+    "gmap-location": (values, key) => <GoogleMap key={key} values={values} />,
   };
 
   useEffect(() => {
@@ -116,10 +125,16 @@ const Custom = ({ pageData }) => {
 
   return (
     <>
+      <Header />
       {notFound ? (
         <NotFound />
       ) : componentSquence.length ? (
-        componentSquence.map((item) => item)
+        <>
+          <Helmet>
+            <title>{pageTitle}</title>
+          </Helmet>
+          {componentSquence.map((item) => item)}
+        </>
       ) : null}
     </>
   );

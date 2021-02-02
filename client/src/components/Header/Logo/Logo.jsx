@@ -1,15 +1,24 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+
+const imgAPI = "http://localhost:1337";
 
 const Logo = () => {
+    const [logoUrl, setLogoUrl] = useState('');
+    
+    useEffect(() => {
+      fetch("http://localhost:1337/logo")
+        .then((res) => res.json())
+        .then((data) => setLogoUrl(data.Image[0].url));
+    }, []);
+
     return (
         <div className="header-logo">
-        <h3>
-          <a href="/">Logo</a>
-        </h3>
-        {/* 
-                    <img class="logo-dark" src="/your-logo-dark.png" alt="">
-                    <img class="logo-light" src="/your-logo-light.png" alt=""> 
-                    */}
+         
+          <a href="/">
+            <img class="logo-light" src={`${imgAPI}${logoUrl}`} alt="" /> 
+          </a>
+          
+          
       </div>
     )
 }

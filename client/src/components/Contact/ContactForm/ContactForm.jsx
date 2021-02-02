@@ -1,11 +1,11 @@
 import React from "react";
 
-const ContactForm = () => {
+const ContactForm = ({values}) => {
   return (
-    <div className="section">
+    <div className="section" style={{paddingTop : '0'}}>
       <div className="container">
         {/* Contact Form */}
-        <div className="margin-top-50 margin-lg-top-60">
+        <div className="margin-top-5 margin-lg-top-5">
           <div className="contact-form">
             <form method="post" id="contactform">
               <div className="form-row">
@@ -49,7 +49,7 @@ const ContactForm = () => {
                 className="button button-lg button-radius button-outline-dark-2"
                 type="submit"
               >
-                Send Message
+                {values[0].Contact_Button_Text}
               </button>
             </form>
             {/* Submit result */}

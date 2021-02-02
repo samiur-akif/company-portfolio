@@ -1,11 +1,45 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
-const BlogPost = ({imgUrl, category, publishDate, title, description }) => {
+const imgAPI = "http://localhost:1337";
+
+const BlogPost = ({
+  id,
+  imgUrl,
+  category,
+  publishDate,
+  title,
+  description,
+}) => {
+  const event = new Date(publishDate);
+
+  const sortedDescription = (description) => {
+    if(description.length > 220){
+      return `${description.slice(0, 220)}...`
+    }
+    else{
+      return description
+    }
+  }
+  
+  const [newDescription, setNewDescription] = useState("");
+
+  const replaceLineBreak = (current) => {
+    const regex = /([A-Za-z])\w+/g;
+    const result = current.match(regex);
+    return result.join(" ");
+  };
+
+  useEffect(() => {
+    setNewDescription(sortedDescription(replaceLineBreak(description)))
+  }, [description])
+
+  
+
   return (
     <div className="margin-bottom-50">
       <div className="hoverbox-8">
-        <a href="#">
-          <img src="../assets/images/col-1.jpg" alt="" />
+        <a href={`/blog/${id}`}>
+          <img src={`${imgAPI}${imgUrl}`} alt="" />
         </a>
       </div>
       <div className="margin-top-30">
@@ -13,26 +47,27 @@ const BlogPost = ({imgUrl, category, publishDate, title, description }) => {
           <div className="d-inline-flex">
             <a
               className="font-family-tertiary font-small font-weight-normal uppercase"
-              href="#"
+              href={`/blog/${id}`}
             >
-              Lifestyle
+              {category.map((item, key) => {
+                if (category.length - 1 === key) {
+                  return `${item.Name}`;
+                } else {
+                  return `${item.Name},  `;
+                }
+              })}
             </a>
           </div>
           <div className="d-inline-flex">
-            <span className="font-small">Jan 24, 2019</span>
+            <span className="font-small">{event.toDateString()}</span>
           </div>
         </div>
         <h5>
-          <a href="#">Benefits of Minimalism</a>
+          <a href={`/blog/${id}`}>{title}</a>
         </h5>
-        <p>
-          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
-          commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus
-          et magnis dis parturient montes, nascetur ridiculus mus. Donec quam
-          felis, ultricies nec, pellentesque eu, pretium quis, sem.
-        </p>
+        <p href={`/blog/${id}`}>{newDescription}</p>
         <div className="margin-top-20">
-          <a className="button-text-1" href="#">
+          <a className="button-text-1" href={`/blog/${id}`}>
             Read More
           </a>
         </div>
