@@ -55,7 +55,7 @@ export default strapi => {
     pluginLogo,
     preventComponentRendering: false,
     trads,
-    /* menu: {
+    menu: {
       pluginsSectionLinks: [
         {
           destination: `/plugins/${pluginId}`,
@@ -68,7 +68,7 @@ export default strapi => {
           permissions: pluginPermissions.main,
         },
       ],
-    }, */
+    },
   };
 
   return strapi.registerPlugin(plugin);

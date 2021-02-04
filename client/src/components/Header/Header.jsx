@@ -1,15 +1,25 @@
 import React, { useEffect, useState } from "react";
 import SocialLinks from "./SocialLinks/SocialLinks";
+import { Helmet } from "react-helmet";
 import Logo from "./Logo/Logo";
+
+
+const imgAPI = "http://localhost:1337";
 
 const Header = ({blackBack}) => {
   const [menus, setMenus] = useState([]);
-  const [handleShow, setHandleShow] = useState(false)
+  const [handleShow, setHandleShow] = useState(false);
+  const [favicon, setFavicon] = useState('');
 
   useEffect(() => {
     fetch("http://localhost:1337/menus")
       .then((res) => res.json())
       .then((data) => setMenus(data));
+    
+    fetch("http://localhost:1337/favicon")
+      .then((res) => res.json())
+      .then((data) => setFavicon(data.Favicon.url));
+
   }, []);
 
   useEffect(() => {
@@ -36,6 +46,12 @@ const Header = ({blackBack}) => {
   );
 
   return (
+    <>
+    {
+      favicon ? <Helmet>
+      <link rel="icon" type="image/png" href={`${imgAPI}${favicon}`} sizes="64x64" />
+    </Helmet> : null
+    }
     <div className="header right absolute-light sticky-autohide" style={ handleShow || blackBack ? {background: '#262626'} : {}}>
       <div className="container">
         <Logo />
@@ -58,6 +74,7 @@ const Header = ({blackBack}) => {
       </div>
       {/* end container */}
     </div>
+    </>
   );
 };
 
