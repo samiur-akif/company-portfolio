@@ -4,6 +4,7 @@ const imgAPI = "http://localhost:1337";
 
 const BlogPost = ({
   id,
+  slug,
   imgUrl,
   category,
   publishDate,
@@ -38,7 +39,7 @@ const BlogPost = ({
   return (
     <div className="margin-bottom-50">
       <div className="hoverbox-8">
-        <a href={`/blog/${id}`}>
+        <a href={`/blog/${slug}`}>
           <img src={`${imgAPI}${imgUrl}`} alt="" />
         </a>
       </div>
@@ -47,7 +48,7 @@ const BlogPost = ({
           <div className="d-inline-flex">
             <a
               className="font-family-tertiary font-small font-weight-normal uppercase"
-              href={`/blog/${id}`}
+              href={`/blog/${slug}`}
             >
               {category.map((item, key) => {
                 if (category.length - 1 === key) {
@@ -63,11 +64,11 @@ const BlogPost = ({
           </div>
         </div>
         <h5>
-          <a href={`/blog/${id}`}>{title}</a>
+          <a href={`/blog/${slug}`}>{title}</a>
         </h5>
-        <p href={`/blog/${id}`}>{newDescription}</p>
+        <p href={`/blog/${slug}`}>{newDescription}</p>
         <div className="margin-top-20">
-          <a className="button-text-1" href={`/blog/${id}`}>
+          <a className="button-text-1" href={`/blog/${slug}`}>
             Read More
           </a>
         </div>

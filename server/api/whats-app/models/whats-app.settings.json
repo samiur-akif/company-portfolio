@@ -1,0 +1,17 @@
+{
+  "kind": "singleType",
+  "collectionName": "whats_apps",
+  "info": {
+    "name": "WhatsApp"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "Phone": {
+      "type": "integer"
+    }
+  }
+}

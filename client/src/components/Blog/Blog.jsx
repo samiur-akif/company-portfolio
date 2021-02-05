@@ -38,6 +38,7 @@ const Blog = () => {
                     <BlogPost
                       key={key}
                       id={item.id}
+                      slug={item.Slug}
                       title={item.Title}
                       category={item.categories}
                       description={item.Description}

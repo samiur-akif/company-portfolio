@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import SocialLinks from "./SocialLinks/SocialLinks";
 import { Helmet } from "react-helmet";
+import {Dropdown} from 'react-bootstrap'
 import Logo from "./Logo/Logo";
 
 
@@ -67,6 +68,17 @@ const Header = ({blackBack}) => {
         </div>
 
         <SocialLinks />
+
+        <Dropdown>
+  <Dropdown.Toggle id="dropdown-basic" style={{background: 'transparent', marginLeft: '12px', border: 'none'}}>
+    English-en
+  </Dropdown.Toggle>
+
+  <Dropdown.Menu>
+    <Dropdown.Item href="#/action-1">English-en</Dropdown.Item>
+    <Dropdown.Item href="#/action-2">Hebrew-he</Dropdown.Item>
+  </Dropdown.Menu>
+</Dropdown>
 
         <button className="header-toggle">
         <span />

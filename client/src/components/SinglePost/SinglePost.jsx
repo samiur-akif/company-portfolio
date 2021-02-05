@@ -7,16 +7,16 @@ const imgAPI = "http://localhost:1337";
 
 const SinglePost = () => {
   const [postData, setPostData] = useState({});
-  const { id } = useParams();
+  const { slug } = useParams();
   const [dateString, setDateString] = useState('');
   useEffect(() => {
-    fetch(`http://localhost:1337/posts/${id}`)
+    fetch(`http://localhost:1337/posts?Slug=${slug}`)
       .then((res) => res.json())
       .then((data) => {
-        setPostData(data);
+        setPostData(data[0]);
         setDateString(new Date(data.published_at));
       });
-  }, [id]);
+  }, [slug]);
 
   const [description, setDescription] = useState("");
 

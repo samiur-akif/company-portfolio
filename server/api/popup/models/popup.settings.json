@@ -1,0 +1,30 @@
+{
+  "kind": "singleType",
+  "collectionName": "popups",
+  "info": {
+    "name": "Popup",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "Heading": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "text"
+    },
+    "Button_Text": {
+      "type": "string"
+    },
+    "Button_Link": {
+      "type": "string"
+    },
+    "Interval": {
+      "type": "string"
+    }
+  }
+}

@@ -31,6 +31,9 @@
     "categories": {
       "collection": "categories",
       "via": "posts"
+    },
+    "Slug": {
+      "type": "string"
     }
   }
 }
