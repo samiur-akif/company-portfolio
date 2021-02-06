@@ -1,5 +1,6 @@
 const INITIAL_STATE = {
-    data : []
+    data : [],
+    translation: 'en'
 }
 
 const pagesReducer = (state= INITIAL_STATE, action) => {
@@ -8,6 +9,11 @@ const pagesReducer = (state= INITIAL_STATE, action) => {
             return {
                 ...state,
                 data : action.payload
+            }
+        case 'CHANGE_TRANSLATION':
+            return {
+                ...state,
+                translation : action.payload
             }
     
         default:

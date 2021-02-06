@@ -3,11 +3,13 @@ import SocialLinks from "./SocialLinks/SocialLinks";
 import { Helmet } from "react-helmet";
 import {Dropdown} from 'react-bootstrap'
 import Logo from "./Logo/Logo";
+import { updateTranslation } from "../../Redux/Pages/Pages/pages-action";
+import { connect } from "react-redux";
 
 
 const imgAPI = "http://localhost:1337";
 
-const Header = ({blackBack}) => {
+const Header = ({blackBack, translation, updateTranslation}) => {
   const [menus, setMenus] = useState([]);
   const [handleShow, setHandleShow] = useState(false);
   const [favicon, setFavicon] = useState('');
@@ -60,9 +62,14 @@ const Header = ({blackBack}) => {
         <div className="header-menu">
           <ul className="nav">
             {menus.length
-              ? menus.map((item, key) => (
-                  <NavElement key={key} name={item.Name} link={item.Link} />
-                ))
+              ? menus.map((item, key) => {
+                  if(translation === 'en'){
+                    return <NavElement key={key} name={item.Name_English} link={item.Link} />
+                  }
+                  else if(translation === 'he'){
+                    return <NavElement key={key} name={item.Name_Hebrew} link={item.Link} />
+                  }
+              })
               : null}
           </ul>
         </div>
@@ -71,12 +78,12 @@ const Header = ({blackBack}) => {
 
         <Dropdown>
   <Dropdown.Toggle id="dropdown-basic" style={{background: 'transparent', marginLeft: '12px', border: 'none'}}>
-    English-en
+    {translation}
   </Dropdown.Toggle>
 
   <Dropdown.Menu>
-    <Dropdown.Item href="#/action-1">English-en</Dropdown.Item>
-    <Dropdown.Item href="#/action-2">Hebrew-he</Dropdown.Item>
+    <Dropdown.Item href="#/action-1" onClick={ () => updateTranslation('en') }>English - en</Dropdown.Item>
+    <Dropdown.Item href="#/action-2" onClick={ () => updateTranslation('he') }>Hebrew - he</Dropdown.Item>
   </Dropdown.Menu>
 </Dropdown>
 
@@ -90,4 +97,12 @@ const Header = ({blackBack}) => {
   );
 };
 
-export default Header;
+const mapDispatchToProps = dispatch => ({
+  updateTranslation : (language) => dispatch(updateTranslation(language))
+})
+
+const mapStateToProps = ({pages}) => ({
+  translation: pages.translation
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(Header);

@@ -11,10 +11,13 @@
     "draftAndPublish": true
   },
   "attributes": {
-    "Name": {
+    "Name_English": {
       "type": "string"
     },
     "Link": {
+      "type": "string"
+    },
+    "Name_Hebrew": {
       "type": "string"
     }
   }
