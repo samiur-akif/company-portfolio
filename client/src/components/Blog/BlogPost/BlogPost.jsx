@@ -26,14 +26,19 @@ const BlogPost = ({
   const [newDescription, setNewDescription] = useState("");
 
   const replaceLineBreak = (current) => {
-    const regex = /([A-Za-z])\w+/g;
-    const result = current.match(regex);
-    return result.join(" ");
+    if(translation !== 'Hebrew'){
+      const regex = /([A-Za-z])\w+/gi;
+      const result = current.match(regex);
+      return result.join(" ");
+    }
+    else {
+      return current
+    }
   };
 
   useEffect(() => {
     setNewDescription(sortedDescription(replaceLineBreak( item[`Description_${translation}`] )))
-  }, [item])
+  }, [item, translation])
 
   
 
@@ -79,8 +84,8 @@ const BlogPost = ({
 };
 
 
-                      const mapStateToProps = ({ pages }) => ({
-                        translation: pages.translation,
-                        });
+const mapStateToProps = ({ pages }) => ({
+  translation: pages.translation,
+  });
 
 export default connect(mapStateToProps)( BlogPost)

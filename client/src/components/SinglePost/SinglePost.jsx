@@ -33,7 +33,7 @@ const SinglePost = ({translation}) => {
       const searchTerm = "/uploads";
       setDescription(replaceLineBreak(searchTerm, postData[`Description_${translation}`] ));
     }
-  }, [postData]);
+  }, [postData, translation]);
   
 
   return (
@@ -56,9 +56,9 @@ const SinglePost = ({translation}) => {
                   {postData.categories.length
                     ? postData.categories.map((item, key) => {
                         if (postData.categories.length - 1 === key) {
-                          return `${<FormattedText objectName={item} extension="Name" />}`
+                          return `${item.Name}`
                         } else {
-                          return `${<FormattedText objectName={item} extension="Name" />},  `;
+                          return `${item.Name},  `;
                         }
                       })
                     : null}

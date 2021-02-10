@@ -25,7 +25,7 @@ const PriceBox = ({
   useEffect(() => {
     const searchTerm = "\n";
     setDescription(parse(replaceLineBreak(searchTerm, item[`Features_${translation}`] )));
-  }, [item]);
+  }, [item, translation]);
 
   useEffect(() => {
     fetch("http://localhost:1337/pay-pal")
