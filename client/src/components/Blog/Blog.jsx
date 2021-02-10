@@ -37,11 +37,9 @@ const Blog = () => {
                 ? currentPosts.map((item, key) => (
                     <BlogPost
                       key={key}
-                      id={item.id}
+                      item={item}
                       slug={item.Slug}
-                      title={item.Title}
                       category={item.categories}
-                      description={item.Description}
                       imgUrl={item.Image.url}
                       publishDate={item.published_at}
                     />

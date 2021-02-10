@@ -62,7 +62,7 @@ function App({updatePagesData}) {
       </Switch>
       <Footer />
       {
-        popModelShow ? <PopUp heading={popUpDatails.Heading} description={popUpDatails.Description} buttonLink={popUpDatails.Button_Link} buttonText={popUpDatails.Button_Text} onClose={onClose} /> : null
+        popModelShow ? <PopUp item={popUpDatails} onClose={onClose} /> : null
       }
       <Whatsapp />
      </> 

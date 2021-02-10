@@ -2,6 +2,7 @@ import React from "react";
 import Carousel from "react-bootstrap/Carousel";
 import { Container, Row } from "react-bootstrap";
 import "./MainBanner.css";
+import FormattedText from "../../../hooks/FormattedText";
 
 const imgAPI = "http://localhost:1337";
 
@@ -22,13 +23,13 @@ const MainBanner = ({ values }) => {
                   />
                   <Carousel.Caption>
                     <h1 className="font-weight-light">
-                      {item?.Company_Slogan}
+                      <FormattedText objectName={item} extension="Company_Slogan" />
                     </h1>
                     <a
                       className="button button-lg button-radius button-white-3 margin-top-30"
                       href={item?.Button_Link}
                     >
-                      {item?.Button_Text}
+                      <FormattedText objectName={item} extension="Button_Text" />
                     </a>
                   </Carousel.Caption>
                 </Carousel.Item>

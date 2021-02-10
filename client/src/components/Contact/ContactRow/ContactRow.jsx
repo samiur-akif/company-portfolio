@@ -10,8 +10,7 @@ const ContactRow = ({ values }) => {
             <ContactBox
               key={key}
               icon={item.Icon}
-              name={item.Name}
-              details={item.Details}
+              item={item}
             />
           ))}
         </div>

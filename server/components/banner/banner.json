@@ -7,7 +7,7 @@
   },
   "options": {},
   "attributes": {
-    "title": {
+    "title_English": {
       "type": "string"
     },
     "Image": {
@@ -20,6 +20,9 @@
       ],
       "plugin": "upload",
       "required": false
+    },
+    "title_Hebrew": {
+      "type": "string"
     }
   }
 }

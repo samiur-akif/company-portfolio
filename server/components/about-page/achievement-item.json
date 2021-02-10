@@ -2,14 +2,21 @@
   "collectionName": "components_about_page_achievement_items",
   "info": {
     "name": "Achievement_Item",
-    "icon": "award"
+    "icon": "award",
+    "description": ""
   },
   "options": {},
   "attributes": {
-    "Number": {
+    "Number_English": {
       "type": "string"
     },
-    "Name": {
+    "Name_English": {
+      "type": "string"
+    },
+    "Name_Hebrew": {
+      "type": "string"
+    },
+    "Number_Hebrew": {
       "type": "string"
     }
   }

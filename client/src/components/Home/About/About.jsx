@@ -1,4 +1,5 @@
 import React from "react";
+import FormattedText from "../../../hooks/FormattedText";
 
 const imgAPI = "http://localhost:1337";
 
@@ -17,14 +18,16 @@ const About = ({ values }) => {
           </div>
           <div className="col-12 col-lg-6">
             <h3 className="font-weight-light margin-bottom-20">
-              {values[0].Title}
+              <FormattedText objectName={values[0]} extension="Title" />
             </h3>
-            <p>{values[0].Description}</p>
+            <p>
+              <FormattedText objectName={values[0]} extension="Description" />
+            </p>
             <a
               className="button-text-3 margin-top-40"
               href={values[0].Button_Link}
             >
-              {values[0].Button_Text}
+              <FormattedText objectName={values[0]} extension="Button_Text" />
             </a>
           </div>
         </div>

@@ -1,10 +1,11 @@
 import React from 'react'
+import FormattedText from '../../../hooks/FormattedText'
 
-const TextBox = ({description}) => {
+const TextBox = ({item}) => {
     return (
         <div className="col-12 col-lg-6">
             <p>
-              {description}
+              <FormattedText objectName={item} extension="Description" />
             </p>
         </div>
     )

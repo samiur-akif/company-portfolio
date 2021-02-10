@@ -11,10 +11,10 @@
     "draftAndPublish": true
   },
   "attributes": {
-    "Title": {
+    "Title_English": {
       "type": "string"
     },
-    "Description": {
+    "Description_English": {
       "type": "richtext"
     },
     "Image": {
@@ -34,6 +34,12 @@
     },
     "Slug": {
       "type": "string"
+    },
+    "Title_Hebrew": {
+      "type": "string"
+    },
+    "Description_Hebrew": {
+      "type": "richtext"
     }
   }
 }

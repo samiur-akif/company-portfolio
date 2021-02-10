@@ -10,10 +10,16 @@
     "Icon": {
       "type": "string"
     },
-    "Name": {
+    "Name_English": {
       "type": "string"
     },
-    "Description": {
+    "Description_English": {
+      "type": "text"
+    },
+    "Name_Hebrew": {
+      "type": "string"
+    },
+    "Description_Hebrew": {
       "type": "text"
     }
   }

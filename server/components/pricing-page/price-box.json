@@ -2,23 +2,36 @@
   "collectionName": "components_pricing_page_price_boxes",
   "info": {
     "name": "Price_Box",
-    "icon": "dollar-sign"
+    "icon": "dollar-sign",
+    "description": ""
   },
   "options": {},
   "attributes": {
-    "Package_Name": {
+    "Package_Name_English": {
       "type": "string"
     },
     "Price": {
       "type": "float"
     },
-    "Subscription_Type": {
+    "Subscription_Type_English": {
       "type": "string"
     },
-    "Features": {
+    "Features_English": {
       "type": "text"
     },
-    "Purchase_Button_Text": {
+    "Purchase_Button_Text_English": {
+      "type": "string"
+    },
+    "Package_Name_Hebrew": {
+      "type": "string"
+    },
+    "Subscription_Type_Hebrew": {
+      "type": "string"
+    },
+    "Features_Hebrew": {
+      "type": "text"
+    },
+    "Purchase_Button_Text_Hebrew": {
       "type": "string"
     }
   }

@@ -1,8 +1,5 @@
 'use strict';
 
-/**
- * Module dependencies
- */
 
 // Node.js core.
 const fs = require('fs');
@@ -19,9 +16,6 @@ const serveStatic = require('./serve-static');
 
 module.exports = strapi => {
   return {
-    /**
-     * Initialize the hook
-     */
 
     async initialize() {
       const { defaultIndex, maxAge, path: publicPath } = strapi.config.middleware.settings.public;

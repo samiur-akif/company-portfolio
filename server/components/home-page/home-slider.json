@@ -2,14 +2,15 @@
   "collectionName": "components_home_page_home_sliders",
   "info": {
     "name": "Home_Slider",
-    "icon": "angle-double-right"
+    "icon": "angle-double-right",
+    "description": ""
   },
   "options": {},
   "attributes": {
-    "Company_Slogan": {
+    "Company_Slogan_English": {
       "type": "string"
     },
-    "Button_Text": {
+    "Button_Text_English": {
       "type": "string"
     },
     "Button_Link": {
@@ -25,6 +26,12 @@
       ],
       "plugin": "upload",
       "required": false
+    },
+    "Company_Slogan_Hebrew": {
+      "type": "string"
+    },
+    "Button_Text_Hebrew": {
+      "type": "string"
     }
   }
 }

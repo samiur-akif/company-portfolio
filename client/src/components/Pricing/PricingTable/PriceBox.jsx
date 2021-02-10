@@ -2,13 +2,14 @@ import React, { useEffect, useState } from "react";
 import parse from "html-react-parser";
 import PayPalButton from '../../PayPal/PayPalButton';
 import PopOver from "./PopOver";
+import FormattedText from "../../../hooks/FormattedText";
+import { connect } from "react-redux";
 
 const PriceBox = ({
+  item,
   recommended,
-  packageName,
   price,
-  subscriptionType,
-  features,
+  translation,
 }) => {
   const [description, setDescription] = useState("");
   const [clientId, setClientId] = useState('');
@@ -23,8 +24,8 @@ const PriceBox = ({
 
   useEffect(() => {
     const searchTerm = "\n";
-    setDescription(parse(replaceLineBreak(searchTerm, features)));
-  }, [features]);
+    setDescription(parse(replaceLineBreak(searchTerm, item[`Features_${translation}`] )));
+  }, [item]);
 
   useEffect(() => {
     fetch("http://localhost:1337/pay-pal")
@@ -60,11 +61,13 @@ const PriceBox = ({
           recommended ? "prices-box-recommended" : ""
         }`}
       >
-        <h6 className="font-weight-normal">{packageName}</h6>
+        <h6 className="font-weight-normal">
+          <FormattedText objectName={item} extension="Package_Name" />
+        </h6>
         <div className="price">
           <h1 className="font-weight-normal">
             {price}
-            <span>/{subscriptionType}</span>
+            <span>/<FormattedText objectName={item} extension="Subscription_Type" /></span>
           </h1>
         </div>
         <div className="price-features">
@@ -83,4 +86,8 @@ const PriceBox = ({
   );
 };
 
-export default PriceBox;
+const mapStateToProps = ({ pages }) => ({
+  translation: pages.translation,
+});
+
+export default connect(mapStateToProps)( PriceBox);

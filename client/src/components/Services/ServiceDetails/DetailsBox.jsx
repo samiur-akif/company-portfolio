@@ -1,13 +1,13 @@
 import React from "react";
+import FormattedText from "../../../hooks/FormattedText";
 
 const imgAPI = "http://localhost:1337";
 
 const DetailsBox = ({
   imgUrl,
+  item,
   heading,
   link,
-  boldHeading,
-  description,
   right,
 }) => {
   return (
@@ -32,10 +32,14 @@ const DetailsBox = ({
           </h6>
         </a>
         <a href={link}>
-          <h4>{boldHeading}</h4>
+          <h4>
+            <FormattedText objectName={item} extension="Title" />
+            </h4>
         </a>
         <a href={link}>
-          <p>{description}</p>
+          <p>
+          <FormattedText objectName={item} extension="Description" />
+          </p>
         </a>
       </div>
     </div>

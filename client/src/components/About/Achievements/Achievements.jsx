@@ -7,7 +7,7 @@ const Achievement = ({ values }) => {
       <div className="container">
         <div className="row margin-top-70 text-center">
           {values.map((item, key) => (
-            <AchievementBox key={key} name={item.Name} number={item.Number} />
+            <AchievementBox key={key} item={item} />
           ))}
         </div>
       </div>

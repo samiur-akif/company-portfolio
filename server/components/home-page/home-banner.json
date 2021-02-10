@@ -18,13 +18,19 @@
       "plugin": "upload",
       "required": false
     },
-    "Banner_Text": {
+    "Banner_Text_English": {
       "type": "string"
     },
-    "Button_Text": {
+    "Button_Text_English": {
       "type": "string"
     },
     "Button_Link": {
+      "type": "string"
+    },
+    "Banner_Text_Hebrew": {
+      "type": "string"
+    },
+    "Button_Text_Hebrew": {
       "type": "string"
     }
   }

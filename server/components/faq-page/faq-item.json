@@ -2,14 +2,21 @@
   "collectionName": "components_faq_page_faq_items",
   "info": {
     "name": "FAQ_Item",
-    "icon": "question-circle"
+    "icon": "question-circle",
+    "description": ""
   },
   "options": {},
   "attributes": {
-    "Question": {
+    "Question_English": {
       "type": "string"
     },
-    "Answer": {
+    "Answer_English": {
+      "type": "text"
+    },
+    "Question_Hebrew": {
+      "type": "string"
+    },
+    "Answer_Hebrew": {
       "type": "text"
     }
   }

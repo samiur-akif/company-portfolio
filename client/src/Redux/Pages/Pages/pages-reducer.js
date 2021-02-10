@@ -1,6 +1,6 @@
 const INITIAL_STATE = {
     data : [],
-    translation: 'en'
+    translation: 'English'
 }
 
 const pagesReducer = (state= INITIAL_STATE, action) => {

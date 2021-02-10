@@ -1,15 +1,16 @@
 import React, { useEffect, useState } from "react";
+import { connect } from "react-redux";
+import FormattedText from "../../../hooks/FormattedText";
 
 const imgAPI = "http://localhost:1337";
 
 const BlogPost = ({
-  id,
   slug,
   imgUrl,
   category,
   publishDate,
-  title,
-  description,
+  item,
+  translation,
 }) => {
   const event = new Date(publishDate);
 
@@ -31,8 +32,8 @@ const BlogPost = ({
   };
 
   useEffect(() => {
-    setNewDescription(sortedDescription(replaceLineBreak(description)))
-  }, [description])
+    setNewDescription(sortedDescription(replaceLineBreak( item[`Description_${translation}`] )))
+  }, [item])
 
   
 
@@ -64,7 +65,7 @@ const BlogPost = ({
           </div>
         </div>
         <h5>
-          <a href={`/blog/${slug}`}>{title}</a>
+          <a href={`/blog/${slug}`}><FormattedText objectName={item} extension="Title" /></a>
         </h5>
         <p href={`/blog/${slug}`}>{newDescription}</p>
         <div className="margin-top-20">
@@ -77,4 +78,9 @@ const BlogPost = ({
   );
 };
 
-export default BlogPost;
+
+                      const mapStateToProps = ({ pages }) => ({
+                        translation: pages.translation,
+                        });
+
+export default connect(mapStateToProps)( BlogPost)

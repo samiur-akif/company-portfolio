@@ -6,7 +6,8 @@ import {
   AccordionItemPanel,
   AccordionItemButton,
 } from "react-accessible-accordion";
-import 'react-accessible-accordion/dist/fancy-example.css';
+import "react-accessible-accordion/dist/fancy-example.css";
+import FormattedText from "../../hooks/FormattedText";
 
 const FAQ = ({ values }) => {
   return (
@@ -20,11 +21,19 @@ const FAQ = ({ values }) => {
                   <AccordionItem key={key}>
                     <AccordionItemHeading>
                       <AccordionItemButton>
-                        {item.Question}?
+                        {
+                          <FormattedText
+                            objectName={item}
+                            extension="Question"
+                          />
+                        }
+                        ?
                       </AccordionItemButton>
                     </AccordionItemHeading>
                     <AccordionItemPanel>
-                      <p>{item.Answer}</p>
+                      <p>
+                        <FormattedText objectName={item} extension="Answer" />
+                      </p>
                     </AccordionItemPanel>
                   </AccordionItem>
                 ))}

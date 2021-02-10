@@ -33,10 +33,8 @@ const ClientReviews = ({ values }) => {
             {values.map((item, key) => (
               <TestimonialBox
                 key={key}
-                review={item.Review_Text}
+                item={item}
                 imgUrl={item.Profile_Picture.url}
-                name={item.Name}
-                designation={item.Designation}
               />
             ))}
           </OwlCarousel>

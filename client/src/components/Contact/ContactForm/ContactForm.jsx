@@ -1,4 +1,5 @@
 import React from "react";
+import FormattedText from "../../../hooks/FormattedText";
 
 const ContactForm = ({values}) => {
   return (
@@ -49,7 +50,7 @@ const ContactForm = ({values}) => {
                 className="button button-lg button-radius button-outline-dark-2"
                 type="submit"
               >
-                {values[0].Contact_Button_Text}
+                <FormattedText objectName={values[0]} extension="Contact_Button_Text" />
               </button>
             </form>
             {/* Submit result */}

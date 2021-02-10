@@ -18,14 +18,20 @@
       "plugin": "upload",
       "required": false
     },
-    "Title": {
+    "Title_English": {
       "type": "string"
     },
-    "Description": {
+    "Description_English": {
       "type": "text"
     },
     "Link": {
       "type": "string"
+    },
+    "Title_Hebrew": {
+      "type": "string"
+    },
+    "Description_Hebrew": {
+      "type": "text"
     }
   }
 }

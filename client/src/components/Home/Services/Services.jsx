@@ -21,8 +21,7 @@ const Services = ({ values }) => {
                 <Service
                   key={key}
                   icon={item.Icon}
-                  title={item.Name}
-                  description={item.Description}
+                  item={item}
                 />
               ))
             : null}

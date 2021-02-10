@@ -8,10 +8,10 @@ const ServideDetails = ({values}) => {
             {
                 values.map((item, key) => {
                 if( (key+1) % 2 === 0  ){
-                    return <DetailsBox key={key} right={true} imgUrl={item.Image.url} boldHeading={item.Title} description={item.Description} link={item.Link} />
+                    return <DetailsBox key={key} right={true} imgUrl={item.Image.url} item={item}  link={item.Link} />
                 }
                 else{
-                    return <DetailsBox key={key} right={false} imgUrl={item.Image.url} boldHeading={item.Title} description={item.Description} link={item.Link} />
+                    return <DetailsBox key={key} right={false} imgUrl={item.Image.url} item={item} link={item.Link} />
                 }
             })
             } 

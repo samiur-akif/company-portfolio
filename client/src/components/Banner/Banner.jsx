@@ -1,4 +1,5 @@
 import React from "react";
+import FormattedText from "../../hooks/FormattedText";
 
 const imgAPI = "http://localhost:1337";
 
@@ -10,7 +11,9 @@ const Banner = ({ values }) => {
     >
       <div className="bg-black-06">
         <div className="container text-center">
-          <h1 className="font-weight-light">{values[0].title}</h1>
+          <h1 className="font-weight-light">
+            <FormattedText objectName={values[0]} extension="title" />
+          </h1>
         </div>
       </div>
     </div>

@@ -7,7 +7,7 @@ const TextSection = ({values}) => {
       <div className="container">
         <div className="row col-spacing-40">
           {
-              values.map((item, key) => <TextBox key={key} description={item.Description} />)
+              values.map((item, key) => <TextBox key={key} item={item} />)
           }
         </div>
       </div>

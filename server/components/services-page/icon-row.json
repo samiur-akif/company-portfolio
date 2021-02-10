@@ -2,14 +2,18 @@
   "collectionName": "components_services_page_icon_rows",
   "info": {
     "name": "Icon_Row",
-    "icon": "air-freshener"
+    "icon": "air-freshener",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "Icon": {
       "type": "string"
     },
-    "Name": {
+    "Name_English": {
+      "type": "string"
+    },
+    "Name_Hebrew": {
       "type": "string"
     }
   }

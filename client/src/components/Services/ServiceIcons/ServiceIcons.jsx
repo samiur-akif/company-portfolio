@@ -8,7 +8,7 @@ const ServiceIcons = ({values}) => {
         <div className="container">
           <div className="row text-center icon-4xl">
             {
-                values.map((item, key) => <IconBox key={key} title={item.Name} icon={item.Icon} />)
+                values.map((item, key) => <IconBox key={key} item={item} icon={item.Icon} />)
             }          
             
           </div>

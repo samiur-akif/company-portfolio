@@ -12,8 +12,7 @@ const Features = ({ values }) => {
                 <Feature
                   key={key}
                   icon={item.Icon}
-                  title={item.Name}
-                  description={item.Description}
+                  item={item}
                 />
               ))
             : null}

@@ -7,13 +7,13 @@
   },
   "options": {},
   "attributes": {
-    "Review_Text": {
+    "Review_Text_English": {
       "type": "text"
     },
-    "Name": {
-      "type": "text"
+    "Name_English": {
+      "type": "string"
     },
-    "Designation": {
+    "Designation_English": {
       "type": "string"
     },
     "Profile_Picture": {
@@ -26,6 +26,15 @@
       ],
       "plugin": "upload",
       "required": false
+    },
+    "Review_Text_Hebrew": {
+      "type": "text"
+    },
+    "Name_Hebrew": {
+      "type": "string"
+    },
+    "Designation_Hebrew": {
+      "type": "string"
     }
   }
 }

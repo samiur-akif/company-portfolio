@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
 import ReactMarkdown from "react-markdown";
+import { connect } from "react-redux";
 import { useParams } from "react-router-dom";
+import FormattedText from "../../hooks/FormattedText";
 import Header from '../Header/Header';
 
 const imgAPI = "http://localhost:1337";
 
-const SinglePost = () => {
+const SinglePost = ({translation}) => {
   const [postData, setPostData] = useState({});
   const { slug } = useParams();
   const [dateString, setDateString] = useState('');
@@ -29,7 +31,7 @@ const SinglePost = () => {
   useEffect(() => {
     if(Object.keys(postData).length){
       const searchTerm = "/uploads";
-      setDescription(replaceLineBreak(searchTerm, postData.Description));
+      setDescription(replaceLineBreak(searchTerm, postData[`Description_${translation}`] ));
     }
   }, [postData]);
   
@@ -37,23 +39,26 @@ const SinglePost = () => {
   return (
     <>
     <Header blackBack={true} />
-      <div className="section">
+    {  Object.keys(postData).length ? <>
+        <div className="section">
         <div className="container">
           <div className="row">
             <div className="col-12 col-md-10 offset-md-1">
-              <h2 className="font-weight-normal">{postData?.Title}</h2>
+              <h2 className="font-weight-normal">
+                <FormattedText objectName={postData} extension="Title" />
+                </h2>
               <ul className="list-inline-dash">
                 <li>
                   <a href="#">by Admin</a>
                 </li>
                 <li>
                   
-                  {postData?.categories?.length
+                  {postData.categories.length
                     ? postData.categories.map((item, key) => {
                         if (postData.categories.length - 1 === key) {
-                          return `${item.Name}`;
+                          return `${<FormattedText objectName={item} extension="Name" />}`
                         } else {
-                          return `${item.Name},  `;
+                          return `${<FormattedText objectName={item} extension="Name" />},  `;
                         }
                       })
                     : null}
@@ -70,7 +75,7 @@ const SinglePost = () => {
       </div>
       {/* Featured Image */}
       <div className="container">
-        <img src={`${imgAPI}${postData?.Image?.url}`} alt="" />
+        <img src={`${imgAPI}${postData.Image.url}`} alt="" />
       </div>
       {/* end container */}
       {/* end Featured Image */}
@@ -85,10 +90,16 @@ const SinglePost = () => {
           {/* end row */}
         </div>
         {/* end container */}
-      </div>
+      </div> </> : null
+    }
+      
       {/* end Post Content */}
     </>
   );
 };
 
-export default SinglePost;
+const mapStateToProps = ({ pages }) => ({
+  translation: pages.translation,
+});
+
+export default connect(mapStateToProps)( SinglePost);

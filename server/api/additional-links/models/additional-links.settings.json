@@ -2,7 +2,8 @@
   "kind": "collectionType",
   "collectionName": "additional_links",
   "info": {
-    "name": "Additional Links"
+    "name": "Additional Links",
+    "description": ""
   },
   "options": {
     "increments": true,
@@ -10,10 +11,13 @@
     "draftAndPublish": true
   },
   "attributes": {
-    "Name": {
+    "Link": {
       "type": "string"
     },
-    "Link": {
+    "Name_English": {
+      "type": "string"
+    },
+    "Name_Hebrew": {
       "type": "string"
     }
   }

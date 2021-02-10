@@ -5,6 +5,7 @@ import {Dropdown} from 'react-bootstrap'
 import Logo from "./Logo/Logo";
 import { updateTranslation } from "../../Redux/Pages/Pages/pages-action";
 import { connect } from "react-redux";
+import FormattedText from "../../hooks/FormattedText";
 
 
 const imgAPI = "http://localhost:1337";
@@ -40,10 +41,10 @@ const Header = ({blackBack, translation, updateTranslation}) => {
     
 }, [])
 
-  const NavElement = ({ name, link }) => (
+  const NavElement = ({ item, link }) => (
     <li className="nav-item">
       <a className="nav-link" href={link}>
-        {name}
+        <FormattedText objectName={item} extension="Name" />
       </a>
     </li>
   );
@@ -63,12 +64,7 @@ const Header = ({blackBack, translation, updateTranslation}) => {
           <ul className="nav">
             {menus.length
               ? menus.map((item, key) => {
-                  if(translation === 'en'){
-                    return <NavElement key={key} name={item.Name_English} link={item.Link} />
-                  }
-                  else if(translation === 'he'){
-                    return <NavElement key={key} name={item.Name_Hebrew} link={item.Link} />
-                  }
+                    return <NavElement key={key} item={item} link={item.Link} />
               })
               : null}
           </ul>
@@ -82,8 +78,8 @@ const Header = ({blackBack, translation, updateTranslation}) => {
   </Dropdown.Toggle>
 
   <Dropdown.Menu>
-    <Dropdown.Item href="#/action-1" onClick={ () => updateTranslation('en') }>English - en</Dropdown.Item>
-    <Dropdown.Item href="#/action-2" onClick={ () => updateTranslation('he') }>Hebrew - he</Dropdown.Item>
+    <Dropdown.Item href="#/action-1" onClick={ () => updateTranslation('English') }>English - en</Dropdown.Item>
+    <Dropdown.Item href="#/action-2" onClick={ () => updateTranslation('Hebrew') }>Hebrew - he</Dropdown.Item>
   </Dropdown.Menu>
 </Dropdown>
 

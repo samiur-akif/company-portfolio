@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 
-const FormattedText = ({translation, objectName, extension}) => {
+const FormattedText = ({translation, text}) => {
   return (
       <>
       {
