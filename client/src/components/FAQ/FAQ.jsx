@@ -7,13 +7,14 @@ import {
   AccordionItemButton,
 } from "react-accessible-accordion";
 import "react-accessible-accordion/dist/fancy-example.css";
+import { connect } from "react-redux";
 import FormattedText from "../../hooks/FormattedText";
 
-const FAQ = ({ values }) => {
+const FAQ = ({ values, translation }) => {
   return (
     <div className="section-lg">
       <div className="container">
-        <div className="row col-spacing-50">
+        <div className={`row col-spacing-50 ${translation === 'Hebrew' ? 'd-flex justify-content-end' : ''}`}>
           <div className="col-12 col-lg-6">
             {values.length ? (
               <Accordion>
@@ -46,4 +47,8 @@ const FAQ = ({ values }) => {
   );
 };
 
-export default FAQ;
+const mapStateToProps = ({ pages }) => ({
+  translation: pages.translation,
+});
+
+export default connect(mapStateToProps)(FAQ);

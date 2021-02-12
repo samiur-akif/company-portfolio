@@ -20,7 +20,7 @@ const PricingTable = ({ values, translation }) => {
           </div>
         </div>
         <div className="row">
-          {values.map((item, key) => {
+          { translation === 'English' ? values.map((item, key) => {
             if (key === 1) {
               return (
                 <PriceBox
@@ -40,7 +40,27 @@ const PricingTable = ({ values, translation }) => {
                 />
               );
             }
-          })}
+          }) :  values.map((item, key) => {
+            if (key === 1) {
+              return (
+                <PriceBox
+                  key={key}
+                  item={item}
+                  price={item.Price}
+                  recommended={true}
+                />
+              );
+            } else {
+              return (
+                <PriceBox
+                  key={key}
+                  item={item}
+                  price={item.Price}
+                  recommended={false}
+                />
+              );
+            }
+          })  }
         </div>
       </div>
     </div>

@@ -1,0 +1,24 @@
+.whatsapp-button{
+    display: flex !important;
+    flex-direction: column !important;
+    position: fixed !important;
+    bottom: 15px !important;
+    right: 25px !important;
+    z-index: 9999 !important;
+}
+
+._YLx_9{
+    position: relative !important;
+    bottom: auto !important;
+    right: auto !important;
+}
+
+.whatsapp-button.left{
+    display: flex !important;
+    flex-direction: column !important;
+    position: fixed !important;
+    bottom: 15px !important;
+    left: 25px !important;
+    right: auto !important;
+    z-index: 9999 !important;
+}

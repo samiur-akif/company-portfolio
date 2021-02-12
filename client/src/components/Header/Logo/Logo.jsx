@@ -12,7 +12,7 @@ const Logo = () => {
     }, []);
 
     return (
-        <div className="header-logo">
+        <div className="header-logo" style={{marginLeft: '20px'}}>
          
           <a href="/">
             <img class="logo-light" src={`${imgAPI}${logoUrl}`} alt="" /> 

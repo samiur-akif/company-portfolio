@@ -19,6 +19,8 @@ import ServiceIcons from "../../components/Services/ServiceIcons/ServiceIcons";
 import ContactForm from "../../components/Contact/ContactForm/ContactForm";
 import GoogleMap from "../../components/GoogleMap/GoogleMap";
 import Header from '../../components/Header/Header';
+import Spinner from '../../components/Spinner/Spinner';
+import Footer from '../../components/Footer/Footer';
 
 import { connect } from "react-redux";
 import { useParams } from "react-router-dom";
@@ -125,7 +127,9 @@ const Custom = ({ pageData }) => {
 
   return (
     <>
-      <Header />
+    {
+      Object.keys(pageData).length ? <> 
+         <Header />
       {notFound ? (
         <NotFound />
       ) : componentSquence.length ? (
@@ -134,8 +138,15 @@ const Custom = ({ pageData }) => {
             <title>{pageTitle}</title>
           </Helmet>
           {componentSquence.map((item) => item)}
+
         </>
       ) : null}
+      <Footer />
+      </>
+
+      : <Spinner />
+    }
+     
     </>
   );
 };

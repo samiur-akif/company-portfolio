@@ -3,6 +3,8 @@ import BlogHeader from "./BlogHeader/BlogHeader";
 import BlogPost from "./BlogPost/BlogPost";
 import Pagination from "./Pagination/Pagination";
 import Header from "../Header/Header";
+import Footer from "../Footer/Footer";
+import Spinner from "../Spinner/Spinner";
 
 const Blog = () => {
   const [posts, setPosts] = useState([]);
@@ -10,12 +12,12 @@ const Blog = () => {
   const postsPerPage = 3;
 
   useEffect(() => {
-      fetch("http://localhost:1337/posts")
-        .then((res) => res.json())
-        .then((data) => {
-          setPosts(data);
-        });
-  },[]);
+    fetch("http://localhost:1337/posts")
+      .then((res) => res.json())
+      .then((data) => {
+        setPosts(data);
+      });
+  }, []);
 
   const indexOfLastPost = currentPage * postsPerPage;
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
@@ -26,35 +28,43 @@ const Blog = () => {
 
   return (
     <>
-      <Header blackBack={true} />
-      <BlogHeader />
-      <div className="section">
-        <div className="container">
-          <div className="row">
-            <div className="col-12 col-sm-10 offset-sm-1 col-md-8 offset-md-2">
-              {/* Blog Posts */}
-              {currentPosts.length
-                ? currentPosts.map((item, key) => (
-                    <BlogPost
-                      key={key}
-                      item={item}
-                      slug={item.Slug}
-                      category={item.categories}
-                      imgUrl={item.Image.url}
-                      publishDate={item.published_at}
-                    />
-                  ))
-                : null}
-              <Pagination
-                postsPerPage={postsPerPage}
-                currentPage={currentPage}
-                totalPosts={posts.length}
-                paginate={paginate}
-              />
+      {" "}
+      {posts.length ? (
+        <>
+          <Header blackBack={true} />
+          <BlogHeader />
+          <div className="section">
+            <div className="container">
+              <div className="row">
+                <div className="col-12 col-sm-10 offset-sm-1 col-md-8 offset-md-2">
+                  {/* Blog Posts */}
+                  {currentPosts.length
+                    ? currentPosts.map((item, key) => (
+                        <BlogPost
+                          key={key}
+                          item={item}
+                          slug={item.Slug}
+                          category={item.categories}
+                          imgUrl={item.Image.url}
+                          publishDate={item.published_at}
+                        />
+                      ))
+                    : null}
+                  <Pagination
+                    postsPerPage={postsPerPage}
+                    currentPage={currentPage}
+                    totalPosts={posts.length}
+                    paginate={paginate}
+                  />
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
+          <Footer />
+        </>
+      ) : (
+        <Spinner />
+      )}
     </>
   );
 };

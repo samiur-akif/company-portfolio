@@ -3,7 +3,9 @@ import ReactMarkdown from "react-markdown";
 import { connect } from "react-redux";
 import { useParams } from "react-router-dom";
 import FormattedText from "../../hooks/FormattedText";
+import Footer from "../Footer/Footer";
 import Header from '../Header/Header';
+import Spinner from "../Spinner/Spinner";
 
 const imgAPI = "http://localhost:1337";
 
@@ -38,8 +40,9 @@ const SinglePost = ({translation}) => {
 
   return (
     <>
-    <Header blackBack={true} />
+    
     {  Object.keys(postData).length ? <>
+      <Header blackBack={true} />
         <div className="section">
         <div className="container">
           <div className="row">
@@ -87,13 +90,13 @@ const SinglePost = ({translation}) => {
               <ReactMarkdown>{description}</ReactMarkdown>
             </div>
           </div>
-          {/* end row */}
+         
         </div>
-        {/* end container */}
-      </div> </> : null
+        
+      </div> 
+      <Footer />
+      </> : <Spinner />
     }
-      
-      {/* end Post Content */}
     </>
   );
 };

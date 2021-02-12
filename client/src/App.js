@@ -60,7 +60,6 @@ function App({updatePagesData}) {
         <Route path="/blog/:slug" component={SinglePost} />
         <Route path="/:id" component={Custom} />
       </Switch>
-      <Footer />
       {
         popModelShow ? <PopUp item={popUpDatails} onClose={onClose} /> : null
       }
