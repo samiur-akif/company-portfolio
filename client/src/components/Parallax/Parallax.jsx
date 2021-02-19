@@ -2,13 +2,11 @@ import React from "react";
 import { connect } from "react-redux";
 import FormattedText from "../../hooks/FormattedText";
 
-const imgAPI = "http://localhost:1337";
-
 const Parallax = ({ values, translation }) => {  
     return (
         <div
         className="section-xl bg-image parallax"
-        data-bg-src={`${imgAPI}${values[0].Banner_Image.url}`}
+        data-bg-src={`${process.env.REACT_APP_BACKEND_URL}${values[0].Banner_Image.url}`}
       >
         {
           translation === 'Hebrew' ? <div className="bg-black-05">

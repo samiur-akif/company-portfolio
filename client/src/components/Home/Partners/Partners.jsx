@@ -39,7 +39,7 @@ const Partners = ({ values }) => {
   };
 
   return (
-    <div className="section-sm bg-grey-lighter">
+    <div className="section-sm bg-grey-lighter" dir="ltr">
       <div className="container text-center">
         {
           values[0]["Images"].length && display ?

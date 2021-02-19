@@ -8,9 +8,6 @@ const Services = ({ values }) => {
         <div className="margin-bottom-70">
           <div className="row">
             <div className="col-12 col-md-10 col-lg-8 col-xl-7">
-              <h3 className="font-weight-light">
-                Vivamus elementum semper nisi. Aenean vulputate eleifend tellus.
-              </h3>
             </div>
           </div>
           {/* end row */}

@@ -12,7 +12,7 @@ const Blog = () => {
   const postsPerPage = 3;
 
   useEffect(() => {
-    fetch("http://localhost:1337/posts")
+    fetch(`${process.env.REACT_APP_BACKEND_URL}/posts`)
       .then((res) => res.json())
       .then((data) => {
         setPosts(data);

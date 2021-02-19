@@ -13,9 +13,6 @@
     "Price": {
       "type": "float"
     },
-    "Subscription_Type_English": {
-      "type": "string"
-    },
     "Features_English": {
       "type": "text"
     },
@@ -25,14 +22,17 @@
     "Package_Name_Hebrew": {
       "type": "string"
     },
-    "Subscription_Type_Hebrew": {
-      "type": "string"
-    },
     "Features_Hebrew": {
       "type": "text"
     },
     "Purchase_Button_Text_Hebrew": {
       "type": "string"
+    },
+    "Two_Year_Package_Price": {
+      "type": "float"
+    },
+    "Three_Year_Package_Price": {
+      "type": "float"
     }
   }
 }

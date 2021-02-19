@@ -2,8 +2,6 @@ import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import FormattedText from "../../../hooks/FormattedText";
 
-const imgAPI = "http://localhost:1337";
-
 const BlogPost = ({
   slug,
   imgUrl,
@@ -46,7 +44,7 @@ const BlogPost = ({
     <div className="margin-bottom-50">
       <div className="hoverbox-8">
         <a href={`/blog/${slug}`}>
-          <img src={`${imgAPI}${imgUrl}`} alt="" />
+          <img src={`${process.env.REACT_APP_BACKEND_URL}${imgUrl}`} alt="" />
         </a>
       </div>
       <div className="margin-top-30">

@@ -1,0 +1,38 @@
+import React, { useEffect, useState } from "react";
+import CircularProgress from "@material-ui/core/CircularProgress";
+import "./DomainAvailability.css";
+
+const DomainAvailability = ({ domainName, handleNext }) => {
+  const [domainAvailability, setDomainAvailability] = useState("");
+
+  useEffect(() => {
+    fetch(`https://domain-availability.whoisxmlapi.com/api/v1?apiKey=at_VlPCpQzwEL7edOXlAENEGfYQNhMWm&domainName=${domainName}&credits=DA`)
+      .then((res) => res.json())
+      .then((data) => setDomainAvailability(data.DomainInfo.domainAvailability));
+  }, []);
+
+  return (
+    <div className="row domain-availablity-check">
+      {domainAvailability ? (
+        <div className="domain-availablity-check-items col-md-12 col-lg-12">
+          {domainAvailability === 'AVAILABLE' ? (
+            <>
+              <p style={{ color: "#078021" }}>
+                Congratulation, your {domainName} is available.
+              </p>
+              <button onClick={() => handleNext('custom')}>Next</button>
+            </>
+          ) : domainAvailability === 'UNAVAILABLE' ? (
+            <p style={{ color: "#d31f1f" }}>
+              Sorry, your {domainName} is not available.
+            </p>
+          ) : null }
+        </div>
+      ) : (
+        <CircularProgress color="inherit" />
+      )}
+    </div>
+  );
+};
+
+export default DomainAvailability;

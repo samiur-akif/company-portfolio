@@ -5,24 +5,41 @@ import "react-whatsapp-widget/dist/index.css";
 import { connect } from "react-redux";
 
 const Whatsapp = ({ translation }) => {
-  const [number, setNumber] = useState("");
+  const [whatsAppData, setWhatsAppData] = useState("");
   useEffect(() => {
-    fetch("http://localhost:1337/whats-app")
+    fetch(`${process.env.REACT_APP_BACKEND_URL}/whats-app`)
       .then((res) => res.json())
-      .then((data) => setNumber(data.Phone));
+      .then((data) => setWhatsAppData(data));
   }, []);
 
   return (
     <>
-      {number ? (
+      {Object.keys(whatsAppData).length ? (
         <>
           {translation === "Hebrew" ? (
-            <div className="whatsapp-button left">
-              <WhatsAppWidget phoneNumber={number} />
+            <div
+              className="whatsapp-button left"
+              dir="rtl"
+            >
+              <WhatsAppWidget
+                phoneNumber={whatsAppData.Phone}
+                textReplyTime={whatsAppData[`Reply_Delay_Text_${translation}`]}
+                companyName={whatsAppData[`CompanyName_${translation}`]}
+                message={whatsAppData[`Initial_Message_${translation}`]}
+                sendButton={whatsAppData[`Sendbutton_Text_${translation}`]}
+              />
             </div>
           ) : (
-            <div className="whatsapp-button">
-              <WhatsAppWidget phoneNumber={number} />
+            <div
+              className="whatsapp-button"
+            >
+              <WhatsAppWidget
+                phoneNumber={whatsAppData.Phone}
+                textReplyTime={whatsAppData[`Reply_Delay_Text_${translation}`]}
+                companyName={whatsAppData[`CompanyName_${translation}`]}
+                message={whatsAppData[`Initial_Message_${translation}`]}
+                sendButton={whatsAppData[`Sendbutton_Text_${translation}`]}
+              />
             </div>
           )}
         </>

@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react";
 import parse from "html-react-parser";
-import PayPalButton from '../../PayPal/PayPalButton';
-import PopOver from "./PopOver";
 import FormattedText from "../../../hooks/FormattedText";
 import { connect } from "react-redux";
 
@@ -10,11 +8,13 @@ const PriceBox = ({
   recommended,
   price,
   translation,
+  handleCart
 }) => {
   const [description, setDescription] = useState("");
   const [clientId, setClientId] = useState('');
   const [popModel, setPopModel] = useState(false);
-  const [popMessage, setPopMessage] = useState('')
+  const [popMessage, setPopMessage] = useState('');
+
 
   const replaceLineBreak = (search, current) => {
     const substring = new RegExp(search, "gi");
@@ -28,7 +28,7 @@ const PriceBox = ({
   }, [item, translation]);
 
   useEffect(() => {
-    fetch("http://localhost:1337/pay-pal")
+    fetch(`${process.env.REACT_APP_BACKEND_URL}/pay-pal`)
     .then((res) => res.json())
     .then((data) => setClientId(data.Client_Id));
 
@@ -54,6 +54,8 @@ const PriceBox = ({
     setPopMessage('');
   }
 
+  
+
   return (
     <div className="col-12 col-lg-4">
       <div
@@ -67,20 +69,21 @@ const PriceBox = ({
         <div className="price">
           <h1 className="font-weight-normal">
             {price}
-            <span>/<FormattedText objectName={item} extension="Subscription_Type" /></span>
+            /mo
           </h1>
         </div>
         <div className="price-features">
           <ul>{description}</ul>
         </div>
         <br/>
-        {
+        <button className="button button-md button-grey button-rounded" onClick={() => handleCart(item)}>Order Now</button>
+        {/* {
         
         clientId ? <PayPalButton price={price} clientId={clientId} onCancel={onCancel} onSuccess={onSuccess} onError={onError} /> : null
         }
         {
           popModel && popMessage ? <PopOver message={popMessage} onClose={popModelClose} /> : null
-        }
+        } */}
       </div>
     </div>
   );

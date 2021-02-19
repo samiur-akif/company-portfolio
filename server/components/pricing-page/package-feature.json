@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_pricing_page_package_features",
+  "info": {
+    "name": "Package-Feature",
+    "icon": "asterisk"
+  },
+  "options": {},
+  "attributes": {
+    "Feature_Name": {
+      "type": "string"
+    },
+    "Quota": {
+      "type": "string"
+    }
+  }
+}

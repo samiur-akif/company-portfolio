@@ -7,14 +7,12 @@ import Footer from "../Footer/Footer";
 import Header from '../Header/Header';
 import Spinner from "../Spinner/Spinner";
 
-const imgAPI = "http://localhost:1337";
-
 const SinglePost = ({translation}) => {
   const [postData, setPostData] = useState({});
   const { slug } = useParams();
   const [dateString, setDateString] = useState('');
   useEffect(() => {
-    fetch(`http://localhost:1337/posts?Slug=${slug}`)
+    fetch(`${process.env.REACT_APP_BACKEND_URL}/posts?Slug=${slug}`)
       .then((res) => res.json())
       .then((data) => {
         setPostData(data[0]);
@@ -26,7 +24,7 @@ const SinglePost = ({translation}) => {
 
   const replaceLineBreak = (search, current) => {
     const substring = new RegExp(search, "gi");
-    const result = current.replace(substring, `http://localhost:1337/uploads`);
+    const result = current.replace(substring, `${process.env.REACT_APP_BACKEND_URL}/uploads`);
     return result;
   };
 
@@ -78,7 +76,7 @@ const SinglePost = ({translation}) => {
       </div>
       {/* Featured Image */}
       <div className="container">
-        <img src={`${imgAPI}${postData.Image.url}`} alt="" />
+        <img src={`${process.env.REACT_APP_BACKEND_URL}${postData.Image.url}`} alt="" />
       </div>
       {/* end container */}
       {/* end Featured Image */}

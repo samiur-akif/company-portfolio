@@ -1,25 +1,26 @@
 import React, { useEffect, useState } from "react";
+import './Header.css'
 import SocialLinks from "./SocialLinks/SocialLinks";
 import { Helmet } from "react-helmet";
 import { Dropdown } from "react-bootstrap";
 import Logo from "./Logo/Logo";
-import { updateTranslation } from "../../Redux/Pages/Pages/pages-action";
+import { updateTranslation } from "../../Redux/Pages/pages-action";
 import { connect } from "react-redux";
 import FormattedText from "../../hooks/FormattedText";
 
-const imgAPI = "http://localhost:1337";
 
 const Header = ({ blackBack, translation, updateTranslation }) => {
   const [menus, setMenus] = useState([]);
   const [handleShow, setHandleShow] = useState(false);
   const [favicon, setFavicon] = useState("");
+  const [togle, setTogle] = useState(false)
 
   useEffect(() => {
-    fetch("http://localhost:1337/menus")
+    fetch(`${process.env.REACT_APP_BACKEND_URL}/menus`)
       .then((res) => res.json())
       .then((data) => setMenus(data));
 
-    fetch("http://localhost:1337/favicon")
+    fetch(`${process.env.REACT_APP_BACKEND_URL}/favicon`)
       .then((res) => res.json())
       .then((data) => setFavicon(data.Favicon.url));
   }, []);
@@ -32,18 +33,22 @@ const Header = ({ blackBack, translation, updateTranslation }) => {
         setHandleShow(false);
       }
     });
-    return () => {
+    /* return () => {
       window.removeEventListener("scroll");
-    };
+    }; */
   }, []);
 
-  const NavElement = ({ item, link }) => (
-    <li className="nav-item">
+  const NavElement = ({ item, link, margin }) => (
+    <li className="nav-item" style={{marginLeft: '14px'}}>
       <a className="nav-link" href={link}>
         <FormattedText objectName={item} extension="Name" />
       </a>
     </li>
   );
+
+  const handleToggle = () => {
+    setTogle(!togle)
+  }
 
   return (
     <>
@@ -52,7 +57,7 @@ const Header = ({ blackBack, translation, updateTranslation }) => {
           <link
             rel="icon"
             type="image/png"
-            href={`${imgAPI}${favicon}`}
+            href={`${process.env.REACT_APP_BACKEND_URL}${favicon}`}
             sizes="64x64"
           />
         </Helmet>
@@ -62,42 +67,9 @@ const Header = ({ blackBack, translation, updateTranslation }) => {
         style={handleShow || blackBack ? { background: "#262626" } : {}}
       >
         <div className="container">
-          {translation === "Hebrew" ? (
-            <>
-              <button className="header-toggle">
-                <span />
-              </button>
-
-              <Dropdown>
-                <Dropdown.Toggle
-                  id="dropdown-basic"
-                  style={{
-                    background: "transparent",
-                    marginLeft: "12px",
-                    border: "none",
-                  }}
-                >
-                  {translation}
-                </Dropdown.Toggle>
-
-                <Dropdown.Menu>
-                  <Dropdown.Item
-                    href="#/action-1"
-                    onClick={() => updateTranslation("English")}
-                  >
-                    English - en
-                  </Dropdown.Item>
-                  <Dropdown.Item
-                    href="#/action-2"
-                    onClick={() => updateTranslation("Hebrew")}
-                  >
-                    Hebrew - he
-                  </Dropdown.Item>
-                </Dropdown.Menu>
-              </Dropdown>
-
-              <SocialLinks />
-              <div className="header-menu">
+            
+             <Logo />
+              <div className={`header-menu ${togle ? 'show' : ''}`}>
                 <ul className="nav">
                   {menus.length
                     ? menus.map((item, key) => {
@@ -107,24 +79,7 @@ const Header = ({ blackBack, translation, updateTranslation }) => {
                       })
                     : null}
                 </ul>
-              </div>
 
-              <Logo />
-            </>
-          ) : (
-            <>
-              <Logo />
-
-              <div className="header-menu">
-                <ul className="nav">
-                  {menus.length
-                    ? menus.map((item, key) => {
-                        return (
-                          <NavElement key={key} item={item} link={item.Link} />
-                        );
-                      })
-                    : null}
-                </ul>
               </div>
 
               <SocialLinks />
@@ -156,12 +111,11 @@ const Header = ({ blackBack, translation, updateTranslation }) => {
                   </Dropdown.Item>
                 </Dropdown.Menu>
               </Dropdown>
+            
 
-              <button className="header-toggle">
+              <button className={`header-toggle ${togle ? 'toggle-close' : ''}`} onClick={handleToggle}>
                 <span />
               </button>
-            </>
-          )}
         </div>
 
         {/* end container */}

@@ -4,8 +4,6 @@ import { Container, Row } from "react-bootstrap";
 import "./MainBanner.css";
 import FormattedText from "../../../hooks/FormattedText";
 
-const imgAPI = "http://localhost:1337";
-
 const MainBanner = ({ values }) => {
 
   return (
@@ -18,7 +16,7 @@ const MainBanner = ({ values }) => {
                 <Carousel.Item key={key}>
                   <img
                     className="d-block w-100"
-                    src={`${imgAPI}${item?.Image?.url}`}
+                    src={`${process.env.REACT_APP_BACKEND_URL}${item?.Image?.url}`}
                     alt="Slider"
                   />
                   <Carousel.Caption>

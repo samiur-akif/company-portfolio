@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "web_hosting_packages",
+  "info": {
+    "name": "Web Hosting Packages",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "Package_Name": {
+      "type": "string"
+    },
+    "Features": {
+      "type": "dynamiczone",
+      "components": [
+        "pricing-page.package-feature"
+      ]
+    }
+  }
+}

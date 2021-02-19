@@ -1,7 +1,6 @@
 import React from "react";
 import FormattedText from "../../hooks/FormattedText";
 
-const imgAPI = "http://localhost:1337";
 
 const TestimonialBox = ({ imgUrl, item }) => {
   return (
@@ -11,7 +10,7 @@ const TestimonialBox = ({ imgUrl, item }) => {
       </p>
       <img
         className="margin-bottom-20"
-        src={`${imgAPI}${imgUrl}`}
+        src={`${process.env.REACT_APP_BACKEND_URL}${imgUrl}`}
         alt=""
         style={{ objectFit: "contain" }}
       />

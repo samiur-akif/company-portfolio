@@ -7,6 +7,14 @@
     z-index: 9999 !important;
 }
 
+.whatsapp-button ._1bpcM {
+    background-color: #24d366;
+}
+
+.whatsapp-button ._1bpcM svg{
+    color: #fff;
+}
+
 ._YLx_9{
     position: relative !important;
     bottom: auto !important;

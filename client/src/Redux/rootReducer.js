@@ -1,11 +1,13 @@
 import {combineReducers} from 'redux';
-import pagesReducer from './Pages/Pages/pages-reducer';
-import aboutReducer from './Pages/About/about-reducer';
+import pagesReducer from './Pages/pages-reducer';
+import domainReducer from './Domain/domain-reducer';
+import cartReducer from './Cart/cart-reducer';
 
 
 const rootReducer = combineReducers({
     pages: pagesReducer,
-    about: aboutReducer
+    domain: domainReducer,
+    cart: cartReducer
 })
 
 export default rootReducer;

@@ -1,7 +1,6 @@
 import React from "react";
 import FormattedText from "../../../hooks/FormattedText";
 
-const imgAPI = "http://localhost:1337";
 
 const DetailsBox = ({
   imgUrl,
@@ -20,7 +19,7 @@ const DetailsBox = ({
         <a href={link}>
           <img
             className="border-radius box-shadow-with-hover"
-            src={`${imgAPI}${imgUrl}`}
+            src={`${process.env.REACT_APP_BACKEND_URL}${imgUrl}`}
             alt=""
           />
         </a>

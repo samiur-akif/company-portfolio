@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
+import './SocialLinks.css'
 
 const SocialLinks = () => {
   const [socialLinks, setSocialLinks] = useState([]);
   
   useEffect(() => {
-    fetch("http://localhost:1337/social-links")
+    fetch(`${process.env.REACT_APP_BACKEND_URL}/social-links`)
       .then((res) => res.json())
       .then((data) => setSocialLinks(data));
   }, []);

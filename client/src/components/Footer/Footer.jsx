@@ -10,11 +10,11 @@ const Footer = ({ translation }) => {
   const [additionalLinks, setAdditionalLinks] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:1337/useful-links")
+    fetch(`${process.env.REACT_APP_BACKEND_URL}/useful-links`)
       .then((res) => res.json())
       .then((data) => setUsefulLinks(data));
 
-    fetch("http://localhost:1337/additional-links")
+    fetch(`${process.env.REACT_APP_BACKEND_URL}/additional-links`)
       .then((res) => res.json())
       .then((data) => setAdditionalLinks(data));
   }, []);

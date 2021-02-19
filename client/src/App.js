@@ -1,25 +1,29 @@
 import React, { useEffect, useState } from 'react';
 import {Route, Switch} from 'react-router-dom';
-import Footer from './components/Footer/Footer';
 import { connect } from 'react-redux';
-import { updatePagesData } from './Redux/Pages/Pages/pages-action';
+import { updatePagesData } from './Redux/Pages/pages-action';
 import Custom from './pages/Custom/Custom';
 import Blog from './components/Blog/Blog';
 import SinglePost from './components/SinglePost/SinglePost';
 import Whatsapp from './components/Whatsapp/Whatsapp';
 import PopUp from './components/PopUp/PopUp';
+import Domain from './pages/Domain/Domain';
+import Checkout from './pages/Checkout/Checkout';
+import Cart from './pages/Cart/Cart';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './assets/css/style.css';
 import './App.css';
 
-function App({updatePagesData}) {
+function App({updatePagesData, translation}) {
 
   const [popModelShow, setPopModelShow] = useState(false);
   const [popUpDatails, setPopUpDatails] = useState({});
+  const [rtlSetup, setRtlSetup] = useState({'dir': 'ltr'})
+
 
   useEffect(() => {
-    const dataFetching = () => fetch('http://localhost:1337/pages')
+    const dataFetching = () => fetch(`${process.env.REACT_APP_BACKEND_URL}/pages`)
     .then(res => res.json())
     .then(data => {
       updatePagesData(data)
@@ -32,7 +36,16 @@ function App({updatePagesData}) {
   })
 
   useEffect(() => {
-    fetch('http://localhost:1337/popup')
+    if(translation === 'Hebrew'){
+      setRtlSetup({'dir': 'rtl'})
+    }
+    else{
+      setRtlSetup({'dir': 'ltr'})
+    }
+  }, [translation])
+
+  useEffect(() => {
+    fetch(`${process.env.REACT_APP_BACKEND_URL}/popup`)
     .then(res => res.json())
     .then(data => {
       setPopUpDatails(data)
@@ -53,24 +66,31 @@ function App({updatePagesData}) {
   }
  
   return (
-    <>
+    <div className="hero" {...rtlSetup}>
       <Switch>
         <Route path="/" exact component={Custom} />
         <Route path="/blog" exact component={Blog} />
         <Route path="/blog/:slug" component={SinglePost} />
+        <Route path="/domain" exact component={Domain} />
+        <Route path="/cart" exact component={Cart} />
+        <Route path="/checkout" exact component={Checkout} />
         <Route path="/:id" component={Custom} />
+        
       </Switch>
       {
         popModelShow ? <PopUp item={popUpDatails} onClose={onClose} /> : null
       }
       <Whatsapp />
-     </> 
+     </div> 
   );
 }
 
+const mapStateToProps = ({pages }) => ({
+  translation: pages.translation
+});
 
 const mapDispatchToProps = dispatch => ({
   updatePagesData: (data) => dispatch(updatePagesData(data))
 })
 
-export default connect(null, mapDispatchToProps)(App);
+export default connect(mapStateToProps , mapDispatchToProps)(App);

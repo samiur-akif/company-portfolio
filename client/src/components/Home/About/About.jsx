@@ -2,8 +2,6 @@ import React from "react";
 import { connect } from "react-redux";
 import FormattedText from "../../../hooks/FormattedText";
 
-const imgAPI = "http://localhost:1337";
-
 const About = ({ values, translation }) => {
   return (
     <div className="section">
@@ -35,7 +33,7 @@ const About = ({ values, translation }) => {
               <div className="col-12 col-lg-6">
                 <img
                   className="border-radius"
-                  src={`${imgAPI}${values[0].About_Small_Image.url}`}
+                  src={`${process.env.REACT_APP_BACKEND_URL}${values[0].About_Small_Image.url}`}
                   alt=""
                 />
               </div>
@@ -45,7 +43,7 @@ const About = ({ values, translation }) => {
               <div className="col-12 col-lg-6">
                 <img
                   className="border-radius"
-                  src={`${imgAPI}${values[0].About_Small_Image.url}`}
+                  src={`${process.env.REACT_APP_BACKEND_URL}${values[0].About_Small_Image.url}`}
                   alt=""
                 />
               </div>
