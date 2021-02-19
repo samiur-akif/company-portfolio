@@ -3,11 +3,11 @@ import CircularProgress from "@material-ui/core/CircularProgress";
 import "./DomainAvailability.css";
 import { connect } from "react-redux";
 
-const DomainAvailability = ({ domainName, handleNext,translation }) => {
+const DomainAvailability = ({ domainName, handleNext,translation, clientAPI }) => {
   const [domainAvailability, setDomainAvailability] = useState("");
 
   useEffect(() => {
-    fetch(`https://domain-availability.whoisxmlapi.com/api/v1?apiKey=at_VlPCpQzwEL7edOXlAENEGfYQNhMWm&domainName=${domainName}&credits=DA`)
+    fetch(`https://domain-availability.whoisxmlapi.com/api/v1?apiKey=${clientAPI}&domainName=${domainName}&credits=DA`)
       .then((res) => res.json())
       .then((data) => setDomainAvailability(data.DomainInfo.domainAvailability));
   }, []);

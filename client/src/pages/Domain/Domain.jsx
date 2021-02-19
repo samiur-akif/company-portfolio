@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
 import { useHistory } from "react-router-dom";
 import Footer from "../../components/Footer/Footer";
@@ -21,6 +21,7 @@ const Domain = ({
   const [searchStatus, setSearchStatus] = useState(false);
   const [customDomainName, setCustomDomainName] = useState("");
   const [userDomainName, setUserDomainName] = useState("");
+  const [domainClientAPI, setDomainClientAPI] = useState('')
   let history = useHistory();
   const handleCustomDomain = (event) => {
     setCustomDomainName(event.target.value);
@@ -50,6 +51,12 @@ const Domain = ({
       history.push("/cart");
     }
   };
+
+  useEffect(() => {
+    fetch(`${process.env.REACT_APP_BACKEND_URL}/domain-availability`)
+    .then(res => res.json())
+    .then(data => setDomainClientAPI(data.API))
+  }, [])
 
   return (
     <>
@@ -151,6 +158,7 @@ const Domain = ({
               <DomainAvailability
                 domainName={customDomainName}
                 handleNext={handleNext}
+                clientAPI={domainClientAPI}
               />
             ) : null}
           </>
