@@ -118,7 +118,7 @@ const Domain = ({
                 
               </div>
               <div className="choose-box-middle col-md-1 col-lg-1">
-                <p>or</p>
+                <p>{translation === 'Hebrew' ? 'אוֹ' : 'or' }</p>
               </div>
               <div className="domain-choose-box col-md-5 col-lg-5">
                 {translation === "Hebrew" ? (

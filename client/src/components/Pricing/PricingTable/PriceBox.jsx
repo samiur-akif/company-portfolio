@@ -11,11 +11,6 @@ const PriceBox = ({
   handleCart
 }) => {
   const [description, setDescription] = useState("");
-  const [clientId, setClientId] = useState('');
-  const [popModel, setPopModel] = useState(false);
-  const [popMessage, setPopMessage] = useState('');
-
-
   const replaceLineBreak = (search, current) => {
     const substring = new RegExp(search, "gi");
     const result = current.replace(substring, `<br />`);
@@ -26,33 +21,6 @@ const PriceBox = ({
     const searchTerm = "\n";
     setDescription(parse(replaceLineBreak(searchTerm, item[`Features_${translation}`] )));
   }, [item, translation]);
-
-  useEffect(() => {
-    fetch(`${process.env.REACT_APP_BACKEND_URL}/pay-pal`)
-    .then((res) => res.json())
-    .then((data) => setClientId(data.Client_Id));
-
-  }, [])
-
-  const onSuccess = () => {
-    setPopModel(true);
-    setPopMessage("Payment Successful. Thanks for your purchase");
-  }
-
-  const onError = () => {
-    setPopModel(true);
-    setPopMessage("Payment Unsuccessful. Something went wrong please try again");
-  }
-
-  const onCancel = () => {
-    setPopModel(true);
-    setPopMessage("Payment Canceled. Please try again.")
-  }
-
-  const popModelClose = () => {
-    setPopModel(false);
-    setPopMessage('');
-  }
 
   
 
@@ -66,7 +34,7 @@ const PriceBox = ({
         <h6 className="font-weight-normal">
           <FormattedText objectName={item} extension="Package_Name" />
         </h6>
-        <div className="price">
+        <div className="price" dir="ltr">
           <h1 className="font-weight-normal">
             {price}
             /mo

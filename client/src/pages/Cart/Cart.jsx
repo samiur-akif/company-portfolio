@@ -62,9 +62,8 @@ const Cart = ({
         updateHostingPack({ id: "Billing_Year", value: 1 });
       }
       updateHostingPack({ id: "SSL", value: SSL });
-    updateHostingPack({ id: "DedicatedIp", value: dedicatedIp });
-    } 
-    
+      updateHostingPack({ id: "DedicatedIp", value: dedicatedIp });
+    }
   }, [billingBox, SSL, dedicatedIp]);
 
   const replaceLineBreak = (search, current) => {
@@ -98,10 +97,22 @@ const Cart = ({
         {cartItems.length ? (
           <>
             {" "}
-            <h1>{translation === 'Hebrew' ? 'הגדר את חבילת אירוח האתרים' : 'Configure Web Hosting Package'}</h1>
+            <h1>
+              {translation === "Hebrew"
+                ? "הגדר את חבילת אירוח האתרים"
+                : "Configure Web Hosting Package"}
+            </h1>
             <div className="row">
-              <div className="col-md-8 col-lg-8 billing-years">
-                <h3>{translation === 'Hebrew' ? 'בחר מחזור חיוב' : 'Choose Billing Cycle'}</h3>
+              <div
+                className={`col-md-8 col-lg-8 billing-years ${
+                  translation === "Hebrew" ? "offset-md-1 offset-lg-1" : ""
+                }`}
+              >
+                <h3>
+                  {translation === "Hebrew"
+                    ? "בחר מחזור חיוב"
+                    : "Choose Billing Cycle"}
+                </h3>
                 <div className="row billing-cycle">
                   <CartBox
                     price={cartItems[0].Three_Year_Package_Price}
@@ -127,12 +138,21 @@ const Cart = ({
                 </div>
               </div>
               {hostingPack ? (
-                <div className="col-md-3 col-lg-3 offset-md-1 offset-lg-1 hosting-pack">
+                <div
+                  className={`col-md-3 col-lg-3 hosting-pack ${
+                    translation === "Hebrew" ? "" : "offset-md-1 offset-lg-1"
+                  }  `}
+                >
                   <h3 className="text-center">
-                    <FormattedText objectName={hostingPack} extension="Package_Name" />
+                    <FormattedText
+                      objectName={hostingPack}
+                      extension="Package_Name"
+                    />
                   </h3>
                   <ul>{description}</ul>
-                  <button onClick={handleCart}>{ translation === 'Hebrew' ? 'לְהַמשִׁיך' : 'Continue'}</button>
+                  <button onClick={handleCart}>
+                    {translation === "Hebrew" ? "לְהַמשִׁיך" : "Continue"}
+                  </button>
                 </div>
               ) : null}
             </div>
@@ -141,10 +161,16 @@ const Cart = ({
                 {Object.keys(hostingExtra).length ? (
                   <>
                     {" "}
-                    <h3>{ translation === 'Hebrew' ? 'הגדר את החבילה' : 'Configure Package'}</h3>
+                    <h3>
+                      {translation === "Hebrew"
+                        ? "הגדר את החבילה"
+                        : "Configure Package"}
+                    </h3>
                     <div className="configure-box">
                       <p className="ip-para">
-                      { translation === 'Hebrew' ? 'האם ברצונך להוסיף כתובת IP ייעודית?' : 'Would you like to add a Dedicated IP address?'}
+                        {translation === "Hebrew"
+                          ? "האם ברצונך להוסיף כתובת IP ייעודית?"
+                          : "Would you like to add a Dedicated IP address?"}
                       </p>
                       <div
                         className={`dedicated-ip ${
@@ -165,15 +191,19 @@ const Cart = ({
                               ></i>
                             ) : null}
                           </div>
-                          YES!
+                          {translation === "Hebrew" ? "כן!" : "YES!"}
                         </h2>
                         <p>
-                        { translation === 'Hebrew' ? 'מומלץ למשלוח דוא"ל הטוב ביותר' : 'Recommended for best Email Delivery'} $
-                          {hostingExtra.Dedicated_IP_Price} USD
+                          {translation === "Hebrew"
+                            ? 'מומלץ למשלוח דוא"ל הטוב ביותר'
+                            : "Recommended for best Email Delivery"}{" "}
+                          ${hostingExtra.Dedicated_IP_Price} USD
                         </p>
                       </div>
                       <p className="ssl-para">
-                      { translation === 'Hebrew' ? 'תצורת אישורי SSL (https)' : 'SSL Certificates Configuration (https)'}
+                        {translation === "Hebrew"
+                          ? "תצורת אישורי SSL (https)"
+                          : "SSL Certificates Configuration (https)"}
                       </p>
                       <div className="ssl-select">
                         <div className="row">
@@ -190,8 +220,9 @@ const Cart = ({
                                     SSL === "FREE" ? "active" : ""
                                   }`}
                                 ></div>
-                                { translation === 'Hebrew' ? 'בואו להצפין SSL אוטומטי - לכל הדומיינים / תת-דומיינים - בחינם!' : 'Let\'s Encrypt Auto SSL - For All Domains/Sub-Domains - FREE!'}
-                                
+                                {translation === "Hebrew"
+                                  ? "בואו להצפין SSL אוטומטי - לכל הדומיינים / תת-דומיינים - בחינם!"
+                                  : "Let's Encrypt Auto SSL - For All Domains/Sub-Domains - FREE!"}
                               </h2>
                               <p className="align-items-end">$0.00 USD</p>
                             </div>
@@ -209,8 +240,9 @@ const Cart = ({
                                     SSL === "PAID" ? "active" : ""
                                   }`}
                                 ></div>
-                                { translation === 'Hebrew' ? 'בואו להצפין SSL אוטומטי + GlobalSign Wildcard SSL (הטוב ביותר לאתרי מסחר אלקטרוני / עסקי)' : 'Let\'s Encrypt Auto SSL + GlobalSign Wildcard SSL (Best For eCommerce/Business Websites)'}
-                                
+                                {translation === "Hebrew"
+                                  ? "בואו להצפין SSL אוטומטי + GlobalSign Wildcard SSL (הטוב ביותר לאתרי מסחר אלקטרוני / עסקי)"
+                                  : "Let's Encrypt Auto SSL + GlobalSign Wildcard SSL (Best For eCommerce/Business Websites)"}
                               </h2>
                               <p>${hostingExtra.SSL_Premium_Price} USD</p>
                             </div>
@@ -224,9 +256,11 @@ const Cart = ({
             </div>{" "}
           </>
         ) : (
-          <h1 className="text-center" style={{marginBottom: '600px'}}>
-            { translation === 'Hebrew' ? 'העגלה שלך ריקה.' : 'Your Cart is Empty.'}
-            </h1>
+          <h1 className="text-center" style={{ marginBottom: "600px" }}>
+            {translation === "Hebrew"
+              ? "העגלה שלך ריקה."
+              : "Your Cart is Empty."}
+          </h1>
         )}
       </div>
       <Footer />

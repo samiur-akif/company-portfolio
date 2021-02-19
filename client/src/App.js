@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import {Route, Switch} from 'react-router-dom';
 import { connect } from 'react-redux';
-import { updatePagesData } from './Redux/Pages/pages-action';
+import { updatePagesData, updateTranslation } from './Redux/Pages/pages-action';
 import Custom from './pages/Custom/Custom';
 import Blog from './components/Blog/Blog';
 import SinglePost from './components/SinglePost/SinglePost';
@@ -15,11 +15,21 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './assets/css/style.css';
 import './App.css';
 
-function App({updatePagesData, translation}) {
+function App({updatePagesData, translation, updateTranslation}) {
 
   const [popModelShow, setPopModelShow] = useState(false);
   const [popUpDatails, setPopUpDatails] = useState({});
   const [rtlSetup, setRtlSetup] = useState({'dir': 'ltr'})
+
+  useEffect(() => {
+   fetch('https://geolocation-db.com/json/09068b10-55fe-11eb-8939-299a0c3ab5e5')
+   .then(res => res.json())
+   .then(data => {
+     if(data['country_name'] === 'Israel'){
+      updateTranslation("Hebrew")
+     }
+   })
+  }, [])
 
 
   useEffect(() => {
@@ -90,7 +100,8 @@ const mapStateToProps = ({pages }) => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  updatePagesData: (data) => dispatch(updatePagesData(data))
+  updatePagesData: (data) => dispatch(updatePagesData(data)),
+  updateTranslation: (language) => dispatch(updateTranslation(language)),
 })
 
 export default connect(mapStateToProps , mapDispatchToProps)(App);

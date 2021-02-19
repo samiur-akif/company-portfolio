@@ -26,7 +26,7 @@ const ClientReviews = ({ values }) => {
   };
 
   return (
-    <div className="section border-top">
+    <div className="section border-top" dir="ltr">
       <div className="container">
         {values.length && display ? (
           <OwlCarousel className="owl-carousel" {...options}>

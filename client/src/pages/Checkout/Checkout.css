@@ -81,6 +81,10 @@
   font-size: 2rem;
 }
 
+.checkout-page .cart-items-actions{
+  margin-bottom: 16px;
+}
+
 .MuiFormControl-root{
   width: 100%;
 }

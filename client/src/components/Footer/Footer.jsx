@@ -4,10 +4,13 @@ import Logo from "../Header/Logo/Logo";
 import SocialLinks from "../Header/SocialLinks/SocialLinks";
 import { connect } from "react-redux";
 import FormattedText from "../../hooks/FormattedText";
+import parse from "html-react-parser";
 
 const Footer = ({ translation }) => {
   const [usefulLinks, setUsefulLinks] = useState([]);
   const [additionalLinks, setAdditionalLinks] = useState([]);
+  const [contactInfo, setContactInfo] = useState({});
+  const [description, setDescription] = useState("");
 
   useEffect(() => {
     fetch(`${process.env.REACT_APP_BACKEND_URL}/useful-links`)
@@ -17,153 +20,90 @@ const Footer = ({ translation }) => {
     fetch(`${process.env.REACT_APP_BACKEND_URL}/additional-links`)
       .then((res) => res.json())
       .then((data) => setAdditionalLinks(data));
+
+    fetch(`${process.env.REACT_APP_BACKEND_URL}/footer-contact-info`)
+      .then((res) => res.json())
+      .then((data) => setContactInfo(data));
   }, []);
+
+  const replaceLineBreak = (search, current) => {
+    const substring = new RegExp(search, "gi");
+    const result = current.replace(substring, `<br />`);
+    return result;
+  };
+
+  useEffect(() => {
+    const searchTerm = "\n";
+    if (Object.keys(contactInfo).length) {
+      setDescription(parse(replaceLineBreak(searchTerm, contactInfo.Info)));
+    }
+  }, [contactInfo]);
 
   return (
     <footer>
       <div className="section-sm bg-dark">
         <div className="container">
           <div className="row col-spacing-20">
-            {translation === "Hebrew" ? (
-              <>
-                <div className="col-6 col-sm-6 col-lg-3">
-                  <h6 className="font-small font-weight-normal uppercase">
-                   
-                      פרטים ליצירת קשר
- 
-                  </h6>
-                  <ul className="list-unstyled">
-                    <li>123 Street Name, City, State, Country</li>
-                    <li>contact@example.com</li>
-                    <li>+(123) 456 789 01</li>
-                  </ul>
-                </div>
+            <div className="col-6 col-sm-6 col-lg-3">
+              <div>
+                <Logo />
+              </div>
+            </div>
 
-                <div className="col-6 col-sm-6 col-lg-3 d-flex flex-column align-items-center">
-                  <h6 className="font-small font-weight-normal uppercase">
-                    
-                    קישורים נוספים
-                  </h6>
-                  <ul className="list-dash">
-                    {additionalLinks.length
-                      ? additionalLinks.map((item, key) => (
-                          <li key={key}>
-                            <a href={item.Link}>
-                              {
-                                <FormattedText
-                                  objectName={item}
-                                  extension="Name"
-                                />
-                              }
-                            </a>
-                          </li>
-                        ))
-                      : null}
-                  </ul>
-                </div>
+            <div className="col-6 col-sm-6 col-lg-3 d-flex flex-column align-items-center">
+              <h6 className="font-small font-weight-normal uppercase">
+                {translation === "Hebrew" ? "קישורים שימושיים" : "Useful Links"}
+              </h6>
+              <ul className="list-dash">
+                {usefulLinks.length
+                  ? usefulLinks.map((item, key) => (
+                      <li key={key}>
+                        <a href={item.Link}>
+                          {<FormattedText objectName={item} extension="Name" />}
+                        </a>
+                      </li>
+                    ))
+                  : null}
+              </ul>
+            </div>
 
-                <div className="col-6 col-sm-6 col-lg-3 d-flex flex-column align-items-center">
-                  <h6 className="font-small font-weight-normal uppercase">
-                    קישורים שימושיים
-                  </h6>
-                  <ul className="list-dash">
-                    {usefulLinks.length
-                      ? usefulLinks.map((item, key) => (
-                          <li key={key}>
-                            <a href={item.Link}>
-                              {
-                                <FormattedText
-                                  objectName={item}
-                                  extension="Name"
-                                />
-                              }
-                            </a>
-                          </li>
-                        ))
-                      : null}
-                  </ul>
-                </div>
+            <div className="col-6 col-sm-6 col-lg-3 d-flex flex-column align-items-center">
+              <h6 className="font-small font-weight-normal uppercase">
+                {translation === "Hebrew"
+                  ? "קישורים נוספים"
+                  : "Additional Links"}
+              </h6>
+              <ul className="list-dash">
+                {additionalLinks.length
+                  ? additionalLinks.map((item, key) => (
+                      <li key={key}>
+                        <a href={item.Link}>
+                          {<FormattedText objectName={item} extension="Name" />}
+                        </a>
+                      </li>
+                    ))
+                  : null}
+              </ul>
+            </div>
 
-                <div className="col-6 col-sm-6 col-lg-3">
-                  <div>
-                    <Logo />
-                  </div>
-                </div>
-              </>
-            ) : (
-              <>
-                <div className="col-6 col-sm-6 col-lg-3">
-                  <div>
-                    <Logo />
-                  </div>
-                </div>
-
-                <div className="col-6 col-sm-6 col-lg-3 d-flex flex-column align-items-center">
-                  <h6 className="font-small font-weight-normal uppercase">
-                    Useful Links
-                  </h6>
-                  <ul className="list-dash">
-                    {usefulLinks.length
-                      ? usefulLinks.map((item, key) => (
-                          <li key={key}>
-                            <a href={item.Link}>
-                              {
-                                <FormattedText
-                                  objectName={item}
-                                  extension="Name"
-                                />
-                              }
-                            </a>
-                          </li>
-                        ))
-                      : null}
-                  </ul>
-                </div>
-
-                <div className="col-6 col-sm-6 col-lg-3 d-flex flex-column align-items-center">
-                  <h6 className="font-small font-weight-normal uppercase">
-                    Additional Links
-                  </h6>
-                  <ul className="list-dash">
-                    {additionalLinks.length
-                      ? additionalLinks.map((item, key) => (
-                          <li key={key}>
-                            <a href={item.Link}>
-                              {
-                                <FormattedText
-                                  objectName={item}
-                                  extension="Name"
-                                />
-                              }
-                            </a>
-                          </li>
-                        ))
-                      : null}
-                  </ul>
-                </div>
-
-                <div className="col-6 col-sm-6 col-lg-3">
-                  <h6 className="font-small font-weight-normal uppercase">
-                   Contact Info
-                  </h6>
-                  <ul className="list-unstyled">
-                    <li>123 Street Name, City, State, Country</li>
-                    <li>contact@example.com</li>
-                    <li>+(123) 456 789 01</li>
-                  </ul>
-                </div>
-              </>
-            )}
-          </div>{" "}
+            <div className="col-6 col-sm-6 col-lg-3">
+              <h6 className="font-small font-weight-normal uppercase">
+                {translation === "Hebrew" ? "פרטים ליצירת קשר" : "Contact Info"}
+              </h6>
+              <ul className="list-unstyled">
+                <p>{description}</p>
+              </ul>
+            </div>
+          </div>
           {/* <!-- end row(1) --> */}
           <hr className="margin-top-30 margin-bottom-30" />
           <div className="row col-spacing-10">
             {translation === "Hebrew" ? (
               <>
-                <div className="col-12 col-md-6 text-center text-md-left">
+                <div className="col-12 col-md-6 text-center text-md-right">
                   <SocialLinks />
                 </div>
-                <div className="col-12 col-md-6 text-center text-md-right">
+                <div className="col-12 col-md-6 text-center text-md-left">
                   <p>&copy; 2020, All Rights Reserved.</p>
                 </div>
               </>

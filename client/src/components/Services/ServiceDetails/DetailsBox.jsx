@@ -8,6 +8,7 @@ const DetailsBox = ({
   heading,
   link,
   right,
+  translation
 }) => {
   return (
     <div
@@ -31,9 +32,9 @@ const DetailsBox = ({
           </h6>
         </a>
         <a href={link}>
-          <h4>
+          <h4 className={`${translation === 'Hebrew' ? 'text-md-right' : ''}`}>
             <FormattedText objectName={item} extension="Title" />
-            </h4>
+          </h4>
         </a>
         <a href={link}>
           <p>

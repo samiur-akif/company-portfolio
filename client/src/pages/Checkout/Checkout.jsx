@@ -4,7 +4,7 @@ import Footer from "../../components/Footer/Footer";
 import Header from "../../components/Header/Header";
 import { connect } from "react-redux";
 import CartItem from "./CartItem/CartItem";
-import { Redirect, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { deleteCartItem, deleteAllItem } from "../../Redux/Cart/cart-action";
 import PayPalButton from "../../components/PayPal/PayPalButton";
 import PopOver from "../../components/PopOver/PopOver";
@@ -90,12 +90,18 @@ const Checkout = ({
           item.Package_Name_English + " price: $" + item.Price + " USD" + "\n";
       }
     });
-    return details
+    return details;
   };
 
   const onSuccess = () => {
     setPopModel(true);
-    setPopMessage("Payment Successful. Thanks for your purchase. Redirecting to homepage....");
+    setPopMessage(
+      `${
+        translation === "Hebrew"
+          ? "התשלום הצליח. תודה על קנייתך. מפנה לדף הבית ...."
+          : "Payment Successful. Thanks for your purchase. Redirecting to homepage...."
+      }`
+    );
     const orderDetails = {
       Email: email,
       Name: firstName + " " + lastName,
@@ -114,7 +120,7 @@ const Checkout = ({
       .then((response) => response.json())
       .then((data) => {
         console.log("Success:", data);
-        history.push('/')
+        history.push("/");
       })
       .catch((error) => {
         console.error("Error:", error);
@@ -124,13 +130,23 @@ const Checkout = ({
   const onError = () => {
     setPopModel(true);
     setPopMessage(
-      "Payment Unsuccessful. Something went wrong please try again"
+      `${
+        translation === "Hebrew"
+          ? "התשלום לא הצליח. משהו השתבש. אנא נסה שוב"
+          : "Payment Unsuccessful. Something went wrong please try again"
+      }`
     );
   };
 
   const onCancel = () => {
     setPopModel(true);
-    setPopMessage("Payment Canceled. Please try again.");
+    setPopMessage(
+      `${
+        translation === "Hebrew"
+          ? "התשלום בוטל. בבקשה נסה שוב."
+          : "Payment Canceled. Please try again"
+      }`
+    );
   };
 
   const popModelClose = () => {
@@ -142,9 +158,15 @@ const Checkout = ({
     <>
       <Header blackBack={true} />
       <div className="checkout-page container">
-        <h1>Review & Checkout</h1>
+        <h1>
+          {translation === "Hebrew" ? "סקירה וקופה" : "Review & Checkout"}
+        </h1>
         <div className="row">
-          <div className="checkout-page-cart-items col-md-7 col-lg-7">
+          <div
+            className={`checkout-page-cart-items col-md-7 col-lg-7 ${
+              translation === "Hebrew" ? "offset-md-1 offset-lg-1" : ""
+            }`}
+          >
             {cartItem.length ? (
               <>
                 <div className="row cart-items-header d-flex justify-content-between">
@@ -227,7 +249,11 @@ const Checkout = ({
             )}
           </div>
 
-          <div className="order-summary col-md-4 col-lg-4 offset-md-1 offset-lg-1">
+          <div
+            className={`order-summary col-md-4 col-lg-4 ${
+              translation === "Hebrew" ? "" : "offset-md-1 offset-lg-1"
+            } `}
+          >
             <h3 className="text-center">
               {" "}
               {translation === "Hebrew" ? "סיכום הזמנה" : "Order Summary"}
@@ -288,7 +314,11 @@ const Checkout = ({
             {Object.prototype.hasOwnProperty.call(
               hostingPack,
               "Billing_Year"
-            ) && clientId && firstName && lastName && email ? (
+            ) &&
+            clientId &&
+            firstName &&
+            lastName &&
+            email ? (
               <PayPalButton
                 price={priceCounter(cartItem)}
                 clientId={clientId}
@@ -298,7 +328,6 @@ const Checkout = ({
               />
             ) : null}
 
-
             {popModel && popMessage ? (
               <PopOver message={popMessage} onClose={popModelClose} />
             ) : null}
@@ -307,42 +336,47 @@ const Checkout = ({
 
         <div className="row billing-details">
           <div className="col-md-6">
-          <div className="row">
-            <div className="col-md-12">
-              <h3>Billing Details</h3>
+            <div className="row">
+              <div className="col-md-12">
+                <h3>
+                  {translation === "Hebrew" ? "פרטי תשלום" : "Billing Details"}
+                </h3>
+              </div>
             </div>
-          </div>
-          <div className="row" style={{marginBottom: '4px', marginTop: '16px'}}>
-            <div className="col-md-6">
-              <TextField
-                onChange={(e) => setFirstName(e.target.value)}
-                required
-                id="outlined-basic"
-                label="First Name"
-                variant="outlined"
-              />
+            <div
+              className="row"
+              style={{ marginBottom: "4px", marginTop: "16px" }}
+            >
+              <div className="col-md-6">
+                <TextField
+                  onChange={(e) => setFirstName(e.target.value)}
+                  required
+                  id="outlined-basic"
+                  label="First Name"
+                  variant="outlined"
+                />
+              </div>
+              <div className="col-md-6">
+                <TextField
+                  onChange={(e) => setLastName(e.target.value)}
+                  required
+                  id="outlined-basic"
+                  label="Last Name"
+                  variant="outlined"
+                />
+              </div>
             </div>
-            <div className="col-md-6">
-              <TextField
-                onChange={(e) => setLastName(e.target.value)}
-                required
-                id="outlined-basic"
-                label="Last Name"
-                variant="outlined"
-              />
+            <div className="row">
+              <div className="col-md-12">
+                <TextField
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
+                  id="outlined-basic"
+                  label="Email"
+                  variant="outlined"
+                />
+              </div>
             </div>
-          </div>
-          <div className="row">
-            <div className="col-md-12">
-              <TextField
-                onChange={(e) => setEmail(e.target.value)}
-                required
-                id="outlined-basic"
-                label="Email"
-                variant="outlined"
-              />
-            </div>
-          </div>
           </div>
         </div>
       </div>

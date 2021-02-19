@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
+import { connect } from "react-redux";
 import "./CompareTable.css";
 
-const CompareTable = ({ prices, handleCart }) => {
+const CompareTable = ({ prices, handleCart, translation }) => {
   const [packages, setPackages] = useState([]);
   useEffect(() => {
     fetch(`${process.env.REACT_APP_BACKEND_URL}/web-hosting-packages`)
@@ -13,7 +14,7 @@ const CompareTable = ({ prices, handleCart }) => {
 
   return (
     <div className="container">
-      <h1 className="text-center">Compare Our Web Hosting Packages</h1>
+      <h1 className="text-center">{ translation === 'Hebrew' ? 'השווה את חבילות אירוח האתרים שלנו' : 'Compare Our Web Hosting Packages'}</h1>
       {packages.length ? (
         <table class="table table-bordered package-table">
           <thead>
@@ -86,4 +87,8 @@ const CompareTable = ({ prices, handleCart }) => {
   );
 };
 
-export default CompareTable;
+const mapStateToProps = ({ pages }) => ({
+  translation: pages.translation,
+});
+
+export default connect(mapStateToProps)(CompareTable);

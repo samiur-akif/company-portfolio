@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import "./DomainAvailability.css";
+import { connect } from "react-redux";
 
-const DomainAvailability = ({ domainName, handleNext }) => {
+const DomainAvailability = ({ domainName, handleNext,translation }) => {
   const [domainAvailability, setDomainAvailability] = useState("");
 
   useEffect(() => {
@@ -18,13 +19,20 @@ const DomainAvailability = ({ domainName, handleNext }) => {
           {domainAvailability === 'AVAILABLE' ? (
             <>
               <p style={{ color: "#078021" }}>
-                Congratulation, your {domainName} is available.
+                {
+                  translation === 'Hebrew' ? `מזל טוב, ה- ${domainName} שלך זמין.` : 
+                  `Congratulation, your ${domainName} is available.`
+                }
+                
               </p>
               <button onClick={() => handleNext('custom')}>Next</button>
             </>
           ) : domainAvailability === 'UNAVAILABLE' ? (
             <p style={{ color: "#d31f1f" }}>
-              Sorry, your {domainName} is not available.
+              {
+                  translation === 'Hebrew' ? `מצטערים, ה- ${domainName} שלך אינו זמין.` : 
+                  `Sorry, your ${domainName} is not available.`
+                }
             </p>
           ) : null }
         </div>
@@ -35,4 +43,8 @@ const DomainAvailability = ({ domainName, handleNext }) => {
   );
 };
 
-export default DomainAvailability;
+const mapStateToProps = ({ pages }) => ({
+  translation: pages.translation,
+});
+
+export default connect(mapStateToProps)(DomainAvailability);
