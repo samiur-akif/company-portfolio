@@ -6,7 +6,7 @@ const Parallax = ({ values, translation }) => {
     return (
         <div
         className="section-xl bg-image parallax"
-        data-bg-src={`${process.env.REACT_APP_BACKEND_URL}${values[0].Banner_Image.url}`}
+        style={{ backgroundImage: `url(${process.env.REACT_APP_BACKEND_URL}${values[0].Banner_Image.url})`}}
       >
         {
           translation === 'Hebrew' ? <div className="bg-black-05">

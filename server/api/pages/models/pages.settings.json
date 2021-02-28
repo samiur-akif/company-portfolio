@@ -37,7 +37,8 @@
         "services-page.icon-row",
         "services-page.details-row",
         "contact-page.contact-form",
-        "contact-page.gmap-location"
+        "contact-page.gmap-location",
+        "faq-page.faq-cloud-service"
       ]
     },
     "Title": {

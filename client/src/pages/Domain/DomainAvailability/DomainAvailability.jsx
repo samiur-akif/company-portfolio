@@ -10,7 +10,7 @@ const DomainAvailability = ({ domainName, handleNext,translation, clientAPI }) =
     fetch(`https://domain-availability.whoisxmlapi.com/api/v1?apiKey=${clientAPI}&domainName=${domainName}&credits=DA`)
       .then((res) => res.json())
       .then((data) => setDomainAvailability(data.DomainInfo.domainAvailability));
-  }, []);
+  }, [domainName]);
 
   return (
     <div className="row domain-availablity-check">

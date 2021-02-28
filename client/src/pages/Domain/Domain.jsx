@@ -21,9 +21,12 @@ const Domain = ({
   const [searchStatus, setSearchStatus] = useState(false);
   const [customDomainName, setCustomDomainName] = useState("");
   const [userDomainName, setUserDomainName] = useState("");
-  const [domainClientAPI, setDomainClientAPI] = useState('')
+  const [domainClientAPI, setDomainClientAPI] = useState("");
+  const [domainNameEmpty, setDomainNameEmpty] = useState(false);
+
   let history = useHistory();
   const handleCustomDomain = (event) => {
+    setSearchStatus(false);
     setCustomDomainName(event.target.value);
   };
   const handleUserDomain = (event) => {
@@ -44,19 +47,24 @@ const Domain = ({
       setUserDomainName("");
       history.push("/cart");
     } else if (status === "user") {
-      updateUserDomain(userDomainName);
-      setSearchStatus(false);
-      setCustomDomainName("");
-      setUserDomainName("");
-      history.push("/cart");
+      if (userDomainName) {
+        setDomainNameEmpty(false);
+        updateUserDomain(userDomainName);
+        setSearchStatus(false);
+        setCustomDomainName("");
+        setUserDomainName("");
+        history.push("/cart");
+      } else {
+        setDomainNameEmpty(true);
+      }
     }
   };
 
   useEffect(() => {
     fetch(`${process.env.REACT_APP_BACKEND_URL}/domain-availability`)
-    .then(res => res.json())
-    .then(data => setDomainClientAPI(data.API))
-  }, [])
+      .then((res) => res.json())
+      .then((data) => setDomainClientAPI(data.API));
+  }, []);
 
   return (
     <>
@@ -100,38 +108,40 @@ const Domain = ({
                     <h1>רשום דומיין חדש</h1>
                     <p>חפש דומיינים זמינים</p>
                     <input
-                  type="text"
-                  onChange={handleCustomDomain}
-                  value={customDomainName}
-                  placeholder="חפש דומיין ..."
-                />
-                <button onClick={() => setSearchStatus(true)}>לחפש</button>
+                      type="text"
+                      onChange={handleCustomDomain}
+                      value={customDomainName}
+                      placeholder="חפש דומיין ..."
+                    />
+                    <button onClick={() => setSearchStatus(true)}>לחפש</button>
                   </>
                 ) : (
                   <>
                     <h1>Register a new domain</h1>
                     <p>Search available domains</p>
                     <input
-                  type="text"
-                  onChange={handleCustomDomain}
-                  value={customDomainName}
-                  placeholder="Search domain..."
-                />
-                <button onClick={() => setSearchStatus(true)}>{translation === 'Hebrew' ? 'לחפש' : 'Search'}</button>
+                      type="text"
+                      onChange={handleCustomDomain}
+                      value={customDomainName}
+                      placeholder="Search domain..."
+                    />
+                    <button onClick={() => setSearchStatus(true)}>
+                      {translation === "Hebrew" ? "לחפש" : "Search"}
+                    </button>
                   </>
                 )}
-
-                
-                
               </div>
               <div className="choose-box-middle col-md-1 col-lg-1">
-                <p>{translation === 'Hebrew' ? 'אוֹ' : 'or' }</p>
+                <p>{translation === "Hebrew" ? "אוֹ" : "or"}</p>
               </div>
               <div className="domain-choose-box col-md-5 col-lg-5">
                 {translation === "Hebrew" ? (
                   <>
                     <h1>השתמש בדומיין שבבעלותך</h1>
                     <p>הזן את התחום הקיים שלך</p>
+                    {domainNameEmpty ? (
+                      <p style={{ color: "red" }}>זהו שדה חובה *</p>
+                    ) : null}
                     <input
                       type="text"
                       onChange={handleUserDomain}
@@ -143,6 +153,10 @@ const Domain = ({
                   <>
                     <h1>Use a domain you own</h1>
                     <p>Enter your existing domain</p>
+                    {domainNameEmpty ? (
+                      <p style={{ color: "red" }}>This field is required *</p>
+                    ) : null}
+
                     <input
                       type="text"
                       onChange={handleUserDomain}
@@ -151,7 +165,9 @@ const Domain = ({
                     />
                   </>
                 )}
-                <button onClick={() => handleNext("user")}>{translation === 'Hebrew' ? 'הַבָּא' : 'Next'}</button>
+                <button onClick={() => handleNext("user")}>
+                  {translation === "Hebrew" ? "הַבָּא" : "Next"}
+                </button>
               </div>
             </div>
             {searchStatus ? (

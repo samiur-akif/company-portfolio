@@ -16,7 +16,12 @@ const SinglePost = ({translation}) => {
       .then((res) => res.json())
       .then((data) => {
         setPostData(data[0]);
-        setDateString(new Date(data[0].published_at));
+        if(data[0].Custom_Date){
+        setDateString(new Date(data[0].Custom_Date));
+        }
+        else{
+          setDateString(new Date(data[0].updated_at));
+        }
       });
   }, [slug]);
 

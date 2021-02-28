@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import parse from "html-react-parser";
 import FormattedText from "../../../hooks/FormattedText";
 import { connect } from "react-redux";
+import './PriceBox.css';
 
 const PriceBox = ({
   item,
@@ -44,7 +45,7 @@ const PriceBox = ({
           <ul>{description}</ul>
         </div>
         <br/>
-        <button className="button button-md button-grey button-rounded" onClick={() => handleCart(item)}>Order Now</button>
+        <button className="button button-md button-grey button-rounded order-button" onClick={() => handleCart(item)}>Order Now</button>
         {/* {
         
         clientId ? <PayPalButton price={price} clientId={clientId} onCancel={onCancel} onSuccess={onSuccess} onError={onError} /> : null

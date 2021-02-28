@@ -1,7 +1,15 @@
 export const removeCartItem = (productItems, removeProduct) => {
-    return productItems.filter(item => {
-        return item.id !== removeProduct.id
-    });
+
+    const exist = productItems.filter(item => item.id === removeProduct.id);
+    
+    if(exist.length){
+        return productItems.filter(item => {
+            return item.id !== removeProduct.id
+        });
+    }
+    else{
+        return productItems
+    }
 }
 
 export const updateHostinPack = (hostingPack, newItem) => {

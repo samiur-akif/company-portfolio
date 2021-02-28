@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import {Route, Switch} from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { updatePagesData, updateTranslation } from './Redux/Pages/pages-action';
 import Custom from './pages/Custom/Custom';
@@ -14,94 +14,109 @@ import Cart from './pages/Cart/Cart';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './assets/css/style.css';
 import './App.css';
+import Spinner from './components/Spinner/Spinner';
+import { updatePopupStatus } from './Redux/Popup/popup-action';
 
-function App({updatePagesData, translation, updateTranslation}) {
+function App({ updatePagesData, translation, updateTranslation, popupStatus, updatePopupStatus }) {
 
   const [popModelShow, setPopModelShow] = useState(false);
   const [popUpDatails, setPopUpDatails] = useState({});
-  const [rtlSetup, setRtlSetup] = useState({'dir': 'ltr'})
+  const [rtlSetup, setRtlSetup] = useState({ 'dir': 'ltr' })
 
   useEffect(() => {
-   fetch('https://geolocation-db.com/json/09068b10-55fe-11eb-8939-299a0c3ab5e5')
-   .then(res => res.json())
-   .then(data => {
-     if(data['country_name'] === 'Israel'){
-      updateTranslation("Hebrew")
-     }
-   })
+    if (!translation) {
+      fetch('https://geolocation-db.com/json/09068b10-55fe-11eb-8939-299a0c3ab5e5')
+        .then(res => res.json())
+        .then(data => {
+          if (data['country_name'] === 'Israel') {
+            updateTranslation("Hebrew")
+          }
+          else {
+            updateTranslation("English")
+          }
+        })
+    }
   }, [])
 
 
   useEffect(() => {
     const dataFetching = () => fetch(`${process.env.REACT_APP_BACKEND_URL}/pages`)
-    .then(res => res.json())
-    .then(data => {
-      updatePagesData(data)
-    })
+      .then(res => res.json())
+      .then(data => {
+        updatePagesData(data)
+      })
     dataFetching()
 
-    return() => {
+    return () => {
       dataFetching()
     }
   })
 
   useEffect(() => {
-    if(translation === 'Hebrew'){
-      setRtlSetup({'dir': 'rtl'})
+    if (translation === 'Hebrew') {
+      setRtlSetup({ 'dir': 'rtl' })
     }
-    else{
-      setRtlSetup({'dir': 'ltr'})
+    else {
+      setRtlSetup({ 'dir': 'ltr' })
     }
   }, [translation])
 
   useEffect(() => {
-    fetch(`${process.env.REACT_APP_BACKEND_URL}/popup`)
-    .then(res => res.json())
-    .then(data => {
-      setPopUpDatails(data)
-    });
+    if (!popupStatus) {
+      fetch(`${process.env.REACT_APP_BACKEND_URL}/popup`)
+        .then(res => res.json())
+        .then(data => {
+          setPopUpDatails(data)
+        });
+    }
+
   }, [])
 
   useEffect(() => {
-    if(Object.keys(popUpDatails).length){
-    console.log('pop up data', popUpDatails)
-     setTimeout(() => {
+    if (Object.keys(popUpDatails).length && !popupStatus) {
+      setTimeout(() => {
         setPopModelShow(true);
-      }, popUpDatails.Interval * 1000 );
+        updatePopupStatus();
+      }, popUpDatails.Interval * 1000);
     }
   }, [popUpDatails])
 
   const onClose = () => {
     setPopModelShow(false);
   }
- 
+
   return (
     <div className="hero" {...rtlSetup}>
-      <Switch>
-        <Route path="/" exact component={Custom} />
-        <Route path="/blog" exact component={Blog} />
-        <Route path="/blog/:slug" component={SinglePost} />
-        <Route path="/domain" exact component={Domain} />
-        <Route path="/cart" exact component={Cart} />
-        <Route path="/checkout" exact component={Checkout} />
-        <Route path="/:id" component={Custom} />
-        
-      </Switch>
+      {
+        translation ? <Switch>
+          <Route path="/" exact component={Custom} />
+          <Route path="/blog" exact component={Blog} />
+          <Route path="/blog/:slug" component={SinglePost} />
+          <Route path="/domain" exact component={Domain} />
+          <Route path="/cart" exact component={Cart} />
+          <Route path="/checkout" exact component={Checkout} />
+          <Route path="/:id" component={Custom} />
+
+        </Switch> : <Spinner />
+      }
+
       {
         popModelShow ? <PopUp item={popUpDatails} onClose={onClose} /> : null
       }
       <Whatsapp />
-     </div> 
+    </div>
   );
 }
 
-const mapStateToProps = ({pages }) => ({
-  translation: pages.translation
+const mapStateToProps = ({ pages, popup }) => ({
+  translation: pages.translation,
+  popupStatus: popup.popupStatus
 });
 
 const mapDispatchToProps = dispatch => ({
   updatePagesData: (data) => dispatch(updatePagesData(data)),
   updateTranslation: (language) => dispatch(updateTranslation(language)),
+  updatePopupStatus: () => dispatch(updatePopupStatus()),
 })
 
-export default connect(mapStateToProps , mapDispatchToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App);

@@ -33,6 +33,9 @@
     },
     "Three_Year_Package_Price": {
       "type": "float"
+    },
+    "Retail_Price": {
+      "type": "float"
     }
   }
 }

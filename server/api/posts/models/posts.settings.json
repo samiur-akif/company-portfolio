@@ -40,6 +40,9 @@
     },
     "Description_Hebrew": {
       "type": "richtext"
+    },
+    "Custom_Date": {
+      "type": "date"
     }
   }
 }

@@ -46,7 +46,7 @@ const Blog = () => {
                           slug={item.Slug}
                           category={item.categories}
                           imgUrl={item.Image.url}
-                          publishDate={item.published_at}
+                          publishDate={item.Custom_Date ? item.Custom_Date : item.updated_at}
                         />
                       ))
                     : null}

@@ -6,7 +6,11 @@ import Header from "../../components/Header/Header";
 import "./Cart.css";
 import CartBox from "./CartBox/CartBox";
 import { useHistory } from "react-router-dom";
-import { addCartItem, updateHostingItem } from "../../Redux/Cart/cart-action";
+import {
+  addCartItem,
+  deleteCartItem,
+  updateHostingItem,
+} from "../../Redux/Cart/cart-action";
 import FormattedText from "../../hooks/FormattedText";
 
 const Cart = ({
@@ -15,50 +19,68 @@ const Cart = ({
   updateHostingPack,
   cartItems,
   addCartItem,
+  deleteCartItem,
 }) => {
-  const [billingBox, setBillingBox] = useState("");
+  const [billingBox, setBillingBox] = useState(null);
   const [dedicatedIp, setDedicatedIp] = useState(false);
   const [description, setDescription] = useState("");
   const [SSL, setSSL] = useState("FREE");
   const [hostingExtra, setHostingExtra] = useState({});
+  const [billingYearMissing, setBillingYearMissing] = useState(false);
 
   const onBillingCycleChange = (value) => {
     setBillingBox(value);
+  };
+
+  const saveCalc = (initialAmount, finalAmount) => {
+    const result = 100 - (100 / initialAmount) * finalAmount;
+    return Math.round(result);
   };
 
   let history = useHistory();
 
   const handleCart = () => {
     if (Object.keys(hostingPack).length) {
+      const SSLItem = {
+        id: 53,
+        Package_Name_English: "SSL - GlobalSign & Wildcard",
+        Price: hostingExtra.SSL_Premium_Price,
+      };
+
       if (hostingPack.SSL === "PAID") {
-        const item = {
-          id: 53,
-          Package_Name_English: "SSL - GlobalSign & Wildcard",
-          Price: hostingExtra.SSL_Premium_Price,
-        };
-
-        addCartItem(item);
+        addCartItem(SSLItem);
+      } else {
+        deleteCartItem(SSLItem);
       }
-      if (hostingPack.DedicatedIp) {
-        const item = {
-          id: 55,
-          Package_Name_English: "Dedicated IP address",
-          Price: hostingExtra.Dedicated_IP_Price,
-        };
 
-        addCartItem(item);
+      const dedicatedIpItem = {
+        id: 55,
+        Package_Name_English: "Dedicated IP address",
+        Price: hostingExtra.Dedicated_IP_Price,
+      };
+
+      if (hostingPack.DedicatedIp) {
+        addCartItem(dedicatedIpItem);
+      } else {
+        deleteCartItem(dedicatedIpItem);
       }
     }
-    history.push("/checkout");
+
+    if (billingBox) {
+      setBillingYearMissing(false);
+      history.push("/checkout");
+    } else {
+      setBillingYearMissing(true);
+    }
   };
 
   useEffect(() => {
     if (billingBox) {
-      if (billingBox === 0) {
+      if (billingBox === 3) {
         updateHostingPack({ id: "Billing_Year", value: 3 });
-      } else if (billingBox === 1) {
-        updateHostingPack({ id: "Billing_Year", value: 2 });
       } else if (billingBox === 2) {
+        updateHostingPack({ id: "Billing_Year", value: 2 });
+      } else if (billingBox === 1) {
         updateHostingPack({ id: "Billing_Year", value: 1 });
       }
       updateHostingPack({ id: "SSL", value: SSL });
@@ -113,27 +135,41 @@ const Cart = ({
                     ? "בחר מחזור חיוב"
                     : "Choose Billing Cycle"}
                 </h3>
+                {billingYearMissing ? (
+                  <p style={{ color: "red" }}>
+                    { translation === 'Hebrew' ? 'אנא בחר אפשרות למטה *' : 'Please select an option below *'}
+                  </p>
+                ) : null}
                 <div className="row billing-cycle">
                   <CartBox
                     price={cartItems[0].Three_Year_Package_Price}
                     year={3}
-                    value={0}
+                    value={3}
                     billingChange={onBillingCycleChange}
                     billingBox={billingBox}
+                    save={saveCalc(
+                      cartItems[0].Price,
+                      cartItems[0].Three_Year_Package_Price
+                    )}
                   />
                   <CartBox
                     price={cartItems[0].Two_Year_Package_Price}
                     year={2}
-                    value={1}
+                    value={2}
                     billingChange={onBillingCycleChange}
                     billingBox={billingBox}
+                    save={saveCalc(
+                      cartItems[0].Price,
+                      cartItems[0].Two_Year_Package_Price
+                    )}
                   />
                   <CartBox
                     price={cartItems[0].Price}
                     year={1}
-                    value={2}
+                    value={1}
                     billingChange={onBillingCycleChange}
                     billingBox={billingBox}
+                    save={false}
                   />
                 </div>
               </div>
@@ -249,11 +285,11 @@ const Cart = ({
                           </div>
                         </div>
                       </div>
-                    </div>{" "}
+                    </div>
                   </>
                 ) : null}
               </div>
-            </div>{" "}
+            </div>
           </>
         ) : (
           <h1 className="text-center" style={{ marginBottom: "600px" }}>
@@ -277,6 +313,7 @@ const mapStateToProps = ({ cart, pages }) => ({
 const mapDisPatchToProps = (dispatch) => ({
   updateHostingPack: (item) => dispatch(updateHostingItem(item)),
   addCartItem: (item) => dispatch(addCartItem(item)),
+  deleteCartItem: (item) => dispatch(deleteCartItem(item)),
 });
 
 export default connect(mapStateToProps, mapDisPatchToProps)(Cart);

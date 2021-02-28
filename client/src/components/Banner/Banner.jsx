@@ -5,7 +5,7 @@ const Banner = ({ values }) => {
   return (
     <div
       className="section-xl bg-image parallax"
-      data-bg-src={`${process.env.REACT_APP_BACKEND_URL}${values[0].Image.url}`}
+      style={{ backgroundImage: `url(${process.env.REACT_APP_BACKEND_URL}${values[0].Image.url})`}}
     >
       <div className="bg-black-06">
         <div className="container text-center">

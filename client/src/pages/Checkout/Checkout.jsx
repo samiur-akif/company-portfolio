@@ -25,6 +25,10 @@ const Checkout = ({
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
+  const [emailError, setEmailError] = useState(false);
+  const [emailCheck, setEmailCheck] = useState({
+    id: "outlined-basic",
+  });
 
   let history = useHistory();
   console.log("User Domain: ", userDomain);
@@ -32,7 +36,27 @@ const Checkout = ({
   const handleHostingDelete = (item) => {
     deleteItem(item);
   };
-
+  const validateEmail = (event) => {
+    const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    if (re.test(String(event.target.value).toLowerCase())) {
+      setEmail(event.target.value);
+      setEmailCheck({
+        id: "outlined-basic",
+      });
+      setEmailError(false);
+    } else {
+      setEmailCheck({
+        error: true,
+        helperText:
+          translation === "Hebrew"
+            ? "הכנס כתובת אימייל תקינה"
+            : "Enter a valid Email address",
+        id: "outlined-error-helper-text",
+      });
+      setEmail(event.target.value);
+      setEmailError(true);
+    }
+  };
   const priceCounter = (items) => {
     return items.reduce((accumulator, currentValue) => {
       if (
@@ -232,7 +256,12 @@ const Checkout = ({
                     </button>
                   </div>
                   <div className="col-md-3 col-lg-3">
-                    <button onClick={() => delteAllItem()}>
+                    <button
+                      onClick={() => {
+                        delteAllItem();
+                        history.push("/hosting");
+                      }}
+                    >
                       <i class="fas fa-trash"></i>{" "}
                       {translation === "Hebrew" ? "עגלה ריקה" : " Empty Cart "}
                     </button>
@@ -318,7 +347,8 @@ const Checkout = ({
             clientId &&
             firstName &&
             lastName &&
-            email ? (
+            email &&
+            !emailError ? (
               <PayPalButton
                 price={priceCounter(cartItem)}
                 clientId={clientId}
@@ -352,7 +382,7 @@ const Checkout = ({
                   onChange={(e) => setFirstName(e.target.value)}
                   required
                   id="outlined-basic"
-                  label="First Name"
+                  label={translation === "Hebrew" ? "שם פרטי" : "First Name"}
                   variant="outlined"
                 />
               </div>
@@ -361,7 +391,7 @@ const Checkout = ({
                   onChange={(e) => setLastName(e.target.value)}
                   required
                   id="outlined-basic"
-                  label="Last Name"
+                  label={translation === "Hebrew" ? "שם משפחה" : "Last Name"}
                   variant="outlined"
                 />
               </div>
@@ -369,11 +399,11 @@ const Checkout = ({
             <div className="row">
               <div className="col-md-12">
                 <TextField
-                  onChange={(e) => setEmail(e.target.value)}
+                  onChange={(e) => validateEmail(e)}
                   required
-                  id="outlined-basic"
-                  label="Email"
+                  label={translation === "Hebrew" ? "אימייל" : "Email"}
                   variant="outlined"
+                  {...emailCheck}
                 />
               </div>
             </div>

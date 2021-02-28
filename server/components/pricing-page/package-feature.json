@@ -2,7 +2,8 @@
   "collectionName": "components_pricing_page_package_features",
   "info": {
     "name": "Package-Feature",
-    "icon": "asterisk"
+    "icon": "asterisk",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -11,6 +12,12 @@
     },
     "Quota": {
       "type": "string"
+    },
+    "Check_Mark": {
+      "type": "boolean"
+    },
+    "Minus_Check": {
+      "type": "boolean"
     }
   }
 }

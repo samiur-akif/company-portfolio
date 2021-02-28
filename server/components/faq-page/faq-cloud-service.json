@@ -1,8 +1,8 @@
 {
-  "collectionName": "components_faq_page_faq_items",
+  "collectionName": "components_faq_page_faq_cloud_services",
   "info": {
-    "name": "FAQ_Item",
-    "icon": "question-circle",
+    "name": "FAQ_Cloud_Service",
+    "icon": "question",
     "description": ""
   },
   "options": {},
@@ -18,12 +18,6 @@
     },
     "Answer_Hebrew": {
       "type": "text"
-    },
-    "Web_Hosting": {
-      "type": "boolean"
-    },
-    "Cloud_Services": {
-      "type": "boolean"
     }
   }
 }

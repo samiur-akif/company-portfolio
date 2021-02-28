@@ -6,13 +6,13 @@ module.exports = {
    */
   lifecycles: {
     async beforeCreate(data) {
-      if (data.Title) {
-        data.Slug = slugify(data.Title, {lower: true});
+      if (data.Title_English) {
+        data.Slug = slugify(data.Title_English, {lower: true});
       }
     },
     async beforeUpdate(params, data) {
-      if (data.Title) {
-        data.Slug = slugify(data.Title, {lower: true});
+      if (data.Title_English) {
+        data.Slug = slugify(data.Title_English, {lower: true});
       }
     },
   },
