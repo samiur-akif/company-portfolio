@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
+import FormattedText from "../../hooks/FormattedText";
 import "./CompareTable.css";
 
 const CompareTable = ({ prices, handleCart, translation }) => {
@@ -25,7 +26,8 @@ const CompareTable = ({ prices, handleCart, translation }) => {
           : "Compare Our Web Hosting Packages"}
       </h1>
       {packages.length ? (
-        <table class="table table-bordered package-table">
+        <div className="table-responsive">
+          <table class="table table-bordered package-table">
           <thead>
             <tr>
               <th scope="col" style={{ height: "100px" }}></th>
@@ -41,7 +43,7 @@ const CompareTable = ({ prices, handleCart, translation }) => {
                     }}
                     key={key}
                   >
-                    {item.Package_Name}
+                    <FormattedText objectName={item} extension="Package_Name" />
                   </th>
                 );
               })}
@@ -55,7 +57,7 @@ const CompareTable = ({ prices, handleCart, translation }) => {
                     scope="row"
                     style={{ width: "34%", color: "#112240", height: "50px" }}
                   >
-                    {subItem["Feature_Name"]}
+                    <FormattedText objectName={subItem} extension="Feature_Name" />
                   </th>
 
                   {packages.map((item, key) => (
@@ -131,6 +133,8 @@ const CompareTable = ({ prices, handleCart, translation }) => {
             </tr>
           </tbody>
         </table>
+        </div>
+        
       ) : null}
     </div>
   );

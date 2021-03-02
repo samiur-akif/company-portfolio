@@ -11,7 +11,7 @@
     "draftAndPublish": true
   },
   "attributes": {
-    "Package_Name": {
+    "Package_Name_English": {
       "type": "string"
     },
     "Features": {
@@ -19,6 +19,9 @@
       "components": [
         "pricing-page.package-feature"
       ]
+    },
+    "Package_Name_Hebrew": {
+      "type": "string"
     }
   }
 }

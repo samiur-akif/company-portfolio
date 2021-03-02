@@ -9,6 +9,9 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800");
 @import url("https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900");
 @import url("https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900");
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+
+
 html, body {
   width: 100%;
   height: 100%;
@@ -1572,38 +1575,38 @@ p {
 /* 56px */
 @media (max-width: 767.98px) {
   .display-1 {
-    font-size: 5.73em;
+    font-size: 6.73em;
   }
   /* 86px */
   .display-2 {
-    font-size: 5.33em;
+    font-size: 6.33em;
   }
   /* 80px */
   .display-3 {
-    font-size: 4.26em;
+    font-size: 5.26em;
   }
   /* 64px */
   .display-4 {
-    font-size: 3.2em;
+    font-size: 4.2em;
   }
   /* 48px */
 }
 
 @media (max-width: 575.98px) {
   .display-1 {
-    font-size: 5.33em;
+    font-size: 6.33em;
   }
   /* 80px */
   .display-2 {
-    font-size: 4.8em;
+    font-size: 5.8em;
   }
   /* 72px */
   .display-3 {
-    font-size: 3.73em;
+    font-size: 4.73em;
   }
   /* 56px */
   .display-4 {
-    font-size: 3.2em;
+    font-size: 4.2em;
   }
   /* 48px */
 }

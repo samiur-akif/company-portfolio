@@ -31,7 +31,7 @@ const Blog = () => {
       {" "}
       {posts.length ? (
         <>
-          <Header blackBack={true} />
+          <Header />
           <BlogHeader />
           <div className="section">
             <div className="container">

@@ -86,7 +86,7 @@ function App({ updatePagesData, translation, updateTranslation, popupStatus, upd
   }
 
   return (
-    <div className="hero" {...rtlSetup}>
+    <div className={`hero ${translation === 'Hebrew' ? 'rtl-style' : ''}`} {...rtlSetup}>
       {
         translation ? <Switch>
           <Route path="/" exact component={Custom} />

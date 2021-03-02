@@ -3,9 +3,9 @@ import { connect } from 'react-redux';
 
 const BlogHeader = ({translation}) => {
     return (
-        <div className="section-sm bg-grey-lighter" style={{paddingTop : '100px'}}>
+        <div className="section-sm" style={{paddingTop : '110px', background: '#cccccc'}}>
 			<div className="container text-center">
-				<h3 className="font-family-secondary">{ translation === 'Hebrew' ? 'בלוג' : 'Blog'}</h3>
+				<h1 style={{color: '#908a8a'}}>{ translation === 'Hebrew' ? 'בלוג' : 'Blog'}</h1>
 			</div>
 		</div>
     )

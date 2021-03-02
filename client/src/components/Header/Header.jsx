@@ -13,6 +13,32 @@ const Header = ({ blackBack, translation, updateTranslation }) => {
   const [handleShow, setHandleShow] = useState(false);
   const [favicon, setFavicon] = useState("");
   const [togle, setTogle] = useState(false);
+  const [navDropDownToggle, setNavDropDownToggle] = useState(false);
+
+  const dropDownStyle = () => {
+    if(translation === 'Hebrew'){
+      if(navDropDownToggle){
+        return {
+          right: '0',
+          left: 'auto',
+          display: 'block'
+        }
+      }
+      else{
+        return {
+          right: '0',
+          left: 'auto',
+        }
+      }
+    }
+    else{
+      if(navDropDownToggle){
+        return {
+          display: 'block'
+        }
+      }
+    }
+  }
 
   useEffect(() => {
     fetch(`${process.env.REACT_APP_BACKEND_URL}/menus`)
@@ -50,9 +76,9 @@ const Header = ({ blackBack, translation, updateTranslation }) => {
       <a class="nav-link d-toggle" href={link}>
         <FormattedText objectName={item} extension="Name" />
       </a>
-      <ul class="nav-dropdown">
+      <ul class="nav-dropdown" style={dropDownStyle()}>
         {item.Dropdown.map((dropitem, key) => (
-          <li class="nav-dropdown-item" key={key}>
+          <li class="nav-dropdown-item" key={key} style={translation === 'Hebrew' ? { textAlign: 'right'} : {}}>
             <a
               class="nav-dropdown-link"
               href={`/${dropitem.Link}`}
@@ -62,7 +88,7 @@ const Header = ({ blackBack, translation, updateTranslation }) => {
           </li>
         ))}
       </ul>
-      <a class="nav-dropdown-toggle" href="#"></a>
+      <a class="nav-dropdown-toggle" onClick={() => setNavDropDownToggle(!navDropDownToggle) }></a>
     </li>
   );
 

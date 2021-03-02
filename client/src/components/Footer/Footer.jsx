@@ -104,13 +104,13 @@ const Footer = ({ translation }) => {
                   <SocialLinks />
                 </div>
                 <div className="col-12 col-md-6 text-center text-md-left">
-                  <p>&copy; 2020, All Rights Reserved.</p>
+                  <p>&copy; {new Date().getFullYear()} , כל הזכויות שמורות</p>
                 </div>
               </>
             ) : (
               <>
                 <div className="col-12 col-md-6 text-center text-md-left">
-                  <p>&copy; 2020, All Rights Reserved.</p>
+                  <p>&copy; {new Date().getFullYear()}, All Rights Reserved.</p>
                 </div>
                 <div className="col-12 col-md-6 text-center text-md-right">
                   <SocialLinks />

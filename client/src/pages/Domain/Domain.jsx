@@ -23,14 +23,30 @@ const Domain = ({
   const [userDomainName, setUserDomainName] = useState("");
   const [domainClientAPI, setDomainClientAPI] = useState("");
   const [domainNameEmpty, setDomainNameEmpty] = useState(false);
+  const [userDomainValidate, setUserDomainValidate] = useState(false);
+  const [customDomainValidate, setCustomDomainValidate] = useState(false);
 
   let history = useHistory();
   const handleCustomDomain = (event) => {
-    setSearchStatus(false);
+    let re = /^((https?|ftp|smtp):\/\/)?(www.)?[a-z0-9]+\.[a-z]+(\/[a-zA-Z0-9#]+\/?)*$/;
+    if (re.test(String(event.target.value).toLowerCase())) {
+      setCustomDomainValidate(false);
+      setSearchStatus(false);
+    }
+    else{
+      setCustomDomainValidate(true);
+    }
     setCustomDomainName(event.target.value);
   };
   const handleUserDomain = (event) => {
     setUserDomainName(event.target.value);
+    let re = /^((https?|ftp|smtp):\/\/)?(www.)?[a-z0-9]+\.[a-z]+(\/[a-zA-Z0-9#]+\/?)*$/;
+    if (re.test(String(event.target.value).toLowerCase())) {
+      setUserDomainValidate(false);
+    }
+    else{
+      setUserDomainValidate(true);
+    }
   };
   const handleNext = (status) => {
     if (status === "custom") {
@@ -59,6 +75,12 @@ const Domain = ({
       }
     }
   };
+
+  const handleDomainSearch = () => {
+    if(!customDomainValidate && customDomainName){
+      setSearchStatus(true) 
+    }
+  }
 
   useEffect(() => {
     fetch(`${process.env.REACT_APP_BACKEND_URL}/domain-availability`)
@@ -107,26 +129,32 @@ const Domain = ({
                   <>
                     <h1>רשום דומיין חדש</h1>
                     <p>חפש דומיינים זמינים</p>
+                    {customDomainValidate ? (
+                      <p style={{ color: "red" }}>* הזן דומיין חוקי </p>
+                    ) : null}
                     <input
                       type="text"
                       onChange={handleCustomDomain}
                       value={customDomainName}
                       placeholder="חפש דומיין ..."
                     />
-                    <button onClick={() => setSearchStatus(true)}>לחפש</button>
+                    <button onClick={handleDomainSearch}>לחפש</button>
                   </>
                 ) : (
                   <>
                     <h1>Register a new domain</h1>
                     <p>Search available domains</p>
+                    {customDomainValidate ? (
+                      <p style={{ color: "red" }}>Enter a valid domain *</p>
+                    ) : null}
                     <input
                       type="text"
                       onChange={handleCustomDomain}
                       value={customDomainName}
                       placeholder="Search domain..."
                     />
-                    <button onClick={() => setSearchStatus(true)}>
-                      {translation === "Hebrew" ? "לחפש" : "Search"}
+                    <button onClick={handleDomainSearch}>
+                      Search
                     </button>
                   </>
                 )}
@@ -140,7 +168,10 @@ const Domain = ({
                     <h1>השתמש בדומיין שבבעלותך</h1>
                     <p>הזן את התחום הקיים שלך</p>
                     {domainNameEmpty ? (
-                      <p style={{ color: "red" }}>זהו שדה חובה *</p>
+                      <p style={{ color: "red" }}>* זהו שדה חובה </p>
+                    ) : null}
+                    {userDomainValidate ? (
+                      <p style={{ color: "red" }}>* הזן דומיין חוקי </p>
                     ) : null}
                     <input
                       type="text"
@@ -155,6 +186,9 @@ const Domain = ({
                     <p>Enter your existing domain</p>
                     {domainNameEmpty ? (
                       <p style={{ color: "red" }}>This field is required *</p>
+                    ) : null}
+                    {userDomainValidate ? (
+                      <p style={{ color: "red" }}>Enter a valid domain *</p>
                     ) : null}
 
                     <input

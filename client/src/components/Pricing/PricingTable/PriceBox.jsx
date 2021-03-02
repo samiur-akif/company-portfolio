@@ -45,7 +45,9 @@ const PriceBox = ({
           <ul>{description}</ul>
         </div>
         <br/>
-        <button className="button button-md button-grey button-rounded order-button" onClick={() => handleCart(item)}>Order Now</button>
+        <button className="button button-md button-grey button-rounded order-button" onClick={() => handleCart(item)}>
+          <FormattedText objectName={item} extension="Purchase_Button_Text" />
+        </button>
         {/* {
         
         clientId ? <PayPalButton price={price} clientId={clientId} onCancel={onCancel} onSuccess={onSuccess} onError={onError} /> : null
