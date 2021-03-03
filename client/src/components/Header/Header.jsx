@@ -8,7 +8,7 @@ import { updateTranslation } from "../../Redux/Pages/pages-action";
 import { connect } from "react-redux";
 import FormattedText from "../../hooks/FormattedText";
 
-const Header = ({ blackBack, translation, updateTranslation }) => {
+const Header = ({ blackBack, translation, updateTranslation, colors }) => {
   const [menus, setMenus] = useState([]);
   const [handleShow, setHandleShow] = useState(false);
   const [favicon, setFavicon] = useState("");
@@ -21,20 +21,23 @@ const Header = ({ blackBack, translation, updateTranslation }) => {
         return {
           right: '0',
           left: 'auto',
-          display: 'block'
+          display: 'block',
+          color: JSON.parse(colors.navlink_color).css
         }
       }
       else{
         return {
           right: '0',
           left: 'auto',
+          color: JSON.parse(colors.navlink_color).css
         }
       }
     }
     else{
       if(navDropDownToggle){
         return {
-          display: 'block'
+          display: 'block',
+          color: JSON.parse(colors.navlink_color).css
         }
       }
     }
@@ -65,15 +68,15 @@ const Header = ({ blackBack, translation, updateTranslation }) => {
 
   const NavElement = ({ item, link }) => (
     <li className="nav-item" style={{ marginLeft: "14px" }}>
-      <a className="nav-link" href={link}>
+      <a className="nav-link" href={link} style={{  color: JSON.parse(colors.navlink_color).css }}>
         <FormattedText objectName={item} extension="Name" />
       </a>
     </li>
   );
 
   const NavDropDown = ({ item, link }) => (
-    <li class="nav-item">
-      <a class="nav-link d-toggle" href={link}>
+    <li class="nav-item" style={{ color: JSON.parse(colors.navlink_color).css }}>
+      <a class="nav-link d-toggle" href={link} style={{  color: JSON.parse(colors.navlink_color).css }}>
         <FormattedText objectName={item} extension="Name" />
       </a>
       <ul class="nav-dropdown" style={dropDownStyle()}>
@@ -110,7 +113,7 @@ const Header = ({ blackBack, translation, updateTranslation }) => {
       ) : null}
       <div
         className="header right absolute-light sticky-autohide"
-        style={handleShow || blackBack ? { background: "#262626" } : {}}
+        style={handleShow || blackBack ? { background: JSON.parse(colors.nav_color).css } : {}}
       >
         <div className="container">
           <Logo />
@@ -198,6 +201,7 @@ const mapDispatchToProps = (dispatch) => ({
 
 const mapStateToProps = ({ pages }) => ({
   translation: pages.translation,
+  colors: pages.colors,
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Header);

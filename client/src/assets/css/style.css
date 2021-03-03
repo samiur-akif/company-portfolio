@@ -1729,57 +1729,42 @@ i {
   display: inline-block;
 }
 
-.icon-5xl {
-  /* 42px */
-}
 
 .icon-5xl i {
   font-size: 2.8em;
 }
 
-.icon-4xl {
-  /* 36px */
-}
+
 
 .icon-4xl i {
   font-size: 2.4em;
 }
 
-.icon-3xl {
-  /* 32px */
-}
+
 
 .icon-3xl i {
   font-size: 2.13em;
 }
 
-.icon-2xl {
-  /* 28px */
-}
+
 
 .icon-2xl i {
   font-size: 1.86em;
 }
 
-.icon-xl {
-  /* 24px */
-}
+
 
 .icon-xl i {
   font-size: 1.6em;
 }
 
-.icon-lg {
-  /* 20px */
-}
+
 
 .icon-lg i {
   font-size: 1.33em;
 }
 
-.icon-sm {
-  /* 13px */
-}
+
 
 .icon-sm i {
   font-size: 0.86em;

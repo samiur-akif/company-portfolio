@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { updatePagesData, updateTranslation } from './Redux/Pages/pages-action';
+import { updateColors, updatePagesData, updateTranslation } from './Redux/Pages/pages-action';
 import Custom from './pages/Custom/Custom';
 import Blog from './components/Blog/Blog';
 import SinglePost from './components/SinglePost/SinglePost';
@@ -17,7 +17,7 @@ import './App.css';
 import Spinner from './components/Spinner/Spinner';
 import { updatePopupStatus } from './Redux/Popup/popup-action';
 
-function App({ updatePagesData, translation, updateTranslation, popupStatus, updatePopupStatus }) {
+function App({ updatePagesData, translation, updateTranslation, popupStatus, updatePopupStatus, updateColors, colors }) {
 
   const [popModelShow, setPopModelShow] = useState(false);
   const [popUpDatails, setPopUpDatails] = useState({});
@@ -51,6 +51,14 @@ function App({ updatePagesData, translation, updateTranslation, popupStatus, upd
       dataFetching()
     }
   })
+
+  useEffect(() => {
+    if(!colors){
+      fetch(`${process.env.REACT_APP_BACKEND_URL}/colors`)
+    .then(res => res.json())
+    .then(data => updateColors(data))
+    }
+  }, [])
 
   useEffect(() => {
     if (translation === 'Hebrew') {
@@ -88,7 +96,8 @@ function App({ updatePagesData, translation, updateTranslation, popupStatus, upd
   return (
     <div className={`hero ${translation === 'Hebrew' ? 'rtl-style' : ''}`} {...rtlSetup}>
       {
-        translation ? <Switch>
+        translation && colors ? <Switch>
+          
           <Route path="/" exact component={Custom} />
           <Route path="/blog" exact component={Blog} />
           <Route path="/blog/:slug" component={SinglePost} />
@@ -110,6 +119,7 @@ function App({ updatePagesData, translation, updateTranslation, popupStatus, upd
 
 const mapStateToProps = ({ pages, popup }) => ({
   translation: pages.translation,
+  colors: pages.colors,
   popupStatus: popup.popupStatus
 });
 
@@ -117,6 +127,7 @@ const mapDispatchToProps = dispatch => ({
   updatePagesData: (data) => dispatch(updatePagesData(data)),
   updateTranslation: (language) => dispatch(updateTranslation(language)),
   updatePopupStatus: () => dispatch(updatePopupStatus()),
+  updateColors: (colors) => dispatch(updateColors(colors))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

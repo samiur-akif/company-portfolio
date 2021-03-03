@@ -6,7 +6,7 @@ import { connect } from "react-redux";
 import FormattedText from "../../hooks/FormattedText";
 import parse from "html-react-parser";
 
-const Footer = ({ translation }) => {
+const Footer = ({ translation, colors }) => {
   const [usefulLinks, setUsefulLinks] = useState([]);
   const [additionalLinks, setAdditionalLinks] = useState([]);
   const [contactInfo, setContactInfo] = useState({});
@@ -41,7 +41,7 @@ const Footer = ({ translation }) => {
 
   return (
     <footer>
-      <div className="section-sm bg-dark">
+      <div className="section-sm" style={{ background: JSON.parse(colors.footers_color).css }}>
         <div className="container">
           <div className="row col-spacing-20">
             <div className="col-6 col-sm-6 col-lg-3">
@@ -128,6 +128,7 @@ const Footer = ({ translation }) => {
 
 const mapStateToProps = ({ pages }) => ({
   translation: pages.translation,
+  colors: pages.colors,
 });
 
 export default connect(mapStateToProps)(Footer);

@@ -10,11 +10,17 @@
     "draftAndPublish": true
   },
   "attributes": {
-    "Navbar": {
-      "type": "string"
+    "nav_color": {
+      "type": "colorpicker",
+      "columnType": "string"
     },
-    "Navlinks": {
-      "type": "string"
+    "navlink_color": {
+      "type": "colorpicker",
+      "columnType": "string"
+    },
+    "footers_color": {
+      "type": "colorpicker",
+      "columnType": "string"
     }
   }
 }

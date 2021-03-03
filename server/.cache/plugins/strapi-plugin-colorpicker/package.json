@@ -1,0 +1,70 @@
+{
+  "_from": "strapi-plugin-colorpicker",
+  "_id": "strapi-plugin-colorpicker@1.0.35",
+  "_inBundle": false,
+  "_integrity": "sha512-53rHmIKPoL3ckn84snBTjmguy4cXgITR3ldkMoXIr0luV9S7F3nAYTwOZixQ8zpjLbdshd5r0pRdTlgrYRPcIQ==",
+  "_location": "/strapi-plugin-colorpicker",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "strapi-plugin-colorpicker",
+    "name": "strapi-plugin-colorpicker",
+    "escapedName": "strapi-plugin-colorpicker",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/strapi-plugin-colorpicker/-/strapi-plugin-colorpicker-1.0.35.tgz",
+  "_shasum": "16cbfaf2abe2eeab159df9438dffd807243cc7d2",
+  "_spec": "strapi-plugin-colorpicker",
+  "_where": "/Volumes/Projects/Jouney to React/agency-strapi/server",
+  "author": {
+    "name": "Daniel Esteves",
+    "email": "danestves@gmail.com",
+    "url": "https://danestves.com/en"
+  },
+  "bugs": {
+    "url": "https://github.com/danestves/strapi-plugin-colorpicker/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "lodash.isempty": "^4.4.0",
+    "react-colorful": "^5.0.0",
+    "react-use": "^17.1.1",
+    "tinycolor2": "^1.4.2"
+  },
+  "deprecated": false,
+  "description": "A plugin for Strapi Headless CMS that provides colorpicker field.",
+  "engines": {
+    "node": ">=10.16.0 <=14.x.x",
+    "npm": ">=6.0.0"
+  },
+  "files": [
+    "admin"
+  ],
+  "homepage": "https://github.com/danestves/strapi-plugin-colorpicker#readme",
+  "license": "MIT",
+  "maintainers": [
+    {
+      "name": "Daniel Esteves",
+      "email": "danestves@gmail.com",
+      "url": "https://danestves.com/en"
+    }
+  ],
+  "name": "strapi-plugin-colorpicker",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danestves/strapi-plugin-colorpicker.git"
+  },
+  "strapi": {
+    "name": "colorpicker",
+    "icon": "plug",
+    "description": "A plugin for Strapi Headless CMS that provides colorpicker field."
+  },
+  "version": "1.0.35"
+}
