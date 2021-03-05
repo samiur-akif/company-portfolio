@@ -23,7 +23,10 @@ const FAQ = ({ values, translation }) => {
                     if(item.Web_Hosting){
                       return  <AccordionItem key={key}>
                       <AccordionItemHeading>
-                        <AccordionItemButton>
+                        <AccordionItemButton style={
+                          translation === 'Hebrew' ?
+                          { textAlign: 'right'} : {}
+                        }>
                           {
                             <FormattedText
                               objectName={item}
@@ -52,7 +55,10 @@ const FAQ = ({ values, translation }) => {
                     if(item.Cloud_Services){
                       return  <AccordionItem key={key}>
                       <AccordionItemHeading>
-                        <AccordionItemButton>
+                        <AccordionItemButton style={
+                          translation === 'Hebrew' ?
+                          { textAlign: 'right'} : {}
+                        }>
                           {
                             <FormattedText
                               objectName={item}

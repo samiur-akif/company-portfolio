@@ -2,7 +2,7 @@
   "_args": [
     [
       "strapi-plugin-email@3.4.4",
-      "/Volumes/Projects/Jouney to React/agency-strapi/server"
+      "D:\\React Journey\\Company Portfolio\\company-portfolio\\server"
     ]
   ],
   "_from": "strapi-plugin-email@3.4.4",
@@ -26,7 +26,7 @@
   ],
   "_resolved": "https://registry.npmjs.org/strapi-plugin-email/-/strapi-plugin-email-3.4.4.tgz",
   "_spec": "3.4.4",
-  "_where": "/Volumes/Projects/Jouney to React/agency-strapi/server",
+  "_where": "D:\\React Journey\\Company Portfolio\\company-portfolio\\server",
   "author": {
     "name": "Strapi team",
     "email": "hi@strapi.io",

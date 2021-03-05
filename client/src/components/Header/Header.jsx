@@ -7,6 +7,8 @@ import Logo from "./Logo/Logo";
 import { updateTranslation } from "../../Redux/Pages/pages-action";
 import { connect } from "react-redux";
 import FormattedText from "../../hooks/FormattedText";
+import USFlag from '../../assets/images/us-flag.png';
+import IsraelFlag from '../../assets/images/israel-flag.png';
 
 const Header = ({ blackBack, translation, updateTranslation, colors }) => {
   const [menus, setMenus] = useState([]);
@@ -154,13 +156,13 @@ const Header = ({ blackBack, translation, updateTranslation, colors }) => {
                   href="#/action-1"
                   onClick={() => updateTranslation("English")}
                 >
-                  🇺🇸 - English
+                 English <span style={{marginLeft: '8px', marginRight:'8px' }}><img src={USFlag} alt=""/></span>
                 </Dropdown.Item>
                 <Dropdown.Item
                   href="#/action-2"
                   onClick={() => updateTranslation("Hebrew")}
                 >
-                  עִברִית - 🇮🇱
+                  עִברִית <span style={{marginLeft: '8px', marginRight:'8px' }}><img src={IsraelFlag} alt=""/></span>
                 </Dropdown.Item>
               </Dropdown.Menu>
             ) : (
@@ -169,13 +171,13 @@ const Header = ({ blackBack, translation, updateTranslation, colors }) => {
                   href="#/action-1"
                   onClick={() => updateTranslation("English")}
                 >
-                  English - 🇺🇸
+                  English <span style={{marginLeft: '8px', marginRight:'8px' }}><img src={USFlag} alt=""/></span>
                 </Dropdown.Item>
                 <Dropdown.Item
                   href="#/action-2"
                   onClick={() => updateTranslation("Hebrew")}
                 >
-                  עִברִית - 🇮🇱
+                  עִברִית <span style={{marginLeft: '8px', marginRight:'8px' }}><img src={IsraelFlag} alt=""/></span>
                 </Dropdown.Item>
               </Dropdown.Menu>
             )}

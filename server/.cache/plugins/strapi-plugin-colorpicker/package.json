@@ -1,28 +1,32 @@
 {
-  "_from": "strapi-plugin-colorpicker",
+  "_args": [
+    [
+      "strapi-plugin-colorpicker@1.0.35",
+      "D:\\React Journey\\Company Portfolio\\company-portfolio\\server"
+    ]
+  ],
+  "_from": "strapi-plugin-colorpicker@1.0.35",
   "_id": "strapi-plugin-colorpicker@1.0.35",
   "_inBundle": false,
   "_integrity": "sha512-53rHmIKPoL3ckn84snBTjmguy4cXgITR3ldkMoXIr0luV9S7F3nAYTwOZixQ8zpjLbdshd5r0pRdTlgrYRPcIQ==",
   "_location": "/strapi-plugin-colorpicker",
   "_phantomChildren": {},
   "_requested": {
-    "type": "tag",
+    "type": "version",
     "registry": true,
-    "raw": "strapi-plugin-colorpicker",
+    "raw": "strapi-plugin-colorpicker@1.0.35",
     "name": "strapi-plugin-colorpicker",
     "escapedName": "strapi-plugin-colorpicker",
-    "rawSpec": "",
+    "rawSpec": "1.0.35",
     "saveSpec": null,
-    "fetchSpec": "latest"
+    "fetchSpec": "1.0.35"
   },
   "_requiredBy": [
-    "#USER",
     "/"
   ],
   "_resolved": "https://registry.npmjs.org/strapi-plugin-colorpicker/-/strapi-plugin-colorpicker-1.0.35.tgz",
-  "_shasum": "16cbfaf2abe2eeab159df9438dffd807243cc7d2",
-  "_spec": "strapi-plugin-colorpicker",
-  "_where": "/Volumes/Projects/Jouney to React/agency-strapi/server",
+  "_spec": "1.0.35",
+  "_where": "D:\\React Journey\\Company Portfolio\\company-portfolio\\server",
   "author": {
     "name": "Daniel Esteves",
     "email": "danestves@gmail.com",
@@ -31,14 +35,12 @@
   "bugs": {
     "url": "https://github.com/danestves/strapi-plugin-colorpicker/issues"
   },
-  "bundleDependencies": false,
   "dependencies": {
     "lodash.isempty": "^4.4.0",
     "react-colorful": "^5.0.0",
     "react-use": "^17.1.1",
     "tinycolor2": "^1.4.2"
   },
-  "deprecated": false,
   "description": "A plugin for Strapi Headless CMS that provides colorpicker field.",
   "engines": {
     "node": ">=10.16.0 <=14.x.x",
