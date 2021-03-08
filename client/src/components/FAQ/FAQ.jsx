@@ -9,12 +9,13 @@ import {
 import "react-accessible-accordion/dist/fancy-example.css";
 import { connect } from "react-redux";
 import FormattedText from "../../hooks/FormattedText";
+import './FAQ.css';
 
 const FAQ = ({ values, translation }) => {
   return (
     <div className="section-lg">
       <div className="container">
-        <div className="row col-spacing-50">
+        <div className={`row col-spacing-50 ${translation === 'Hebrew' ? 'arrow-opposite' : ''}`}>
           <div className="col-md-6 col-lg-6">
             <h2>{ translation === 'Hebrew' ? 'אירוח אתרים' : 'Web Hosting'} </h2>
             {values.length ? (
@@ -23,7 +24,8 @@ const FAQ = ({ values, translation }) => {
                     if(item.Web_Hosting){
                       return  <AccordionItem key={key}>
                       <AccordionItemHeading>
-                        <AccordionItemButton style={
+                        <AccordionItemButton
+                         style={
                           translation === 'Hebrew' ?
                           { textAlign: 'right'} : {}
                         }>

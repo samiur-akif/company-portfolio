@@ -1,0 +1,19 @@
+.accordion__button:before{
+    margin-left: 12px;
+}
+
+.arrow-opposite .accordion__button:before{
+    transform: rotate(-225deg);
+    -webkit-transform: rotate(-225deg);
+    -moz-transform: rotate(-225deg);
+    -ms-transform: rotate(-225deg);
+    -o-transform: rotate(-225deg);
+}
+
+.arrow-opposite .accordion__button[aria-expanded='true']::before{
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+}
