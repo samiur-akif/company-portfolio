@@ -8,7 +8,6 @@
 -------------------------------------------------*/
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800");
 @import url("https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900");
-@import url("https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900");
 @import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
 
 
@@ -369,7 +368,8 @@ div[class^='bg-black'] .blockquote.style-3:before, div[class*=' bg-black'] .bloc
 
 .breadcrumb .breadcrumb-item {
   display: inline-block;
-  font: 400 13px "Open Sans", sans-serif;
+  font-size: 13px;
+  font-weight: 400;
   letter-spacing: 1px;
   text-transform: uppercase;
 }
@@ -1494,7 +1494,6 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0 0 10px;
   letter-spacing: -0.3px;
   color: #131517;
-  font-family: "Poppins", sans-serif;
   font-weight: 600;
 }
 
@@ -2279,7 +2278,6 @@ a:focus, a:active, button:focus, button:active {
 }
 
 .button {
-  font: 400 13px "Poppins", sans-serif;
   letter-spacing: 1px;
   text-transform: uppercase;
 }
@@ -3103,7 +3101,6 @@ a[class*=' button-fancy-2']:hover:after, a[class^='button-fancy-2']:hover:after,
   position: relative;
   display: inline-block;
   color: #000;
-  font-family: "Poppins", sans-serif;
   letter-spacing: -0.2px;
 }
 
@@ -6869,7 +6866,6 @@ div[class^='bg-black'].fullscreen-menu .fm-wrapper .fm-close span:before, div[cl
 
 .header .header-menu .nav .nav-item .nav-link {
   padding: 0;
-  font-family: "Poppins", sans-serif;
   letter-spacing: -0.2px;
   color: #131517;
 }
@@ -7779,7 +7775,6 @@ div[class^='bg-black'].fullscreen-menu .fm-wrapper .fm-close span:before, div[cl
   border-radius: 30px;
   margin: 0 5px;
   padding: 7px 15px;
-  font: 400 13px "Poppins", sans-serif;
   letter-spacing: 1px;
   text-transform: uppercase;
   cursor: pointer;
@@ -8595,7 +8590,6 @@ body.loaded:after {
   background: rgba(0, 0, 0, 0.4);
   padding: 8px 11px;
   border-radius: 40px;
-  font: 500 12px "Poppins", sans-serif;
   line-height: 1;
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -8644,7 +8638,6 @@ body.loaded:after {
 
 .product-box .product-img .add-to-cart a:not([class*=' button']):not([class^='button']) {
   color: #7C7C7C;
-  font: 500 13px "Poppins", sans-serif;
   letter-spacing: 1px;
   text-transform: uppercase;
 }
@@ -8820,7 +8813,6 @@ body.loaded:after {
   position: relative;
   padding: 0 0 1px;
   font-weight: 400;
-  font-family: "Poppins", sans-serif;
   letter-spacing: -0.2px;
 }
 
@@ -9119,7 +9111,7 @@ body.loaded:after {
 }
 
 .font-family-primary {
-  font-family: "Open Sans", sans-serif;
+  
 }
 
 .font-family-secondary, .font-family-playfair {
@@ -9127,7 +9119,7 @@ body.loaded:after {
 }
 
 .font-family-tertiary {
-  font-family: "Poppins", sans-serif;
+  
 }
 
 .font-weight-thin {

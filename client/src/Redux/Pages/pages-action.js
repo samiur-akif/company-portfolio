@@ -12,3 +12,8 @@ export const updateColors = (colors) => ({
     type: 'UPDATE_COLORS',
     payload: colors
 })
+
+export const updateFont = (fonts) => ({
+    type: 'UPDATE_FONT',
+    payload: fonts
+})

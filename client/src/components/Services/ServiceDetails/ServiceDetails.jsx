@@ -14,7 +14,7 @@ const ServideDetails = ({ values, translation }) => {
                 right={true}
                 imgUrl={item.Image.url}
                 item={item}
-                link={item.Link}
+                link={`/${item.Link}`}
                 translation={translation}
               />
             );
@@ -25,7 +25,7 @@ const ServideDetails = ({ values, translation }) => {
                 right={false}
                 imgUrl={item.Image.url}
                 item={item}
-                link={item.Link}
+                link={`/${item.Link}`}
                 translation={translation}
               />
             );

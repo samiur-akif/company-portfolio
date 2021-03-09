@@ -2,7 +2,7 @@
   "_args": [
     [
       "strapi-plugin-users-permissions@3.4.4",
-      "D:\\React Journey\\Company Portfolio\\company-portfolio\\server"
+      "/Volumes/Projects/Jouney to React/agency-strapi/server"
     ]
   ],
   "_from": "strapi-plugin-users-permissions@3.4.4",
@@ -26,7 +26,7 @@
   ],
   "_resolved": "https://registry.npmjs.org/strapi-plugin-users-permissions/-/strapi-plugin-users-permissions-3.4.4.tgz",
   "_spec": "3.4.4",
-  "_where": "D:\\React Journey\\Company Portfolio\\company-portfolio\\server",
+  "_where": "/Volumes/Projects/Jouney to React/agency-strapi/server",
   "author": {
     "name": "Strapi team",
     "email": "hi@strapi.io",

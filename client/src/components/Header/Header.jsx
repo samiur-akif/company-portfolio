@@ -10,7 +10,7 @@ import FormattedText from "../../hooks/FormattedText";
 import USFlag from '../../assets/images/us-flag.png';
 import IsraelFlag from '../../assets/images/israel-flag.png';
 
-const Header = ({ blackBack, translation, updateTranslation, colors }) => {
+const Header = ({ blackBack, translation, updateTranslation, colors, font }) => {
   const [menus, setMenus] = useState([]);
   const [handleShow, setHandleShow] = useState(false);
   const [favicon, setFavicon] = useState("");
@@ -70,7 +70,7 @@ const Header = ({ blackBack, translation, updateTranslation, colors }) => {
 
   const NavElement = ({ item, link }) => (
     <li className="nav-item" style={{ marginLeft: "14px" }}>
-      <a className="nav-link" href={link} style={{  color: JSON.parse(colors.navlink_color).css }}>
+      <a className="nav-link" href={link} style={{  color: JSON.parse(colors.navlink_color).css, fontSize: `${font.Menu_Font_Size}px` }}>
         <FormattedText objectName={item} extension="Name" />
       </a>
     </li>
@@ -78,7 +78,7 @@ const Header = ({ blackBack, translation, updateTranslation, colors }) => {
 
   const NavDropDown = ({ item, link }) => (
     <li class="nav-item" style={{ color: JSON.parse(colors.navlink_color).css }}>
-      <a class="nav-link d-toggle" href={link} style={{  color: JSON.parse(colors.navlink_color).css }}>
+      <a class="nav-link d-toggle" href={link} style={{  color: JSON.parse(colors.navlink_color).css, fontSize: `${font.Menu_Font_Size}px` }}>
         <FormattedText objectName={item} extension="Name" />
       </a>
       <ul class="nav-dropdown" style={dropDownStyle()}>
@@ -204,6 +204,7 @@ const mapDispatchToProps = (dispatch) => ({
 const mapStateToProps = ({ pages }) => ({
   translation: pages.translation,
   colors: pages.colors,
+  font: pages.font,
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Header);

@@ -1,7 +1,8 @@
 const INITIAL_STATE = {
     data: [],
     translation: '',
-    colors: ''
+    colors: '',
+    font: '',
 }
 
 const pagesReducer = (state = INITIAL_STATE, action) => {
@@ -20,6 +21,11 @@ const pagesReducer = (state = INITIAL_STATE, action) => {
             return {
                 ...state,
                 colors: action.payload
+            }
+        case 'UPDATE_FONT':
+            return {
+                ...state,
+                font: action.payload
             }
 
         default:
