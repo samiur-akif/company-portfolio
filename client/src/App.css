@@ -9,11 +9,10 @@ body {
   height: 100%;
 }
 
-.rtl-style {
-  font-family: "Varela Round", sans-serif !important;
+ .rtl-style {
   text-align: right;
 }
-
+/*
 .rtl-style h1,
 .rtl-style h2,
 .rtl-style h3,
@@ -48,4 +47,4 @@ body {
 
 .rtl-style .font-family-tertiary {
   font-family: "Varela Round", sans-serif !important;
-}
+} */

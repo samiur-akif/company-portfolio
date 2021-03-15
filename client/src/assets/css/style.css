@@ -4176,6 +4176,13 @@ div[class^='bg-black'] .divider-dots span, div[class*=' bg-black'] .divider-dots
   transition: ease-out 0.16s;
 }
 
+.feature-box .feature-box-icon.hebrew-active {
+  left: auto;
+  right: 0;
+  margin-bottom: 20px;
+}
+
+
 .feature-box .feature-box-icon * {
   margin: 0;
   line-height: 50px;

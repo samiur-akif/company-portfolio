@@ -19,6 +19,12 @@
     },
     "Font_Family_Name": {
       "type": "string"
+    },
+    "Hebrew_Font_Family_Link": {
+      "type": "string"
+    },
+    "Hebrew_Font_Family_Name": {
+      "type": "string"
     }
   }
 }

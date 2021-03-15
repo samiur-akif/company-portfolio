@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import FormattedText from "../../hooks/FormattedText";
 import "./CompareTable.css";
 
-const CompareTable = ({ prices, handleCart, translation }) => {
+const CompareTable = ({ prices, handleCart, translation, colors }) => {
   const [packages, setPackages] = useState([]);
   useEffect(() => {
     fetch(`${process.env.REACT_APP_BACKEND_URL}/web-hosting-packages`)
@@ -122,10 +122,10 @@ const CompareTable = ({ prices, handleCart, translation }) => {
                     </span>
                     <button
                       className="button button-md button-grey button-rounded order-button"
-                      style={{ marginTop: "12px" }}
+                      style={{ marginTop: "12px", background: JSON.parse(colors.order_button_color).css }}
                       onClick={() => handleCart(item)}
                     >
-                      Order Now
+                      <FormattedText objectName={item} extension="Purchase_Button_Text" />
                     </button>
                   </td>
                 );
@@ -142,6 +142,7 @@ const CompareTable = ({ prices, handleCart, translation }) => {
 
 const mapStateToProps = ({ pages }) => ({
   translation: pages.translation,
+  colors: pages.colors
 });
 
 export default connect(mapStateToProps)(CompareTable);

@@ -155,6 +155,47 @@ function App({
 }
 
 
+
+`;
+
+  const GlobalStylesHebrew = createGlobalStyle`
+@import url('${font?.Hebrew_Font_Family_Link}');
+body {
+  font-family: '${font?.Hebrew_Font_Family_Name}', sans-serif;
+}
+h1, h2, h3, h4, h5, h6{
+  font-family: '${font?.Hebrew_Font_Family_Name}', sans-serif;
+}
+.button-text-1,
+.button-text-2,
+.button-text-3{
+font-family: '${font?.Hebrew_Font_Family_Name}', sans-serif;
+
+}
+
+.header .header-menu .nav .nav-item .nav-link{
+font-family: '${font?.Hebrew_Font_Family_Name}', sans-serif;
+
+}
+
+.product-info-box .nav .nav-item .nav-link{
+font-family: '${font?.Hebrew_Font_Family_Name}', sans-serif;
+
+}
+
+.font-family-primary {
+font-family: '${font?.Hebrew_Font_Family_Name}', sans-serif;
+
+}
+
+.font-family-secondary, .font-family-playfair {
+font-family: '${font?.Hebrew_Font_Family_Name}', sans-serif;
+
+}
+
+.font-family-tertiary {
+font-family: '${font?.Hebrew_Font_Family_Name}', sans-serif;
+}
 `;
 
   return (
@@ -162,7 +203,10 @@ function App({
       className={`hero ${translation === "Hebrew" ? "rtl-style" : ""}`}
       {...rtlSetup}
     >
-      <GlobalStyles />
+      {
+        translation === 'Hebrew' ?
+        <GlobalStylesHebrew /> : <GlobalStyles />
+      }
       {translation && colors && font ? (
         <Switch>
           <Route path="/" exact component={Custom} />

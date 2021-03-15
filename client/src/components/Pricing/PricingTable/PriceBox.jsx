@@ -9,7 +9,8 @@ const PriceBox = ({
   recommended,
   price,
   translation,
-  handleCart
+  handleCart,
+  colors
 }) => {
   const [description, setDescription] = useState("");
   const replaceLineBreak = (search, current) => {
@@ -45,7 +46,9 @@ const PriceBox = ({
           <ul>{description}</ul>
         </div>
         <br/>
-        <button className="button button-md button-grey button-rounded order-button" onClick={() => handleCart(item)}>
+        <button className="button button-md button-grey button-rounded order-button"
+        style={{ background: JSON.parse(colors.order_button_color).css }}
+         onClick={() => handleCart(item)}>
           <FormattedText objectName={item} extension="Purchase_Button_Text" />
         </button>
         {/* {
@@ -62,6 +65,7 @@ const PriceBox = ({
 
 const mapStateToProps = ({ pages }) => ({
   translation: pages.translation,
+  colors: pages.colors,
 });
 
 export default connect(mapStateToProps)( PriceBox);

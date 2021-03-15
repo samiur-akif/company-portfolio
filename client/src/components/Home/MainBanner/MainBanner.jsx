@@ -3,8 +3,9 @@ import Carousel from "react-bootstrap/Carousel";
 import { Container, Row } from "react-bootstrap";
 import "./MainBanner.css";
 import FormattedText from "../../../hooks/FormattedText";
+import { connect } from "react-redux";
 
-const MainBanner = ({ values }) => {
+const MainBanner = ({ values, colors }) => {
 
   return (
     <div className="bg-black-05">
@@ -26,6 +27,7 @@ const MainBanner = ({ values }) => {
                     <a
                       className="button button-lg button-radius button-white-3 margin-top-30"
                       href={item?.Button_Link}
+                      style={{ background: JSON.parse(colors.regular_button_color).css }}
                     >
                       <FormattedText objectName={item} extension="Button_Text" />
                     </a>
@@ -41,5 +43,9 @@ const MainBanner = ({ values }) => {
 };
 
 
+const mapStateToProps = ({ pages }) => ({
+  colors: pages.colors,
+});
 
-export default MainBanner;
+
+export default connect(mapStateToProps)(MainBanner);

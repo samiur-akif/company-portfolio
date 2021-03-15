@@ -1,7 +1,9 @@
 import React from 'react';
 import Carousel from "react-bootstrap/Carousel";
+import { connect } from 'react-redux';
 
-const Slider = ({imgUrl, title, buttonText, buttonLink}) => {
+const Slider = ({imgUrl, title, buttonText, buttonLink, colors}) => {
+   console.log("regular color: ",colors.regular_button_color);
     return (
       <Carousel.Item>
       <img
@@ -13,6 +15,7 @@ const Slider = ({imgUrl, title, buttonText, buttonLink}) => {
         <h1 className="font-weight-light">{title}</h1>
         <a
           className="button button-lg button-radius button-white-3 margin-top-30"
+          style={{ background: JSON.parse(colors.regular_button_color).css }}
           href={buttonLink}
         >
           {buttonText}
@@ -22,5 +25,9 @@ const Slider = ({imgUrl, title, buttonText, buttonLink}) => {
     )
 }
 
+const mapStateToProps = ({ pages }) => ({
+  colors: pages.colors,
+});
 
-export default Slider
+
+export default connect(mapStateToProps)(Slider)
